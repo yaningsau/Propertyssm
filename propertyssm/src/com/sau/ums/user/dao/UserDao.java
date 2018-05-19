@@ -1,0 +1,18 @@
+package com.sau.ums.user.dao;
+
+import java.util.List;
+
+import org.springframework.stereotype.Repository;
+
+import com.sau.ums.bean.User;
+
+@Repository
+public interface UserDao {
+
+    //根据用户名获取用户信息
+    User getUserByName(String username);
+
+    //查询用户列表
+    public List<User> listUser(User user);
+
+}

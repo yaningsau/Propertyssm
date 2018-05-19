@@ -1,0 +1,44 @@
+a:link{
+	text-decoration:none;
+}
+a:hover{
+	text-decoration:none;
+}
+a:visited{
+	text-decoration:none;
+}
+#content_l{
+	float:left;
+	padding-top:0px;
+}
+#content_l a{
+	color:#fff;
+}
+#menu li{
+	margin-top:3px;
+	list-style:none;
+	height:50px;
+	border:1px solid #fff;
+	border-radius:5px;
+}
+#menu{
+	margin-top:50px;
+}
+#menu li:hover{
+	cursor:pointer;
+}
+#menu li span{
+	position:relative;
+	top:15px;
+}
+.sub{
+	display:none;
+	border:1px solid #fff;
+	border-radius:5px;
+}
+dl.sub dd{
+	padding:5px;
+}
+dl.sub dd:hover{
+	cursor:pointer;
+}

@@ -1,0 +1,34 @@
+body{
+	 background:url(../../image/bg.png);
+}
+a:link{
+	text-decoration:none;
+}
+a:hover{
+	text-decoration:none;
+}
+a:visited{
+	text-decoration:none;
+}
+#content_r{
+	float:left;
+	margin-top:50px;
+	border-radius:20px 20px 20px 20px;
+	background:#F5F5F5;
+	padding:5px;
+}
+.divide-50{
+	position:relative;
+	top:0px;
+	height:30px;
+	background:#F0F0F0;
+}
+#r_nav li{
+	list-style:none;
+	float:left;
+	padding-top:0px;
+	padding-left:5px;
+}
+.r_content{
+	margin-top:10px;
+}

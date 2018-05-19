@@ -1,0 +1,21 @@
+.container{
+	margin-top:30px;
+	border-radius:10px;
+	height:480px;
+	border:1px solid #fff;
+}
+body{
+	background:url(../../image/bg.png);
+	
+}
+.divide-40{
+	height:40px;
+}
+.head{
+	margin-top:30px;
+}
+
+.head span{
+	font-size:48px;
+	
+}

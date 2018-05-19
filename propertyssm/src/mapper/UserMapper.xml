@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sau.ums.user.dao.UserDao">
+<sql id="usercolumn">
+    id,name,sex,idcard,username,password,Tel,email,kind,num,ps
+    </sql>
+    <!-- 通过用户名查询用户信息 -->
+   <select id="getUserByName" parameterType="string" resultType="User">
+       SELECT <include refid="usercolumn"></include>
+       FROM t_user
+       WHERE username=#{username}
+    </select>
+    
+    <!-- 查询用户列表 -->
+    <select id="listUser" parameterType="User" resultType="User">
+    SELECT <include refid="usercolumn"></include>
+    FROM t_user
+    <where>
+    <if test="username!=null and username!=''">
+    username LIKE #{username}
+    </if>
+    <if test="kind!=null and kind!=''">
+    and kind=#{kind}
+    </if>
+    </where>
+    </select>
+    
+
+</mapper>
