@@ -3,6 +3,7 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -37,15 +38,15 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </div>
         <div class="r_content">
             <form action="listUser.do" method="post" role="form" class="form-inline pull-right">
-                用户名：
-                <input type="text" class="form-control" placeholder="username" name="username" value="${condition.username}"/>
-               用户类别：
-                <input type="text" class="form-control" name="kind"/>
+                <font color="#545454">用户名：</font>
+                <input type="text" style="color:#545454" class="form-control" placeholder="username" name="username" value="${condition.username}"/>
+                <font color="#545454">用户类别：</font>
+                <input type="text" style="color:#545454" class="form-control" name="kind"/>
                 <input type="button" class="form-control" id="target" value="搜索" onClick="document.forms[0].submit()">
             </form>
             <div class="divide-60"></div>
             <div class="table-responsive">
-                <table class="table table-bordered table-hover fff" style="color:silver">
+                <table class="table table-bordered table-hover fff" style="color:#545454">
                     <thead>
                         <tr class="active">
                             <th>#</th>
@@ -62,7 +63,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                         </tr>
                     </thead>
                     <tbody>
-                       
                         <c:if test="${empty page.list}">
                             <tr><td colspan="10">没有符合条件的数据</td></tr>
                         </c:if>
@@ -74,7 +74,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                     <td>${user.sex}</td>
                                     <td>${user.idcard}</td>
                                     <td>${user.username}</td>
-                                    <td>${user.Tel}</td>
+                                    <td>${user.tel}</td>
                                     <td>${user.email}</td>
                                     <td>${user.kind}</td>
                                     <td>${user.num}</td>

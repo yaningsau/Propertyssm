@@ -14,7 +14,7 @@ public class User {
 
     private String password;
 
-    private String Tel;
+    private String tel;
 
     private String email;
 
@@ -73,11 +73,11 @@ public class User {
     }
 
     public String getTel() {
-        return Tel;
+        return tel;
     }
 
     public void setTel(String tel) {
-        Tel = tel;
+        this.tel = tel;
     }
 
     public String getEmail() {

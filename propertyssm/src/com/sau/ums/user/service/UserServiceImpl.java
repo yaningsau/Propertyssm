@@ -37,7 +37,7 @@ public class UserServiceImpl implements UserService {
     @Override
     public PageInfo<User> listUser(User user, Integer pageNum) {
         PageInfo<User> page = null;
-        if (user.getUsername() != null && "".equals(user.getUsername())) {
+        if ((user.getUsername() != null) && (!"".equals(user.getUsername()))) {
             user.setUsername("%" + user.getUsername() + "%");
         }
         //查询用户列表
@@ -46,5 +46,4 @@ public class UserServiceImpl implements UserService {
         page = new PageInfo<User>(userlist);
         return page;
     }
-
 }
