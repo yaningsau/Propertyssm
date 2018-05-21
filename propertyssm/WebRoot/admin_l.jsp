@@ -64,7 +64,7 @@ $(function(){
 	            </li>      	
 	            <div>
 	                <dl class="sub" id="sub2">
-	                    <dd><a href="room_search.jsp" class="col-sm-offset-3"><span>查询房产</span></a></dd>
+	                    <dd><a href="listRoom.do" class="col-sm-offset-3"><span>查询房产</span></a></dd>
 	                    <dd><a href="room_add.jsp" class="col-sm-offset-3"><span>添加房产</span></a></dd>
 	            	</dl>
 	            <div>
@@ -115,8 +115,8 @@ $(function(){
                 </li>       
                 <div>
                     <dl class="sub" id="sub7">
-                        <dd><a href="/admin/guard_search.jsp" class="col-sm-offset-3"><span>外来人员查询</span></a></dd>
-                        <dd><a href="/admin/guard_add.jsp" class="col-sm-offset-3"><span>外来人员记录</span></a></dd>
+                        <dd><a href="guard_search.jsp" class="col-sm-offset-3"><span>外来人员查询</span></a></dd>
+                        <dd><a href="guard_add.jsp" class="col-sm-offset-3"><span>外来人员记录</span></a></dd>
                     </dl>
                 <div>
                 
@@ -125,8 +125,8 @@ $(function(){
                 </li>       
                 <div>
                     <dl class="sub" id="sub8">
-                        <dd><a href="/admin/repair_search.jsp" class="col-sm-offset-3"><span>报修查询</span></a></dd>
-                        <dd><a href="/admin/repair_add.jsp" class="col-sm-offset-3"><span>报修</span></a></dd>
+                        <dd><a href="repair_search.jsp" class="col-sm-offset-3"><span>报修查询</span></a></dd>
+                        <dd><a href="repair_add.jsp" class="col-sm-offset-3"><span>报修</span></a></dd>
                     </dl>
                 <div>
                 
@@ -135,8 +135,8 @@ $(function(){
                 </li>       
                 <div>
                     <dl class="sub" id="sub9">
-                        <dd><a href="/admin/complain_search.jsp" class="col-sm-offset-3"><span>投诉查询</span></a></dd>
-                        <dd><a href="/admin/complain_add.jsp" class="col-sm-offset-3"><span>投诉</span></a></dd>
+                        <dd><a href="complain_search.jsp" class="col-sm-offset-3"><span>投诉查询</span></a></dd>
+                        <dd><a href="complain_add.jsp" class="col-sm-offset-3"><span>投诉</span></a></dd>
                     </dl>
                 <div>
                 

@@ -3,6 +3,7 @@
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -36,7 +37,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </ul>
         </div>
         <div class="r_content">
-            <form action="/hr/emp_search.do" method="post" role="form" class="form-inline pull-right">
+            <form action="listRoom.do" method="post" role="form" class="form-inline pull-right">
                 户型：
                 <input type="text" class="form-control" placeholder="roomtype" name="roomtype"/>
                房号：
@@ -45,7 +46,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </form>
             <div class="divide-60"></div>
             <div class="table-responsive">
-                <table class="table table-bordered table-hover fff" style="color:silver">
+                <table class="table table-bordered table-hover fff" style="color:#545454">
                     <thead>
                         <tr class="active">
                             <th>#</th>
@@ -61,27 +62,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                         </tr>
                     </thead>
                     <tbody>
-                       <%--  <%
-                        List<Emp> emplist = (List<Emp>)request.getAttribute("emplist");
-                        %> --%>
-                        <c:if test="${empty emplist}">
+                       
+                        <c:if test="${empty page.list}">
                             <tr><td colspan="10">没有符合条件的数据</td></tr>
                         </c:if>
-                        <c:if test="${not empty emplist}">
-                            <c:forEach items="${emplist}" var="emp" varStatus="st">
+                        <c:if test="${not empty page.list}">
+                            <c:forEach items="${page.list}" var="room" varStatus="st">
                                 <tr>
                                     <td>${st.index+1}</td>
-                                    <td>${emp.getEmp_no()}</td>
-                                    <td>${emp.getEmp_name()}</td>
-                                    <td>${emp.getEmp_birth()}</td>
-                                    <td>${emp.getEmp_sex()}</td>
-                                    <td>${emp.getEmp_phone()}</td>
-                                    <td>${emp.getEmp_indate()}</td>
-                                    <td>${emp.getDept_name()}</td>
-                                    <td>${emp.getDept_name()}</td>
+                                    <td>${room.room}</td>
+                                    <td>${room.roomtype}</td>
+                                    <td>${room.publicarea}</td>
+                                    <td>${room.roomarea}</td>
+                                    <td>${room.area}</td>
+                                    <td>${room.loftarea}</td>
+                                    <td>${room.number}</td>
+                                    <td>${room.ps}</td>
                                     <td>
-                                    <a href='/hr/gotomodify.do?id=${dept.getId()}'>修改</a>
-                                    <a onClick='return confirmOpe();'href='/hr/dept_del.do?id=${dept.getId()}'>删除</a>
+                                    <a href=>修改</a>
+                                    <a onClick=>删除</a>
                                     </td>
                                  </tr>
                             </c:forEach>

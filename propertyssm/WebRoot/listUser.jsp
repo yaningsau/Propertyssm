@@ -86,7 +86,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                  </tr>
                             </c:forEach>
                         </c:if>
-<p>
+<%-- <p>
   <!-- 保存分页信息 -->
   <form id="condition">
      <!-- 分页查询条件 -->
@@ -106,8 +106,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
  <script>
 
 $(function(){
-    <!--设置权限查询条件-->
-    $("#userform #permission").val($("#condition #permission").val());
+    /* <!--设置权限查询条件-->
+    $("#userform #kind").val($("#condition #kind").val()); */
     
     <!--初始化分页插件-->
     $("#page").jqPaginator({
@@ -127,7 +127,7 @@ $(function(){
          }
     });
 })
-</script>
+</script> --%>
                         
                         
                     </tbody>
