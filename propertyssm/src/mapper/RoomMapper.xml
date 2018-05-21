@@ -17,7 +17,7 @@
     roomtype LIKE #{roomtype}
     </if>
     <if test="room != null and room !=''">
-    and room=#{room}
+    and room LIKE #{room}
     </if> 
     </where>
     </select>

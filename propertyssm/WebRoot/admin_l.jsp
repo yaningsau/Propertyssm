@@ -84,7 +84,7 @@ $(function(){
                 </li>       
                 <div>
                     <dl class="sub" id="sub4">
-                        <dd><a href="protect_search.jsp" class="col-sm-offset-3"><span>查询安防</span></a></dd>
+                        <dd><a href="listProtect.do" class="col-sm-offset-3"><span>查询安防</span></a></dd>
                         <dd><a href="protect_add.jsp" class="col-sm-offset-3"><span>添加安防</span></a></dd>
                     </dl>
                 <div>

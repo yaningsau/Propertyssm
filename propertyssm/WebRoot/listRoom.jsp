@@ -38,9 +38,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </div>
         <div class="r_content">
             <form action="listRoom.do" method="post" role="form" class="form-inline pull-right">
-                户型：
+              <font color="#545454">户型：</font>
                 <input type="text" class="form-control" placeholder="roomtype" name="roomtype"/>
-               房号：
+               <font color="#545454">房号：</font>
                 <input type="text" class="form-control" placeholder="room" name="room"/>
                 <input type="button" class="form-control" id="target" value="搜索" onClick="document.forms[0].submit()">
             </form>
