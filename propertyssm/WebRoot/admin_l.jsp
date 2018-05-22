@@ -125,7 +125,7 @@ $(function(){
                 </li>       
                 <div>
                     <dl class="sub" id="sub8">
-                        <dd><a href="repair_search.jsp" class="col-sm-offset-3"><span>报修查询</span></a></dd>
+                        <dd><a href="listRepair.do" class="col-sm-offset-3"><span>报修查询</span></a></dd>
                         <dd><a href="repair_add.jsp" class="col-sm-offset-3"><span>报修</span></a></dd>
                     </dl>
                 <div>
