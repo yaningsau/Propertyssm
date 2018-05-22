@@ -94,7 +94,7 @@ $(function(){
                 </li>       
                 <div>
                     <dl class="sub" id="sub5">
-                        <dd><a href="purchase_search.jsp" class="col-sm-offset-3"><span>查询采购</span></a></dd>
+                        <dd><a href="listPurchase.do" class="col-sm-offset-3"><span>查询采购</span></a></dd>
                         <dd><a href="purchase_add.jsp" class="col-sm-offset-3"><span>添加采购</span></a></dd>
                     </dl>
                 <div>

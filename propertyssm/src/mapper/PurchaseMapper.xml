@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sau.ums.purchase.dao.PurchaseDao">
+  <sql id="purchasecolumn">
+      id,sname,price,number,total,uses,time,ps
+  </sql>
+
+  <!-- 查询采购列表 -->
+  <select id="listPurchase" parameterType="Purchase" resultType="Purchase">
+  SELECT <include refid="purchasecolumn"></include>
+  FROM t_purchase
+  <where>
+  <if test="sname != null and sname != ''">
+  sname LIKE #{sname}
+  </if>
+  </where>
+  
+  </select>
+
+</mapper>

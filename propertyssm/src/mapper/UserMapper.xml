@@ -22,7 +22,7 @@
     username LIKE #{username}
     </if>
     <if test="kind!=null and kind!=''">
-    and kind=#{kind}
+    and kind LIKE #{kind}
     </if>
     </where>
     </select>
