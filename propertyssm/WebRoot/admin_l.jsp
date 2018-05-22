@@ -115,7 +115,7 @@ $(function(){
                 </li>       
                 <div>
                     <dl class="sub" id="sub7">
-                        <dd><a href="guard_search.jsp" class="col-sm-offset-3"><span>外来人员查询</span></a></dd>
+                        <dd><a href="listGuard.do" class="col-sm-offset-3"><span>外来人员查询</span></a></dd>
                         <dd><a href="guard_add.jsp" class="col-sm-offset-3"><span>外来人员记录</span></a></dd>
                     </dl>
                 <div>
