@@ -18,7 +18,7 @@
     SELECT <include refid="usercolumn"></include>
     FROM t_user
     <where>
-    <if test="username!=null and username!=''">
+    <if test="username != null and username != ''">
     username LIKE #{username}
     </if>
     <if test="kind!=null and kind!=''">

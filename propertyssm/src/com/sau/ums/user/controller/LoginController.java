@@ -26,6 +26,7 @@ public class LoginController {
     //标注成处理请求的方法
     @RequestMapping(value = "/login.do", method = RequestMethod.POST)
     public String login(String username, String password, ModelMap model) {
+
         //调用Servise层方法处理请求
         User user = us.login(username, password);
 

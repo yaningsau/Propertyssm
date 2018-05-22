@@ -26,6 +26,7 @@ public class UserController {
 
         //调用service方法处理请求
         PageInfo<User> page = us.listUser(user, pageNum);
+
         //生成响应信息
         model.addAttribute("page", page);
         model.addAttribute("condition", u);

@@ -135,7 +135,7 @@ $(function(){
                 </li>       
                 <div>
                     <dl class="sub" id="sub9">
-                        <dd><a href="complain_search.jsp" class="col-sm-offset-3"><span>投诉查询</span></a></dd>
+                        <dd><a href="listComplain.do" class="col-sm-offset-3"><span>投诉查询</span></a></dd>
                         <dd><a href="complain_add.jsp" class="col-sm-offset-3"><span>投诉</span></a></dd>
                     </dl>
                 <div>
