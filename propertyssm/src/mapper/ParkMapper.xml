@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.sau.ums.park.dao.ParkDao">
+  <sql id="parkcolumn">
+     carnum,begintime,endtime,status,room,ps
+  </sql>
+  <!-- 查询停车场列表 -->
+  <select id="listPark" parameterType="Park" resultType="Park">
+  SELECT <include refid="parkcolumn"></include>
+  FROM t_park
+  <where>
+  <if test="carnum != null and carnum != ''">
+  carnum LIKE #{carnum}
+  </if>
+  <if test="room != null and room != ''">
+  room LIKE #{room}
+  </if>
+  <if test="status != null and status != ''" >
+  status LIKE #{status}
+  </if>
+  
+  </where>
+  </select>
+
+
+</mapper>
