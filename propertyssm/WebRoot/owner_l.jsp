@@ -33,6 +33,9 @@ $(function(){
     $( 'li#dropdown_menu4' ).click( function(){
         $("#sub4").slideToggle("slow");
     });
+    $( 'li#dropdown_menu5' ).click( function(){
+        $("#sub5").slideToggle("slow");
+    });
      
 });
 </script>
@@ -67,7 +70,7 @@ $(function(){
                 </li>       
                 <div>
                     <dl class="sub" id="sub3">
-                        <dd><a href="ownrepair_search.jsp" class="col-sm-offset-3"><span>查询报修</span></a></dd>
+                        <dd><a href="listRepair.do" class="col-sm-offset-3"><span>查询报修</span></a></dd>
                         <dd><a href="ownrepair_add.jsp" class="col-sm-offset-3"><span>报修</span></a></dd>
                     </dl>
                 <div>
@@ -77,7 +80,7 @@ $(function(){
                 </li>       
                 <div>
                     <dl class="sub" id="sub4">
-                        <dd><a href="ownpark_search.jsp" class="col-sm-offset-3"><span>查询停车场</span></a></dd>
+                        <dd><a href="listPark.do" class="col-sm-offset-3"><span>查询停车场</span></a></dd>
                     </dl>
                 <div>
                 
@@ -86,7 +89,7 @@ $(function(){
                 </li>       
                 <div>
                     <dl class="sub" id="sub5">
-                        <dd><a href="owncomplain_search.jsp" class="col-sm-offset-3"><span>查询投诉</span></a></dd>
+                        <dd><a href="listComplain.do" class="col-sm-offset-3"><span>查询投诉</span></a></dd>
                         <dd><a href="owncomplain_add.jsp" class="col-sm-offset-3"><span>投诉</span></a></dd>
                     </dl>
                 <div>

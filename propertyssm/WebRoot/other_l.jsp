@@ -44,7 +44,7 @@ $(function(){
                 </li>       
                 <div>
                     <dl class="sub" id="sub1">
-                        <dd><a href="othrepair_search.jsp" class="col-sm-offset-3"><span>查询报修</span></a></dd>
+                        <dd><a href="listRepair.do" class="col-sm-offset-3"><span>查询报修</span></a></dd>
                         <dd><a href="othrepair_add.jsp" class="col-sm-offset-3"><span>报修</span></a></dd>
                     </dl>
                 <div>
@@ -55,7 +55,7 @@ $(function(){
                 </li>       
                 <div>
                     <dl class="sub" id="sub2">
-                        <dd><a href="othcomplain_search.jsp" class="col-sm-offset-3"><span>查询投诉</span></a></dd>
+                        <dd><a href="listComplain.do" class="col-sm-offset-3"><span>查询投诉</span></a></dd>
                         <dd><a href="othcomplain_add.jsp" class="col-sm-offset-3"><span>投诉</span></a></dd>
                     </dl>
                 <div>

@@ -26,7 +26,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </head>
 <body>
     <jsp:include page="header.jsp"></jsp:include>
+    <c:if test="${ loguser.kind == '管理员' }">
     <jsp:include page="admin_l.jsp"></jsp:include>
+    </c:if>
+    <c:if test="${ loguser.kind == '保安' }">
+    <jsp:include page="security_l.jsp"></jsp:include>
+    </c:if>
     <div id="content_r" class="col-sm-10" style="color:silver">
         <div class="divide-50"> 
             <ul id="r_nav">

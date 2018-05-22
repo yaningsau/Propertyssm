@@ -57,7 +57,6 @@
                     <option value="业主">业主</option>
                     <option value="家属">家属</option>
                     <option value="保安">保安</option>
-                    <option value="保洁">保洁</option>
                     <option value="其他">其他</option>                               
                     </select>                                                         
                     </div>

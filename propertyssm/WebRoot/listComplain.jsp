@@ -26,7 +26,22 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </head>
 <body>
     <jsp:include page="header.jsp"></jsp:include>
+    <c:if test="${ loguser.kind == '管理员' }">
     <jsp:include page="admin_l.jsp"></jsp:include>
+    </c:if>
+    <c:if test="${ loguser.kind == '业主' }">
+    <jsp:include page="owner_l.jsp"></jsp:include>
+    </c:if>
+    <c:if test="${ loguser.kind == '家属' }">
+    <jsp:include page="family_l.jsp"></jsp:include>
+    </c:if>
+    <c:if test="${ loguser.kind == '保安' }">
+    <jsp:include page="security_l.jsp"></jsp:include>
+    </c:if>
+    <c:if test="${ loguser.kind == '其他' }">
+    <jsp:include page="other_l.jsp"></jsp:include>
+    </c:if>
+    
     <div id="content_r" class="col-sm-10" style="color:silver">
         <div class="divide-50"> 
             <ul id="r_nav">
@@ -53,7 +68,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                             <th>处理状态</th>
                             <th>处理方式</th>
                             <th>备注</th>
+                            <c:if test="${ loguser.kind == '管理员' }">
                             <th colspan="2">操作</th>
+                            </c:if>
                         </tr>
                     </thead>
                     <tbody>
@@ -69,10 +86,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                     <td>${complain.status}</td>
                                     <td>${complain.way}</td>
                                     <td>${complain.ps}</td>
+                                    <c:if test="${ loguser.kind == '管理员' }">
                                     <td>
                                     <a href=>处理</a>
                                     <a onClick=>删除</a>
                                     </td>
+                                    </c:if>
                                  </tr>
                             </c:forEach>
                         </c:if>

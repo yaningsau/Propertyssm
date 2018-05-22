@@ -61,7 +61,7 @@ $(function(){
                 </li>       
                 <div>
                     <dl class="sub" id="sub2">
-                        <dd><a href="famrepair_search.jsp" class="col-sm-offset-3"><span>查询报修</span></a></dd>
+                        <dd><a href="listRepair.do" class="col-sm-offset-3"><span>查询报修</span></a></dd>
                         <dd><a href="famrepair_add.jsp" class="col-sm-offset-3"><span>报修</span></a></dd>
                     </dl>
                 <div>
@@ -71,7 +71,7 @@ $(function(){
                 </li>       
                 <div>
                     <dl class="sub" id="sub3">
-                        <dd><a href="fampark_search.jsp" class="col-sm-offset-3"><span>查询停车场</span></a></dd>
+                        <dd><a href="listPark.do" class="col-sm-offset-3"><span>查询停车场</span></a></dd>
                     </dl>
                 <div>
                 
@@ -80,7 +80,7 @@ $(function(){
                 </li>       
                 <div>
                     <dl class="sub" id="sub4">
-                        <dd><a href="famcomplain_search.jsp" class="col-sm-offset-3"><span>查询投诉</span></a></dd>
+                        <dd><a href="listComplain.do" class="col-sm-offset-3"><span>查询投诉</span></a></dd>
                         <dd><a href="famcomplain_add.jsp" class="col-sm-offset-3"><span>投诉</span></a></dd>
                     </dl>
                 <div>
