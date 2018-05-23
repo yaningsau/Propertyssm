@@ -14,4 +14,7 @@ public interface PurchaseService {
     @Transactional
     public boolean delPurchase(Purchase purchase);
 
+    //添加
+    public boolean addPurchase(Purchase purchase);
+
 }

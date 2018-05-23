@@ -15,4 +15,7 @@ public interface ComplainDao {
     //删除
     public void delComplain(Integer id);
 
+    //添加
+    public void addComplain(Complain complain);
+
 }

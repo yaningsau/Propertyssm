@@ -1,14 +1,18 @@
 package com.sau.ums.bean;
 
-import java.sql.Timestamp;
+import java.util.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 public class Park {
 
     private String carnum;
 
-    private Timestamp begintime;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date begintime;
 
-    private Timestamp endtime;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date endtime;
 
     private String status;
 
@@ -24,19 +28,19 @@ public class Park {
         this.carnum = carnum;
     }
 
-    public Timestamp getBegintime() {
+    public Date getBegintime() {
         return begintime;
     }
 
-    public void setBegintime(Timestamp begintime) {
+    public void setBegintime(Date begintime) {
         this.begintime = begintime;
     }
 
-    public Timestamp getEndtime() {
+    public Date getEndtime() {
         return endtime;
     }
 
-    public void setEndtime(Timestamp endtime) {
+    public void setEndtime(Date endtime) {
         this.endtime = endtime;
     }
 

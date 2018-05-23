@@ -55,4 +55,22 @@ public class RoomController {
         return map;
 
     }
+
+    //添加房屋
+    @RequestMapping("addRoom.do")
+    @ResponseBody
+    public Map<String, Object> addRoom(Room room, HttpSession session) {
+        Map<String, Object> map = new HashMap<String, Object>();
+        boolean isSuccess = false;
+
+        isSuccess = rs.addRoom(room);
+        if (isSuccess) {
+            map.put("tip", "success");
+        } else {
+            map.put("tip", "error");
+        }
+        return map;
+
+    }
+
 }

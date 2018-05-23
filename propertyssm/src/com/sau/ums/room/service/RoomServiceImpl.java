@@ -40,4 +40,14 @@ public class RoomServiceImpl implements RoomService {
         return isSuccess;
     }
 
+    @Override
+    public boolean addRoom(Room room) {
+        boolean isSuccess = false;
+
+        rdao.addRoom(room);
+        isSuccess = true;
+
+        return isSuccess;
+    }
+
 }

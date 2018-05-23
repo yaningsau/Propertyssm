@@ -21,5 +21,11 @@
   DELETE FROM t_complain
   WHERE id=#{id}
   </delete>
+  
+  <!-- 添加 -->
+  <insert id="addComplain" parameterType="Complain">
+  INSERT INTO t_complain(complain,status,ps)
+  VALUES(#{complain},#{status},#{ps})
+  </insert>
 
 </mapper>

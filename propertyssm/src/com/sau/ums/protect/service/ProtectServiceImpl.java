@@ -41,4 +41,14 @@ public class ProtectServiceImpl implements ProtectService {
         return isSuccess;
     }
 
+    @Override
+    public boolean addProtect(Protect protect) {
+        boolean isSuccess = false;
+
+        pdao.addProtect(protect);
+        isSuccess = true;
+
+        return isSuccess;
+    }
+
 }

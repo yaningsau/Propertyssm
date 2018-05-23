@@ -14,4 +14,7 @@ public interface GuardService {
     @Transactional
     public boolean delGuard(Integer id);
 
+    //添加
+    public boolean addGuard(Guard guard);
+
 }

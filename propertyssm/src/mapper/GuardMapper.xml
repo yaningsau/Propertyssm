@@ -23,5 +23,11 @@
   DELETE FROM t_guard
   WHERE id=#{id}
   </delete>
+  
+  <!-- 添加 -->
+  <insert id="addGuard" parameterType="Guard">
+  INSERT INTO t_guard(name,idcard,sex,tel,lnum,time,ps)
+  VALUES(#{name},#{idcard},#{sex},#{tel},#{lnum},#{time},#{ps})
+  </insert>
 
 </mapper>

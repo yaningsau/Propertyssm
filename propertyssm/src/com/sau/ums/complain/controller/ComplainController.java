@@ -56,4 +56,22 @@ public class ComplainController {
         return map;
     }
 
+    //添加
+    @RequestMapping("addComplain.do")
+    @ResponseBody
+    public Map<String, Object> addComplain(Complain complain,
+            HttpSession session) {
+        Map<String, Object> map = new HashMap<String, Object>();
+        boolean isSuccess = false;
+
+        isSuccess = cs.addComplain(complain);
+
+        if (isSuccess) {
+            map.put("tip", "success");
+        } else {
+            map.put("tip", "error");
+        }
+        return map;
+    }
+
 }

@@ -27,6 +27,12 @@
     DELETE FROM t_house
     WHERE room=#{room}
     </delete>
+    
+    <!-- 添加房屋 -->
+    <insert id="addRoom" parameterType="Room" >
+    INSERT INTO t_house(room,roomtype,publicarea,roomarea,area,loftarea,ps)
+    VALUES(#{room},#{roomtype},#{publicarea},#{roomarea},#{area},#{loftarea},#{ps})
+    </insert>
 
 
 </mapper>

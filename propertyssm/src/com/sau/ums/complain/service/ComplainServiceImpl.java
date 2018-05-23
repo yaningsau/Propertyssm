@@ -40,4 +40,16 @@ public class ComplainServiceImpl implements ComplainService {
 
         return isSuccess;
     }
+
+    @Override
+    public boolean addComplain(Complain complain) {
+        boolean isSuccess = false;
+
+        cdao.addComplain(complain);
+        ;
+        isSuccess = true;
+
+        return isSuccess;
+
+    }
 }

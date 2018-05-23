@@ -14,4 +14,7 @@ public interface ComplainService {
     @Transactional
     public boolean delComplain(Integer id);
 
+    //添加
+    public boolean addComplain(Complain complain);
+
 }

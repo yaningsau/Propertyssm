@@ -41,4 +41,14 @@ public class GuardServiceImpl implements GuardService {
         return isSUccess;
     }
 
+    @Override
+    public boolean addGuard(Guard guard) {
+        boolean isSUccess = false;
+
+        gdao.addGuard(guard);
+        isSUccess = true;
+
+        return isSUccess;
+    }
+
 }

@@ -17,24 +17,31 @@
         <div class="divide-50"> 
             <ul id="r_nav">
                 <li>> </li>
-                <li><a>停车场管理</a></li>
+                <li><a>安防管理</a></li>
                 <li>></li>
-                <li><a>添加停车位</a></li>
+                <li><a>添加安防</a></li>
             </ul>
         </div>
         <div class="r_content">
-            <form action="/hr/emp_add.do" method="post" class="form-horizontal" role="from">
+            <form action="addProtect.do" method="post" class="form-horizontal" role="from">
                 <div class="form-group">
-                    <label class="col-sm-offset-3 col-sm-2 control-label">车位号</label>
+                    <label class="col-sm-offset-3 col-sm-2 control-label">位置</label>
                     <div class="col-sm-3">
-                        <input type="text"class="form-control" name=""/>
+                        <input type="text"class="form-control" name="position"/>
                     </div>
                 </div>
-                
+                <div class="form-group">
+                    <label class="col-sm-offset-3 col-sm-2 control-label">设备</label>
+                    <div class="col-sm-3">
+                    <input type="checkbox" name="facility" value="灭火器"/>灭火器
+                    <input type="checkbox" name="facility" value="烟雾报警器"/>烟雾报警器
+                    <input type="checkbox" name="facility" value="防盗窗"/>防盗窗
+                    </div>
+                </div>
                     <div class="form-group">
                     <label class="col-sm-offset-3 col-sm-2 control-label">备注</label>
                     <div class="col-sm-3">
-                        <textarea class="form-control" name="emp_birth"/></textarea>
+                        <textarea class="form-control" name="ps"/></textarea>
                     </div>
                 </div>
                 

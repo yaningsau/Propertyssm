@@ -58,4 +58,23 @@ public class PurchaseController {
         return map;
     }
 
+    //添加
+    @RequestMapping("addPurchase.do")
+    @ResponseBody
+    public Map<String, Object> addPurchase(Purchase purchase,
+            HttpSession session) {
+        Map<String, Object> map = new HashMap<String, Object>();
+
+        boolean isSuccess = false;
+
+        isSuccess = ps.addPurchase(purchase);
+
+        if (isSuccess) {
+            map.put("tip", "success");
+        } else {
+            map.put("tip", "error");
+        }
+        return map;
+    }
+
 }

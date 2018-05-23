@@ -28,5 +28,11 @@
   DELETE FROM t_repair
   WHERE id=#{id}
   </delete>
+  
+  <!-- 添加 -->
+  <insert id="addRepair" parameterType="Repair">
+  INSERT INTO t_repair(room,position,name,tel,facility,status,ps)
+  VALUES(#{room},#{position},#{name},#{tel},#{facility},#{status},#{ps})
+  </insert>
 
 </mapper>

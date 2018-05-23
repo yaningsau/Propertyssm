@@ -15,4 +15,7 @@ public interface RoomDao {
     //删除房屋
     public void delRoom(Room room);
 
+    //添加房屋
+    public void addRoom(Room room);
+
 }

@@ -18,4 +18,7 @@ public interface UserDao {
     //删除用户
     public void delUser(Integer id);
 
+    //添加用户
+    public void addUser(User user);
+
 }

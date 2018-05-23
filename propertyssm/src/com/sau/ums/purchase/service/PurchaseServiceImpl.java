@@ -41,4 +41,15 @@ public class PurchaseServiceImpl implements PurchaseService {
 
         return isSuccess;
     }
+
+    //添加
+    @Override
+    public boolean addPurchase(Purchase purchase) {
+        boolean isSuccess = false;
+
+        pdao.addPurchase(purchase);
+        isSuccess = true;
+
+        return isSuccess;
+    }
 }

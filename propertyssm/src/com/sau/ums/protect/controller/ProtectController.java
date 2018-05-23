@@ -52,4 +52,21 @@ public class ProtectController {
         }
         return map;
     }
+
+    //添加安防
+    @RequestMapping("addProtect.do")
+    @ResponseBody
+    public Map<String, Object> addProtect(Protect protect, HttpSession session) {
+        Map<String, Object> map = new HashMap<String, Object>();
+        boolean isSuccess = false;
+
+        isSuccess = ps.addProtect(protect);
+        if (isSuccess) {
+            map.put("tip", "success");
+        } else {
+            map.put("tip", "error");
+        }
+        return map;
+    }
+
 }

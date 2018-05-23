@@ -1,6 +1,8 @@
 package com.sau.ums.bean;
 
-import java.sql.Timestamp;
+import java.util.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 public class Guard {
 
@@ -16,7 +18,8 @@ public class Guard {
 
     private String lnum;
 
-    private Timestamp time;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date time;
 
     private String ps;
 
@@ -68,11 +71,11 @@ public class Guard {
         this.lnum = lnum;
     }
 
-    public Timestamp getTime() {
+    public Date getTime() {
         return time;
     }
 
-    public void setTime(Timestamp time) {
+    public void setTime(Date time) {
         this.time = time;
     }
 

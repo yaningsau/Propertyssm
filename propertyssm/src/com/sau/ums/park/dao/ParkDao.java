@@ -15,4 +15,7 @@ public interface ParkDao {
     //删除
     public void delPark(Park park);
 
+    //添加
+    public void addPark(Park park);
+
 }

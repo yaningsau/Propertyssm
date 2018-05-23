@@ -15,4 +15,7 @@ public interface PurchaseDao {
     //删除
     public void delPurchase(Purchase purchase);
 
+    //添加
+    public void addPurchase(Purchase purchase);
+
 }

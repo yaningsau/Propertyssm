@@ -14,4 +14,7 @@ public interface ProtectService {
     @Transactional
     public boolean delProtect(Protect protect);
 
+    //添加安防
+    public boolean addProtect(Protect protect);
+
 }

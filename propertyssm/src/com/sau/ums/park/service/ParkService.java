@@ -14,4 +14,7 @@ public interface ParkService {
     @Transactional
     public boolean delPark(Park park);
 
+    //添加
+    public boolean addPark(Park park);
+
 }

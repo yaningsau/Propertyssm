@@ -57,7 +57,7 @@ $(function(){
 	            <div>
 	                <dl class="sub" id="sub1">
 	                    <dd><a href="listUser.do" class="col-sm-offset-3"><span>查询用户</span></a></dd>
-	                    <dd><a href="user_add.jsp" class="col-sm-offset-3"><span>添加用户</span></a></dd>
+	                    <dd><a href="addUser.jsp" class="col-sm-offset-3"><span>添加用户</span></a></dd>
 	            	</dl>
 	            <div>
 	            <li class="dropdown_menu" id="dropdown_menu2">
@@ -66,7 +66,7 @@ $(function(){
 	            <div>
 	                <dl class="sub" id="sub2">
 	                    <dd><a href="listRoom.do" class="col-sm-offset-3"><span>查询房产</span></a></dd>
-	                    <dd><a href="room_add.jsp" class="col-sm-offset-3"><span>添加房产</span></a></dd>
+	                    <dd><a href="addRoom.jsp" class="col-sm-offset-3"><span>添加房产</span></a></dd>
 	            	</dl>
 	            <div>
                 
@@ -86,7 +86,7 @@ $(function(){
                 <div>
                     <dl class="sub" id="sub4">
                         <dd><a href="listProtect.do" class="col-sm-offset-3"><span>查询安防</span></a></dd>
-                        <dd><a href="protect_add.jsp" class="col-sm-offset-3"><span>添加安防</span></a></dd>
+                        <dd><a href="addProtect.jsp" class="col-sm-offset-3"><span>添加安防</span></a></dd>
                     </dl>
                 <div>
                 
@@ -96,7 +96,7 @@ $(function(){
                 <div>
                     <dl class="sub" id="sub5">
                         <dd><a href="listPurchase.do" class="col-sm-offset-3"><span>查询采购</span></a></dd>
-                        <dd><a href="purchase_add.jsp" class="col-sm-offset-3"><span>添加采购</span></a></dd>
+                        <dd><a href="addPurchase.jsp" class="col-sm-offset-3"><span>添加采购</span></a></dd>
                     </dl>
                 <div>
                 
@@ -106,7 +106,7 @@ $(function(){
                 <div>
                     <dl class="sub" id="sub6">
                         <dd><a href="listPark.do" class="col-sm-offset-3"><span>查询停车位</span></a></dd>
-                        <dd><a href="park_add.jsp" class="col-sm-offset-3"><span>添加停车位</span></a></dd>
+                        <dd><a href="addPark.jsp" class="col-sm-offset-3"><span>添加停车位</span></a></dd>
                         <dd><a href="usepark.jsp" class="col-sm-offset-3"><span>车位使用登记</span></a></dd>
                     </dl>
                 <div>
@@ -117,7 +117,7 @@ $(function(){
                 <div>
                     <dl class="sub" id="sub7">
                         <dd><a href="listGuard.do" class="col-sm-offset-3"><span>外来人员查询</span></a></dd>
-                        <dd><a href="guard_add.jsp" class="col-sm-offset-3"><span>外来人员记录</span></a></dd>
+                        <dd><a href="addGuard.jsp" class="col-sm-offset-3"><span>外来人员记录</span></a></dd>
                     </dl>
                 <div>
                 
@@ -127,7 +127,7 @@ $(function(){
                 <div>
                     <dl class="sub" id="sub8">
                         <dd><a href="listRepair.do" class="col-sm-offset-3"><span>报修查询</span></a></dd>
-                        <dd><a href="repair_add.jsp" class="col-sm-offset-3"><span>报修</span></a></dd>
+                        <dd><a href="addRepair.jsp" class="col-sm-offset-3"><span>报修</span></a></dd>
                     </dl>
                 <div>
                 
@@ -137,7 +137,7 @@ $(function(){
                 <div>
                     <dl class="sub" id="sub9">
                         <dd><a href="listComplain.do" class="col-sm-offset-3"><span>投诉查询</span></a></dd>
-                        <dd><a href="complain_add.jsp" class="col-sm-offset-3"><span>投诉</span></a></dd>
+                        <dd><a href="addComplain.jsp" class="col-sm-offset-3"><span>投诉</span></a></dd>
                     </dl>
                 <div>
                 

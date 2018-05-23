@@ -55,4 +55,21 @@ public class GuardController {
         return map;
     }
 
+    //添加
+    @RequestMapping("addGuard.do")
+    @ResponseBody
+    public Map<String, Object> addGuard(Guard guard, HttpSession session) {
+        Map<String, Object> map = new HashMap<String, Object>();
+        boolean isSuccess = false;
+
+        isSuccess = gs.addGuard(guard);
+
+        if (isSuccess) {
+            map.put("tip", "success");
+        } else {
+            map.put("tip", "error");
+        }
+        return map;
+    }
+
 }

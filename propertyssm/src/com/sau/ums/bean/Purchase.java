@@ -1,6 +1,8 @@
 package com.sau.ums.bean;
 
-import java.sql.Timestamp;
+import java.util.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
 
 public class Purchase {
 
@@ -16,7 +18,8 @@ public class Purchase {
 
     private String uses;
 
-    private Timestamp time;
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
+    private Date time;
 
     private String ps;
 
@@ -68,11 +71,11 @@ public class Purchase {
         this.uses = uses;
     }
 
-    public Timestamp getTime() {
+    public Date getTime() {
         return time;
     }
 
-    public void setTime(Timestamp time) {
+    public void setTime(Date time) {
         this.time = time;
     }
 

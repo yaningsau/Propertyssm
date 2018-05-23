@@ -23,5 +23,11 @@
   DELETE FROM t_purchase
   WHERE id=#{id}
   </delete>
+  
+  <!-- 添加 -->
+  <insert id="addPurchase" parameterType="Purchase">
+  INSERT INTO t_purchase(sname,price,number,total,uses,time,ps)
+  VALUES(#{sname},#{price},#{number},#{total},#{uses},#{time},#{ps})
+  </insert>
 
 </mapper>

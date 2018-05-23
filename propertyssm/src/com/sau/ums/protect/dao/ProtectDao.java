@@ -15,4 +15,7 @@ public interface ProtectDao {
     //删除安防
     public void delProtect(Protect protect);
 
+    //添加安防
+    public void addProtect(Protect protect);
+
 }

@@ -15,4 +15,7 @@ public interface RepairDao {
     //删除
     public void delRepair(Repair repair);
 
+    //添加
+    public void addRepair(Repair repair);
+
 }

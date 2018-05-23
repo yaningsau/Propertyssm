@@ -12,53 +12,59 @@
 </head>
 <body>
     <jsp:include page="header.jsp"></jsp:include>
-    <jsp:include page="family_l.jsp"></jsp:include>
+    <jsp:include page="admin_l.jsp"></jsp:include>
     <div id="content_r" class="col-sm-10" style="color:silver">
         <div class="divide-50"> 
             <ul id="r_nav">
                 <li>> </li>
-                <li><a>报修管理</a></li>
+                <li><a>采购管理</a></li>
                 <li>></li>
-                <li><a>报修</a></li>
+                <li><a>添加采购</a></li>
             </ul>
         </div>
         <div class="r_content">
-            <form action="/hr/emp_add.do" method="post" class="form-horizontal" role="from">
+            <form action="addPurchase.do" method="post" class="form-horizontal" role="from">
                 <div class="form-group">
-                    <label class="col-sm-offset-3 col-sm-2 control-label">房号</label>
+                    <label class="col-sm-offset-3 col-sm-2 control-label">商品名称</label>
                     <div class="col-sm-3">
-                        <input type="text"class="form-control" name=""/>
+                        <input type="text"class="form-control" name="sname"/>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-offset-3 col-sm-2 control-label">报修人</label>
+                    <label class="col-sm-offset-3 col-sm-2 control-label">数量</label>
                     <div class="col-sm-3">
-                        <input type="text"class="form-control" name=""/>
+                        <input type="text"class="form-control" name="number"/>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-offset-3 col-sm-2 control-label">位置</label>
+                    <label class="col-sm-offset-3 col-sm-2 control-label">单价</label>
                     <div class="col-sm-3">
-                        <input type="text"class="form-control" name=""/>
+                        <input type="text"class="form-control" name="price"/>
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-offset-3 col-sm-2 control-label">报修设备</label>
+                    <label class="col-sm-offset-3 col-sm-2 control-label">总价</label>
                     <div class="col-sm-3">
-                        <input type="text"class="form-control" name=""/>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-offset-3 col-sm-2 control-label">报修人电话</label>
-                    <div class="col-sm-3">
-                        <input type="text"class="form-control" name=""/>
+                        <input type="text"class="form-control" name="total"/>
                     </div>
                 </div>
                 
-                    <div class="form-group">
+                <div class="form-group">
+                    <label class="col-sm-offset-3 col-sm-2 control-label">用途</label>
+                    <div class="col-sm-3">
+                        <input type="text"class="form-control" name="uses"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-offset-3 col-sm-2 control-label">采购时间</label>
+                    <div class="col-sm-3">
+                        <input type="date"  class="form-control" name="time"/>
+                    </div>
+                </div>
+                <div class="form-group">
                     <label class="col-sm-offset-3 col-sm-2 control-label">备注</label>
                     <div class="col-sm-3">
-                        <textarea class="form-control" name="emp_birth"/></textarea>
+                        <textarea class="form-control" name="ps"/></textarea>
                     </div>
                 </div>
                 

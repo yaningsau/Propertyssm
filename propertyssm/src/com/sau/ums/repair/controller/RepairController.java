@@ -54,4 +54,20 @@ public class RepairController {
         return map;
     }
 
+    //添加
+    @RequestMapping("addRepair.do")
+    @ResponseBody
+    public Map<String, Object> addProtect(Repair repair, HttpSession session) {
+        Map<String, Object> map = new HashMap<String, Object>();
+        boolean isSuccess = false;
+
+        isSuccess = rs.addRepair(repair);
+        if (isSuccess) {
+            map.put("tip", "success");
+        } else {
+            map.put("tip", "error");
+        }
+        return map;
+    }
+
 }

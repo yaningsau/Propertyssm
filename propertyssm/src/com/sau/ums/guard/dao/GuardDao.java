@@ -15,4 +15,7 @@ public interface GuardDao {
     //删除
     public void delGuard(Integer id);
 
+    //添加
+    public void addGuard(Guard guard);
+
 }

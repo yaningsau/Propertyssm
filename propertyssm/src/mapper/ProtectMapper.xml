@@ -21,4 +21,10 @@
     DELETE FROM t_protect
     WHERE position=#{position}
     </delete>
+    
+    <!-- 添加 -->
+    <insert id="addProtect" parameterType="Protect">
+    INSERT INTO t_protect(position,facility,ps)
+    VALUES(#{position},#{facility},#{ps})
+    </insert>
 </mapper>

@@ -22,7 +22,7 @@
     username LIKE #{username}
     </if>
     <if test="kind!=null and kind!=''">
-    and kind LIKE #{kind}
+    AND kind LIKE #{kind}
     </if>
     </where>
     </select>
@@ -32,4 +32,11 @@
      DELETE FROM t_user
      WHERE id=#{id}
     </delete>
+    
+    <!-- 添加用户 -->
+    <insert id="addUser" parameterType="User">
+    INSERT INTO t_user(name,sex,idcard,kind,ps)
+    VALUES(#{name},#{sex},#{idcard},#{kind},#{ps})
+    </insert>
+    
 </mapper>

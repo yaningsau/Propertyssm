@@ -14,4 +14,7 @@ public interface RepairService {
     @Transactional
     public boolean delRepair(Repair repair);
 
+    //添加
+    public boolean addRepair(Repair repair);
+
 }

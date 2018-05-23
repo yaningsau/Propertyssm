@@ -57,4 +57,22 @@ public class UserController {
         return map;
 
     }
+
+    //添加用户
+    @RequestMapping("addUser.do")
+    @ResponseBody
+    public Map<String, Object> addUser(User user, HttpSession session) {
+        Map<String, Object> map = new HashMap<String, Object>();
+        boolean isSuccess = false;
+
+        isSuccess = us.addUser(user);
+        if (isSuccess) {
+            map.put("tip", "success");
+        } else {
+            map.put("tip", "error");
+        }
+        return map;
+
+    }
+
 }

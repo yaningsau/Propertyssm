@@ -11,10 +11,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <base href="<%=basePath%>">
     
     <title>物业管理系统</title>
-    
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="bootstrap-3.3.5-dist/css/font-awesome.min.css" rel="stylesheet">
 <link href="bootstrap-3.3.5-dist/css/content_r.css" rel="stylesheet">
 <script src="bootstrap-3.3.5-dist/js/jquery-3.0.0.min.js"></script>
 <script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
@@ -32,6 +30,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <c:if test="${ loguser.kind == '保安' }">
     <jsp:include page="security_l.jsp"></jsp:include>
     </c:if>
+    
     <div id="content_r" class="col-sm-10" style="color:silver">
         <div class="divide-50"> 
             <ul id="r_nav">

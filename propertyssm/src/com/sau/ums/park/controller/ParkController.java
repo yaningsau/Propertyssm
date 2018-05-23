@@ -57,4 +57,21 @@ public class ParkController {
         return map;
     }
 
+    //添加
+    @RequestMapping("addPark.do")
+    @ResponseBody
+    public Map<String, Object> addPark(Park park, HttpSession session) {
+        Map<String, Object> map = new HashMap<String, Object>();
+        boolean isSuccess = false;
+
+        isSuccess = ps.addPark(park);
+
+        if (isSuccess) {
+            map.put("tip", "success");
+        } else {
+            map.put("tip", "error");
+        }
+        return map;
+    }
+
 }

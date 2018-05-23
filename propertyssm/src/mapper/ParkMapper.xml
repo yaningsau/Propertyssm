@@ -28,5 +28,11 @@
   DELETE FROM t_park
   WHERE carnum=#{carnum}
   </delete>
+  
+  <!-- 添加停车位 -->
+  <insert id="addPark" parameterType="Park">
+  INSERT INTO t_park(carnum,status,ps)
+  VALUES(#{carnum},#{status},#{ps})
+  </insert>
 
 </mapper>

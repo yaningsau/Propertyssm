@@ -40,4 +40,14 @@ public class ParkServiceImpl implements ParkService {
         return isSuccess;
     }
 
+    @Override
+    public boolean addPark(Park park) {
+        boolean isSuccess = false;
+
+        pdao.addPark(park);
+        isSuccess = true;
+
+        return isSuccess;
+    }
+
 }

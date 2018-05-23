@@ -12,30 +12,32 @@
 </head>
 <body>
     <jsp:include page="header.jsp"></jsp:include>
-    <jsp:include page="owner_l.jsp"></jsp:include>
+    <jsp:include page="admin_l.jsp"></jsp:include>
     <div id="content_r" class="col-sm-10" style="color:silver">
         <div class="divide-50"> 
             <ul id="r_nav">
                 <li>> </li>
-                <li><a>投诉管理</a></li>
+                <li><a>停车场管理</a></li>
                 <li>></li>
-                <li><a>投诉</a></li>
+                <li><a>添加停车位</a></li>
             </ul>
         </div>
         <div class="r_content">
-            <form action="/hr/emp_add.do" method="post" class="form-horizontal" role="from">
+            <form action="addPark.do" method="post" class="form-horizontal" role="from">
                 <div class="form-group">
-                    <label class="col-sm-offset-3 col-sm-2 control-label">投诉内容</label>
+                    <label class="col-sm-offset-3 col-sm-2 control-label">车位号</label>
                     <div class="col-sm-3">
-                        <textarea class="form-control" name="emp_birth"/></textarea>
+                        <input type="text"class="form-control" name="carnum"/>
                     </div>
                 </div>
-               
+                
+                <input type="hidden" class="form-control" name="status" value="未使用"/>
+                   
                 
                     <div class="form-group">
                     <label class="col-sm-offset-3 col-sm-2 control-label">备注</label>
                     <div class="col-sm-3">
-                        <textarea class="form-control" name="emp_birth"/></textarea>
+                        <textarea class="form-control" name="ps"/></textarea>
                     </div>
                 </div>
                 

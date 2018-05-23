@@ -17,4 +17,7 @@ public interface UserService {
     @Transactional
     public boolean delUser(Integer id);
 
+    //添加用户
+    public boolean addUser(User user);
+
 }

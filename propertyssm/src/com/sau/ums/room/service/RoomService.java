@@ -14,4 +14,7 @@ public interface RoomService {
     @Transactional
     public boolean delRoom(Room room);
 
+    //添加房屋
+    public boolean addRoom(Room room);
+
 }
