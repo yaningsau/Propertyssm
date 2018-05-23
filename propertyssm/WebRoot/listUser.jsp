@@ -81,7 +81,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                     <td>${user.ps}</td>
                                     <td>
                                     <a href=''>修改</a>
-                                    <a onClick=''>删除</a>
+                                    <a onClick='return delUser(this);' href='delUser.do?id=${user.id}'>删除</a>
                                     </td>
                                  </tr>
                             </c:forEach>
@@ -135,5 +135,23 @@ $(function(){
             </div>
         </div>
     </div>
+    <script type='text/javascript' language='javascript'>
+        function delUser(obj){
+        if(confirm("是否删除该用户")){
+            var id =  $(obj).parent("td").attr("id");
+            $.post("delUser.do",{"id":id},function(response){
+                if(response.tip=="success"){
+                    alert("用户删除成功");
+                    window.location.href='listUser.do';
+                }
+                else if(response.tip=="error"){
+                    alert("用户删除失败!"+response.msg);
+                }
+            });
+            
+        }
+        
+    }
+    </script>
 </body>
 </html>

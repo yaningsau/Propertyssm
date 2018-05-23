@@ -92,7 +92,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                     <c:if test="${ loguser.kind == '管理员' }">
                                     <td>
                                     <a href=>修改</a>
-                                    <a onClick=>删除</a>
+                                    <a onClick='return delPark(this);' href='delPark.do?carnum=${park.carnum}'>删除</a>
                                     </td>
                                     </c:if>
                                  </tr>
@@ -103,5 +103,25 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </div>
         </div>
     </div>
+    
+    
+    <script type='text/javascript' language='javascript'>
+        function delPark(obj){
+        if(confirm("是否删除该停车位")){
+            var park =  $(obj).parent("td").attr("park");
+            $.post("delPark.do",{"park":park},function(response){
+                if(response.tip=="success"){
+                    alert("删除成功");
+                    window.location.href='listPark.do';
+                }
+                else if(response.tip=="error"){
+                    alert("删除失败!"+response.msg);
+                }
+            });
+            
+        }
+        
+    }
+    </script>
 </body>
 </html>

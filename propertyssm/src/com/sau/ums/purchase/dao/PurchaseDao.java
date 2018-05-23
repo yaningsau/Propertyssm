@@ -12,4 +12,7 @@ public interface PurchaseDao {
     //查询采购列表
     public List<Purchase> listPurchase(Purchase purchase);
 
+    //删除
+    public void delPurchase(Purchase purchase);
+
 }

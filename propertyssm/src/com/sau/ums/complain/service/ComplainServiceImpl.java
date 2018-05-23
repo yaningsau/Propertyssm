@@ -30,4 +30,14 @@ public class ComplainServiceImpl implements ComplainService {
         page = new PageInfo<Complain>(complainlist);
         return page;
     }
+
+    @Override
+    public boolean delComplain(Integer id) {
+        boolean isSuccess = false;
+
+        cdao.delComplain(id);
+        isSuccess = true;
+
+        return isSuccess;
+    }
 }

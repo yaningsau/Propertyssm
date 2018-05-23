@@ -46,4 +46,15 @@ public class UserServiceImpl implements UserService {
         page = new PageInfo<User>(userlist);
         return page;
     }
+
+    //删除用户
+    @Override
+    public boolean delUser(Integer id) {
+        boolean isSuccess = false;
+        //删除用户
+        udao.delUser(id);
+        isSuccess = true;
+
+        return isSuccess;
+    }
 }

@@ -13,19 +13,28 @@
 <script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
 </head>
 <body>
+<div id="d" align="right" style="margin-top:0px">
+<a href="login.jsp"><font size=+2 color="#fff" >登陆</font></a>
+</div>
 <div class="header">
   <center>
     <font size=+5 color="#fff">蒲新教师公寓物业管理系统</font>
   </center>
-    </div>
 
     <div class="container col-lg-offset-4 col-lg-4">
-        <div class="col-lg-offset-4"><span><font size=+5 color="#fff">注册</font></span></div>
+        <div form-group class="col-lg-offset-1 col-lg-10">
+        <div class="head col-lg-offset-4" >
+        <span><font size=+5 color="#fff">注册</font></span></div>
+          </div>
         <div class="divide-40"></div>
         <form action=""  method="post">
             <div class="form-group col-lg-offset-1 col-lg-10">
                 <label class="control-label"><font size=+1 color="#fff">用户名</font></label>
                 <input type="text" class="form-control"  name="username"/>
+            </div>
+            <div class="form-group col-lg-offset-1 col-lg-10">
+                <label class="control-label"><font size=+1 color="#fff">身份证号</font></label>
+                    <input type="text" class="form-control" name="idcard" />
             </div>
             <div class="form-group col-lg-offset-1 col-lg-10">
                 <label class="control-label"><font size=+1 color="#fff">密码</font></label>
@@ -43,10 +52,9 @@
                 <button type="reset" class="btn btn-default col-lg-6">重置</button>  
             </div>
             
-             <div class="form-group col-lg-offset-8 col-lg-10">
-               <a href="login.jsp"><font size=+2 color="#fff">去登陆</font></a>
-            </div>
+             
             </form>
+            
         
     </div>
 </body>

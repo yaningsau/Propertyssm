@@ -22,5 +22,11 @@
   </if>
   </where>
   </select>
+  
+  <!-- 删除 -->
+  <delete id="delRepair" parameterType="Repair">
+  DELETE FROM t_repair
+  WHERE id=#{id}
+  </delete>
 
 </mapper>

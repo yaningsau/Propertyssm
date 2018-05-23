@@ -15,5 +15,11 @@
   </if>
   </where>
   </select>
+  
+  <!-- 删除 -->
+  <delete id="delComplain" parameterType="Complain">
+  DELETE FROM t_complain
+  WHERE id=#{id}
+  </delete>
 
 </mapper>

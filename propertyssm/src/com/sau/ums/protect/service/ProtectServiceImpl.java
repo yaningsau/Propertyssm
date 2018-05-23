@@ -31,4 +31,14 @@ public class ProtectServiceImpl implements ProtectService {
         return page;
     }
 
+    @Override
+    public boolean delProtect(Protect protect) {
+        boolean isSuccess = false;
+
+        pdao.delProtect(protect);
+        isSuccess = true;
+
+        return isSuccess;
+    }
+
 }

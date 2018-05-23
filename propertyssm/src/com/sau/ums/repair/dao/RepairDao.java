@@ -12,4 +12,7 @@ public interface RepairDao {
     //查询报修列表
     public List<Repair> listRepair(Repair repair);
 
+    //删除
+    public void delRepair(Repair repair);
+
 }

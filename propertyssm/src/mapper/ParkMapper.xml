@@ -20,9 +20,13 @@
   <if test="status != null and status != ''" >
   status LIKE #{status}
   </if>
-  
   </where>
   </select>
-
+  
+  <!-- 删除 -->
+  <delete id="delPark" parameterType="Park">
+  DELETE FROM t_park
+  WHERE carnum=#{carnum}
+  </delete>
 
 </mapper>

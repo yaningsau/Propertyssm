@@ -68,7 +68,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                     <td>${protect.ps}</td>
                                     <td>
                                     <a href=>修改</a>
-                                    <a onClick=>删除</a>
+                                    <a onClick='return delProtect(this);' href='delProtect.do?position=${protect.position}'>删除</a>
                                     </td>
                                  </tr>
                             </c:forEach>
@@ -78,5 +78,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </div>
         </div>
     </div>
+    <script type='text/javascript' language='javascript'>
+        function delProtect(obj){
+        if(confirm("是否删除该安防")){
+            var position =  $(obj).parent("td").attr("position");
+            $.post("delProtect.do",{"position":position},function(response){
+                if(response.tip=="success"){
+                    alert("用户删除成功");
+                    window.location.href='listProtect.do';
+                }
+                else if(response.tip=="error"){
+                    alert("用户删除失败!"+response.msg);
+                }
+            });
+            
+        }
+        
+    }
+    </script>
 </body>
 </html>

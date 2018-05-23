@@ -96,8 +96,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                     <td>${repair.ps}</td>
                                    <c:if test="${ loguser.kind == '管理员' }">
                                     <td>
-                                    <a href=>修改</a>
-                                    <a onClick=>删除</a>
+                                    <a href=>处理</a>
+                                    <a onClick='return delRepair(this);' href='delRepair.do?id=${repair.id}'>删除</a>
                                     </td>
                                     </c:if>
                                  </tr>
@@ -108,5 +108,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </div>
         </div>
     </div>
+    <script type='text/javascript' language='javascript'>
+        function delRepair(obj){
+        if(confirm("是否删除该报修")){
+            var repair =  $(obj).parent("td").attr("repair");
+            $.post("delRepair.do",{"repair":repair},function(response){
+                if(response.tip=="success"){
+                    alert("报修删除成功");
+                    window.location.href='listRepair.do';
+                }
+                else if(response.tip=="error"){
+                    alert("报修删除失败!"+response.msg);
+                }
+            });
+            
+        }
+        
+    }
+    </script>
 </body>
 </html>

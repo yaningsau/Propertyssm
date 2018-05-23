@@ -1,9 +1,15 @@
 package com.sau.ums.complain.controller;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.github.pagehelper.PageInfo;
 import com.sau.ums.bean.Complain;
@@ -31,6 +37,23 @@ public class ComplainController {
         model.addAttribute("condition", c);
 
         return "listComplain";
+    }
+
+    //删除
+    @RequestMapping("delComplain.do")
+    @ResponseBody
+    public Map<String, Object> delComplain(Integer id, HttpSession session) {
+        Map<String, Object> map = new HashMap<String, Object>();
+        boolean isSuccess = false;
+
+        isSuccess = cs.delComplain(id);
+
+        if (isSuccess) {
+            map.put("tip", "success");
+        } else {
+            map.put("tip", "error");
+        }
+        return map;
     }
 
 }

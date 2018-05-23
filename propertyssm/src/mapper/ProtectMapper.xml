@@ -15,4 +15,10 @@
     </if>
     </where>
     </select>
+    
+    <!-- 删除 -->
+    <delete id="delProtect" parameterType="Protect">
+    DELETE FROM t_protect
+    WHERE position=#{position}
+    </delete>
 </mapper>

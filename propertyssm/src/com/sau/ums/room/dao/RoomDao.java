@@ -12,4 +12,7 @@ public interface RoomDao {
     //查询房屋列表
     public List<Room> listRoom(Room room);
 
+    //删除房屋
+    public void delRoom(Room room);
+
 }

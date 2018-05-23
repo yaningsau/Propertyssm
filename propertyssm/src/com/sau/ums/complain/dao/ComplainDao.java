@@ -12,4 +12,7 @@ public interface ComplainDao {
     //查询投诉列表
     public List<Complain> listComplain(Complain complain);
 
+    //删除
+    public void delComplain(Integer id);
+
 }

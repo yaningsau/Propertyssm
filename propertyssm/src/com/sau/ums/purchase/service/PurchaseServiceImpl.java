@@ -30,4 +30,15 @@ public class PurchaseServiceImpl implements PurchaseService {
         page = new PageInfo<Purchase>(purchaselist);
         return page;
     }
+
+    //删除
+    @Override
+    public boolean delPurchase(Purchase purchase) {
+        boolean isSuccess = false;
+
+        pdao.delPurchase(purchase);
+        isSuccess = true;
+
+        return isSuccess;
+    }
 }

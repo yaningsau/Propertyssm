@@ -80,7 +80,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                     <td>${room.ps}</td>
                                     <td>
                                     <a href=>修改</a>
-                                    <a onClick=>删除</a>
+                                    <a onClick='return delRoom(this);' href='delRoom.do?room=${room.room}'>删除</a>
                                     </td>
                                  </tr>
                             </c:forEach>
@@ -90,5 +90,23 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </div>
         </div>
     </div>
+    <script type='text/javascript' language='javascript'>
+        function delRoom(obj){
+        if(confirm("是否删除该房屋")){
+            var room =  $(obj).parent("td").attr("room");
+            $.post("delRoom.do",{"room":room},function(response){
+                if(response.tip=="success"){
+                    alert("房屋删除成功");
+                    window.location.href='listRoom.do';
+                }
+                else if(response.tip=="error"){
+                    alert("房屋删除失败!"+response.msg);
+                }
+            });
+            
+        }
+        
+    }
+    </script>
 </body>
 </html>

@@ -12,4 +12,7 @@ public interface ParkDao {
     //查询停车场列表
     public List<Park> listPark(Park park);
 
+    //删除
+    public void delPark(Park park);
+
 }

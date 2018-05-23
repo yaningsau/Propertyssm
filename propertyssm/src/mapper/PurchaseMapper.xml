@@ -16,7 +16,12 @@
   sname LIKE #{sname}
   </if>
   </where>
-  
   </select>
+  
+  <!-- 删除 -->
+  <delete id="delPurchase" parameterType="Purchase">
+  DELETE FROM t_purchase
+  WHERE id=#{id}
+  </delete>
 
 </mapper>

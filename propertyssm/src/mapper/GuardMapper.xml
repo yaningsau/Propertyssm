@@ -17,5 +17,11 @@
   </if>
   </where>
   </select>
+  
+  <!-- 删除 -->
+  <delete id="delGuard" parameterType="Guard">
+  DELETE FROM t_guard
+  WHERE id=#{id}
+  </delete>
 
 </mapper>

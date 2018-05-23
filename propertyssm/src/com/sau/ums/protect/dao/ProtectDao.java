@@ -12,4 +12,7 @@ public interface ProtectDao {
     //查询安防列表
     public List<Protect> listProtect(Protect protect);
 
+    //删除安防
+    public void delProtect(Protect protect);
+
 }

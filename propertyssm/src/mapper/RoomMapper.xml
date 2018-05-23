@@ -21,5 +21,12 @@
     </if> 
     </where>
     </select>
+    
+    <!-- 删除房屋 -->
+    <delete id="delRoom" parameterType="Room">
+    DELETE FROM t_house
+    WHERE room=#{room}
+    </delete>
+
 
 </mapper>

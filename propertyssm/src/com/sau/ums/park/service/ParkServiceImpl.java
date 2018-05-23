@@ -30,4 +30,14 @@ public class ParkServiceImpl implements ParkService {
         return page;
     }
 
+    @Override
+    public boolean delPark(Park park) {
+        boolean isSuccess = false;
+
+        pdao.delPark(park);
+        isSuccess = true;
+
+        return isSuccess;
+    }
+
 }

@@ -26,4 +26,10 @@
     </if>
     </where>
     </select>
+    
+    <!-- 删除用户 -->
+    <delete id="delUser" parameterType="User">
+     DELETE FROM t_user
+     WHERE id=#{id}
+    </delete>
 </mapper>

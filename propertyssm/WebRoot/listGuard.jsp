@@ -82,7 +82,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                     <td>${guard.ps}</td>
                                     <td>
                                     <a href=>修改</a>
-                                    <a onClick=>删除</a>
+                                    <a onClick='return delGuard(this);' href='delGuard.do?id=${guard.id}'>删除</a>
                                     </td>
                                  </tr>
                             </c:forEach>
@@ -92,5 +92,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </div>
         </div>
     </div>
+    
+    <script type='text/javascript' language='javascript'>
+        function delGuard(obj){
+        if(confirm("是否删除该人")){
+            var id =  $(obj).parent("td").attr("id");
+            $.post("delGuard.do",{"id":id},function(response){
+                if(response.tip=="success"){
+                    alert("删除成功");
+                    window.location.href='listGuard.do';
+                }
+                else if(response.tip=="error"){
+                    alert("删除失败!"+response.msg);
+                }
+            });
+            
+        }
+        
+    }
+    </script>
 </body>
 </html>

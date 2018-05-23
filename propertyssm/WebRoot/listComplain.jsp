@@ -89,7 +89,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                     <c:if test="${ loguser.kind == '管理员' }">
                                     <td>
                                     <a href=>处理</a>
-                                    <a onClick=>删除</a>
+                                    <a onClick='return delComplain(this);' href='delComplain.do?id=${complain.id}'>删除</a>
                                     </td>
                                     </c:if>
                                  </tr>
@@ -100,5 +100,24 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </div>
         </div>
     </div>
+    
+    <script type='text/javascript' language='javascript'>
+        function delComplain(obj){
+        if(confirm("是否删除该投诉")){
+            var id =  $(obj).parent("td").attr("id");
+            $.post("delComplain.do",{"id":id},function(response){
+                if(response.tip=="success"){
+                    alert("删除成功");
+                    window.location.href='listComplain.do';
+                }
+                else if(response.tip=="error"){
+                    alert("删除失败!"+response.msg);
+                }
+            });
+            
+        }
+        
+    }
+    </script>
 </body>
 </html>

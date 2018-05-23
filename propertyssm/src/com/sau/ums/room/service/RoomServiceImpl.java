@@ -30,4 +30,14 @@ public class RoomServiceImpl implements RoomService {
         return page;
     }
 
+    @Override
+    public boolean delRoom(Room room) {
+        boolean isSuccess = false;
+
+        //删除房屋
+        rdao.delRoom(room);
+        isSuccess = true;
+        return isSuccess;
+    }
+
 }

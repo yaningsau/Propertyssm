@@ -31,4 +31,14 @@ public class GuardServiceImpl implements GuardService {
         return page;
     }
 
+    @Override
+    public boolean delGuard(Integer id) {
+        boolean isSUccess = false;
+
+        gdao.delGuard(id);
+        isSUccess = true;
+
+        return isSUccess;
+    }
+
 }

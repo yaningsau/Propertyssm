@@ -12,4 +12,7 @@ public interface GuardDao {
     //查询外来人员列表
     public List<Guard> listGuard(Guard guard);
 
+    //删除
+    public void delGuard(Integer id);
+
 }

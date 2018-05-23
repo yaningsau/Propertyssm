@@ -30,4 +30,14 @@ public class RepairServiceImpl implements RepairService {
         return page;
     }
 
+    @Override
+    public boolean delRepair(Repair repair) {
+        boolean isSuccess = false;
+
+        rdao.delRepair(repair);
+        isSuccess = true;
+
+        return isSuccess;
+    }
+
 }

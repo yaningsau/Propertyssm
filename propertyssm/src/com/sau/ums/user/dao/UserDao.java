@@ -15,4 +15,7 @@ public interface UserDao {
     //查询用户列表
     public List<User> listUser(User user);
 
+    //删除用户
+    public void delUser(Integer id);
+
 }
