@@ -31,7 +31,7 @@
             </ul>
         </div>
         <div class="r_content">
-            <form action="addGuard.do" method="post" class="form-horizontal" role="from">
+            <form action="addGuard.do" id="form1" method="post" class="form-horizontal" role="from">
                 <div class="form-group">
                     <label class="col-sm-offset-3 col-sm-2 control-label">姓名</label>
                     <div class="col-sm-3">
@@ -84,5 +84,16 @@
             </form>
         </div>
     </div>
+    
+    <!-- <script type="text/javascript">
+     $(function){
+         $("#form1").ajaxForm(function(map)){
+            if(map.tip=="success"){
+                alert("添加成功");
+                window.location.href='listGuard.do';
+            }
+         }
+     }
+    </script> -->
 </body>
 </html>

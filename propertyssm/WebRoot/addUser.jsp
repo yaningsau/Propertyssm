@@ -23,7 +23,7 @@
             </ul>
         </div>
         <div class="r_content">
-            <form action="addUser.do" method="post" class="form-horizontal" role="from" omsubmit='return addUser()' >
+            <form  action="addUser.do" method="post" class="form-horizontal" onsubmit="return check(this)">
                 <div class="form-group">
                     <label class="col-sm-offset-3 col-sm-2 control-label">房号</label>
                     <div class="col-sm-3">
@@ -82,14 +82,34 @@
             </form>
         </div>
     </div>
-    <script type="text/javascript">
-    $(document).ready(function(){
-    $("form").submit(function(e){
-      
-       });
-    });
-    
-    </script>
-    
+
+
+<script type="text/javascript">
+	
+	
+	function check(obj){
+	   var msg = "是否添加该用户";
+        if(confirm(msg) == true){
+            
+           return true;
+        }
+       else {
+         return false;
+       }
+    } 
+	
+		/* $(document).ready(function() {
+			$('#addUserForm').ajaxForm(function(tip) {
+			     alert("tip:" + tip);
+			     if (tip.success) {
+				    alert("success");
+			     } else {
+			         alert("fail");
+			     }
+			});
+		});
+		
+	</script>
+
 </body>
 </html>

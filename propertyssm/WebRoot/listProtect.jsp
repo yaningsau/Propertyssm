@@ -80,7 +80,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </div>
     <script type='text/javascript' language='javascript'>
         function delProtect(obj){
-        if(confirm("是否删除该安防")){
+        var msg = "是否删除该安防";
+        if(confirm(msg) == true){
             var position =  $(obj).parent("td").attr("position");
             $.post("delProtect.do",{"position":position},function(response){
                 if(response.tip=="success"){
@@ -91,9 +92,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     alert("用户删除失败!"+response.msg);
                 }
             });
-            
+            return true;
         }
-        
+        else{
+          return false;
+        }
     }
     </script>
 </body>

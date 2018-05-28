@@ -103,7 +103,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
     <script type='text/javascript' language='javascript'>
         function delComplain(obj){
-        if(confirm("是否删除该投诉")){
+        var msg = "是否删除该投诉";
+        if(confirm(msg) == true){
             var id =  $(obj).parent("td").attr("id");
             $.post("delComplain.do",{"id":id},function(response){
                 if(response.tip=="success"){
@@ -114,9 +115,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     alert("删除失败!"+response.msg);
                 }
             });
-            
+            return true;
         }
-        
+        else{
+          return false;
+        }
     }
     </script>
 </body>

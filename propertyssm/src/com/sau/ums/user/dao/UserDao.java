@@ -21,4 +21,7 @@ public interface UserDao {
     //添加用户
     public void addUser(User user);
 
+    //修改用户信息
+    public void updateUser(User user);
+
 }

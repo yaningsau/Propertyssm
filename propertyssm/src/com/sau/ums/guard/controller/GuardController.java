@@ -21,6 +21,7 @@ public class GuardController {
     @Autowired
     public GuardService gs;
 
+    //查询
     @RequestMapping("listGuard.do")
     public String listGuard(Guard guard, Integer pageNum, ModelMap model) {
         if (pageNum == null) {
@@ -60,8 +61,15 @@ public class GuardController {
     @ResponseBody
     public Map<String, Object> addGuard(Guard guard, HttpSession session) {
         Map<String, Object> map = new HashMap<String, Object>();
-        boolean isSuccess = false;
 
+        /*
+         * SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+         * 
+         * try { guard.setTime(sdf.parse(sdf.format(guard.getTime()))); } catch
+         * (ParseException e) { e.printStackTrace(); }
+         */
+
+        boolean isSuccess = false;
         isSuccess = gs.addGuard(guard);
 
         if (isSuccess) {

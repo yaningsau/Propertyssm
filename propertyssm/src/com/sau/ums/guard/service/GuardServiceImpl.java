@@ -31,6 +31,7 @@ public class GuardServiceImpl implements GuardService {
         return page;
     }
 
+    //删除
     @Override
     public boolean delGuard(Integer id) {
         boolean isSUccess = false;
@@ -41,6 +42,7 @@ public class GuardServiceImpl implements GuardService {
         return isSUccess;
     }
 
+    //添加
     @Override
     public boolean addGuard(Guard guard) {
         boolean isSUccess = false;

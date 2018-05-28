@@ -24,14 +24,14 @@
 	<div class="container col-lg-offset-4 col-lg-4">
 		<div class="head col-lg-offset-4"><span><font color="#fff">登录</font></span></div>
 		<div class="divide-40"></div>
-		<form action="login.do"  method="post">
+		<form action="login.do"  method="post" id="form" onsubmit="return check(this)">
 			<div class="form-group col-lg-offset-1 col-lg-10">
 	        	<label class="control-label"><font size=+1 color="#fff">用户名</font></label>
-	           	<input type="text" class="form-control"  name="username"/>
+	           	<input type="text" class="form-control"  name="username" id="username"/>
 	        </div>
 	    	<div class="form-group col-lg-offset-1 col-lg-10">
 	        	<label class="control-label"><font size=+1 color="#fff">密码</font></label>
-	           		<input type="password" class="form-control" name="password" />
+	           		<input type="password" class="form-control" name="password" id="password"/>
 	        </div>
 	        <div class="form-group col-lg-offset-1 col-lg-10">
 	        
@@ -48,5 +48,19 @@
 			</form>
 	    
     </div>
+    
+    <script type="text/javascript">
+      function check(form){
+        if(form.username.value==''){
+           alert("请输入用户名!!!");
+           return false;
+        }
+        if(form.password.value==''){
+           alert("请输入密码!!!");
+           return false;
+        }
+        return true;
+      }
+    </script>
 </body>
 </html>

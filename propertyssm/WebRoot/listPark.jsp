@@ -107,7 +107,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     
     <script type='text/javascript' language='javascript'>
         function delPark(obj){
-        if(confirm("是否删除该停车位")){
+        var msg = "是否删除该停车位";
+        if(confirm(msg) == true){
             var park =  $(obj).parent("td").attr("park");
             $.post("delPark.do",{"park":park},function(response){
                 if(response.tip=="success"){
@@ -118,9 +119,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     alert("删除失败!"+response.msg);
                 }
             });
-            
+            return true;
         }
-        
+        else{
+          return false;
+        }
     }
     </script>
 </body>

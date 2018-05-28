@@ -39,4 +39,27 @@
     VALUES(#{name},#{sex},#{idcard},#{kind},#{ps})
     </insert>
     
+    <!-- 修改用户信息 -->
+    <update id="updateUser" parameterType="User">
+    UPDATE t_user
+    <set>
+    <if test="name != null">
+    name=#{name}
+    </if>
+    <if test="sex != null">
+    sex=#{sex}
+    </if>
+    <if test="idcard != null">
+    idcard=#{idcard}
+    </if>
+    <if test="kind != null">
+    kind=#{kind}
+    </if>
+    <if test="num != null">
+    num=#{num}
+    </if>
+    </set>
+    WHERE id=#{id}
+    </update>
+    
 </mapper>

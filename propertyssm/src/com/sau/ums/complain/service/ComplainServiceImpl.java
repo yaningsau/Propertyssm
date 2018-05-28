@@ -31,6 +31,7 @@ public class ComplainServiceImpl implements ComplainService {
         return page;
     }
 
+    //删除
     @Override
     public boolean delComplain(Integer id) {
         boolean isSuccess = false;
@@ -41,12 +42,13 @@ public class ComplainServiceImpl implements ComplainService {
         return isSuccess;
     }
 
+    //添加
     @Override
     public boolean addComplain(Complain complain) {
         boolean isSuccess = false;
 
         cdao.addComplain(complain);
-        ;
+
         isSuccess = true;
 
         return isSuccess;

@@ -68,4 +68,15 @@ public class UserServiceImpl implements UserService {
 
         return isSuccess;
     }
+
+    //修改用户信息
+    @Override
+    public boolean updateUser(User user) {
+        boolean isSuccess = false;
+
+        udao.updateUser(user);
+        isSuccess = true;
+
+        return isSuccess;
+    }
 }

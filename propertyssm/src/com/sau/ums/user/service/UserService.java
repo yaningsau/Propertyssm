@@ -20,4 +20,7 @@ public interface UserService {
     //添加用户
     public boolean addUser(User user);
 
+    //修改用户信息
+    public boolean updateUser(User user);
+
 }

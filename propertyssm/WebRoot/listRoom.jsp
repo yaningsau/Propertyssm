@@ -92,7 +92,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </div>
     <script type='text/javascript' language='javascript'>
         function delRoom(obj){
-        if(confirm("是否删除该房屋")){
+        var msg = "是否删除该房屋";
+        if(confirm(msg) == true){
             var room =  $(obj).parent("td").attr("room");
             $.post("delRoom.do",{"room":room},function(response){
                 if(response.tip=="success"){
@@ -102,9 +103,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                 else if(response.tip=="error"){
                     alert("房屋删除失败!"+response.msg);
                 }
-            });
-            
+            }); 
+            return true;
         }
+        
+       else {
+         return false;
+       }
         
     }
     </script>

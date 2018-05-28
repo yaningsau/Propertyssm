@@ -56,8 +56,8 @@ $(function(){
 	            </li>      	
 	            <div>
 	                <dl class="sub" id="sub1">
-	                    <dd><a href="listUser.do" class="col-sm-offset-3"><span>查询用户</span></a></dd>
-	                    <dd><a href="addUser.jsp" class="col-sm-offset-3"><span>添加用户</span></a></dd>
+	                    <dd><a href="listUser.do" class="col-sm-offset-3" ><span>查询用户</span></a></dd>
+	                    <dd><a href="addUser.jsp" class="col-sm-offset-3" id="addUser"><span>添加用户</span></a></dd>
 	            	</dl>
 	            <div>
 	            <li class="dropdown_menu" id="dropdown_menu2">

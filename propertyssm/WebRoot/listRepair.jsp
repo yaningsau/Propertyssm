@@ -110,7 +110,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </div>
     <script type='text/javascript' language='javascript'>
         function delRepair(obj){
-        if(confirm("是否删除该报修")){
+        var msg = "是否删除该报修";
+        if(confirm(msg) == true){
             var repair =  $(obj).parent("td").attr("repair");
             $.post("delRepair.do",{"repair":repair},function(response){
                 if(response.tip=="success"){
@@ -121,8 +122,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     alert("报修删除失败!"+response.msg);
                 }
             });
+            return true;
             
         }
+        else{
+         return false; 
+       }
         
     }
     </script>

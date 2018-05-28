@@ -80,7 +80,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                     <td>${user.num}</td>
                                     <td>${user.ps}</td>
                                     <td>
-                                    <a href=''>修改</a>
+                                    <a href='updateUser.do?id=${user.id}'>修改</a>
                                     <a onClick='return delUser(this);' href='delUser.do?id=${user.id}'>删除</a>
                                     </td>
                                  </tr>
@@ -135,9 +135,12 @@ $(function(){
             </div>
         </div>
     </div>
+    
+    
     <script type='text/javascript' language='javascript'>
         function delUser(obj){
-        if(confirm("是否删除该用户")){
+        var msg = "是否删除该用户";
+        if(confirm(msg) == true){
             var id =  $(obj).parent("td").attr("id");
             $.post("delUser.do",{"id":id},function(response){
                 if(response.tip=="success"){
@@ -145,11 +148,15 @@ $(function(){
                     window.location.href='listUser.do';
                 }
                 else if(response.tip=="error"){
-                    alert("用户删除失败!"+response.msg);
+                    alert("用户删除失败!");
                 }
             });
-            
+           return true;
         }
+        
+       else {
+         return false;
+       }
         
     }
     </script>

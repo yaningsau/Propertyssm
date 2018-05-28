@@ -75,4 +75,19 @@ public class UserController {
 
     }
 
+    //修改用户信息
+    public Map<String, Object> updateUser(User user, HttpSession session) {
+        Map<String, Object> map = new HashMap<String, Object>();
+        boolean isSuccess = false;
+
+        isSuccess = us.updateUser(user);
+        if (isSuccess) {
+            map.put("tip", "success");
+        } else {
+            map.put("tip", "error");
+        }
+        return map;
+
+    }
+
 }

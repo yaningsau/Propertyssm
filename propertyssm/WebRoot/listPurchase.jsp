@@ -87,7 +87,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     </div>
     <script type='text/javascript' language='javascript'>
         function delPurchase(obj){
-        if(confirm("是否删除该采购")){
+        var msg = "是否删除该采购";
+        if(confirm(msg) == true){
             var purchase =  $(obj).parent("td").attr("purchase");
             $.post("delPurchase.do",{"purchase":purchase},function(response){
                 if(response.tip=="success"){
@@ -98,9 +99,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                     alert("采购删除失败!"+response.msg);
                     }
             });
-            
+            return true;
         }
-        
+        else{
+          return false;
+        }
     }
     </script>
         
