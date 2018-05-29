@@ -11,6 +11,7 @@
 <link href="bootstrap-3.3.5-dist/css/content_r.css" rel="stylesheet">
 <script src="bootstrap-3.3.5-dist/js/jquery-3.0.0.min.js"></script>
 <script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<script src="bootstrap-3.3.5-dist/js/jquery.form.js"></script>
 
 </head>
 <body>
@@ -31,7 +32,7 @@
             </ul>
         </div>
         <div class="r_content">
-            <form action="addGuard.do" id="form1" method="post" class="form-horizontal" role="from">
+            <form action="addGuard.do" id="addGuardForm" method="post" class="form-horizontal" role="from">
                 <div class="form-group">
                     <label class="col-sm-offset-3 col-sm-2 control-label">姓名</label>
                     <div class="col-sm-3">
@@ -77,23 +78,27 @@
                 </div>
                  <div class="form-group">
                      <div class="col-sm-offset-5 col-sm-4">
-                        <button type="submit" class="btn btn-default">submit</button>
-                        <button type="reset" class="btn btn-default">reset</button>
+                        <button type="button" id="submit" class="btn btn-default">提交</button>
+                        <button type="reset" class="btn btn-default">重置</button>
                      </div>
                  </div>
             </form>
         </div>
     </div>
     
-    <!-- <script type="text/javascript">
-     $(function){
-         $("#form1").ajaxForm(function(map)){
-            if(map.tip=="success"){
-                alert("添加成功");
-                window.location.href='listGuard.do';
-            }
-         }
-     }
-    </script> -->
+    <script type="text/javascript">
+    $("#submit").click(function(){
+       $("#addGuardForm").ajaxSubmit(function(response){
+            if (response.tip == "success") {
+                    alert("添加成功");
+                    window.location.href = 'listGuard.do';
+                } else if (response.tip == "error") {
+                    alert("添加失败!");
+                } 
+       });
+     
+    }); 
+    </script>
+    
 </body>
 </html>

@@ -31,6 +31,7 @@ public class ProtectServiceImpl implements ProtectService {
         return page;
     }
 
+    //删除
     @Override
     public boolean delProtect(Protect protect) {
         boolean isSuccess = false;
@@ -41,6 +42,7 @@ public class ProtectServiceImpl implements ProtectService {
         return isSuccess;
     }
 
+    //添加
     @Override
     public boolean addProtect(Protect protect) {
         boolean isSuccess = false;

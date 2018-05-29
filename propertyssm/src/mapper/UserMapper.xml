@@ -21,6 +21,9 @@
     <if test="username != null and username != ''">
     username LIKE #{username}
     </if>
+    <if test="name!=null and name!=''">
+    AND name LIKE #{name}
+    </if>
     <if test="kind!=null and kind!=''">
     AND kind LIKE #{kind}
     </if>

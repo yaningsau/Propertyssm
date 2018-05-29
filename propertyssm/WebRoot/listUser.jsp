@@ -16,7 +16,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="bootstrap-3.3.5-dist/css/font-awesome.min.css" rel="stylesheet">
 <link href="bootstrap-3.3.5-dist/css/content_r.css" rel="stylesheet">
-<script src="bootstrap-3.3.5-dist/js/jquery-3.0.0.min.js"></script>
+<script src="bootstrap-3.3.5-dist/js/jquery-3.0.0min.js"></script>
 <script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
 <style>
     .divide-60{ 
@@ -40,6 +40,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             <form action="listUser.do" method="post" role="form" class="form-inline pull-right">
                 <font color="#545454">用户名：</font>
                 <input type="text" style="color:#545454" class="form-control" placeholder="username" name="username" value="${condition.username}"/>
+                <font color="#545454">姓名：</font>
+                <input type="text" style="color:#545454" class="form-control" name="name"/>
                 <font color="#545454">用户类别：</font>
                 <input type="text" style="color:#545454" class="form-control" name="kind"/>
                 <input type="button" class="form-control" id="target" value="搜索" onClick="document.forms[0].submit()">

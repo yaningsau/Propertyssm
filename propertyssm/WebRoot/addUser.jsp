@@ -7,8 +7,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="bootstrap-3.3.5-dist/css/content_r.css" rel="stylesheet">
-<script src="bootstrap-3.3.5-dist/js/jquery-3.0.0.min.js"></script>
+<!-- <script src="bootstrap-3.3.5-dist/js/jquery-1.11.0.min.js"></script> -->
 <script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<script src="bootstrap-3.3.5-dist/js/jquery.form.js"></script>
 </head>
 <body>
     <jsp:include page="header.jsp"></jsp:include>
@@ -23,7 +24,7 @@
             </ul>
         </div>
         <div class="r_content">
-            <form  action="addUser.do" method="post" class="form-horizontal" onsubmit="return check(this)">
+            <form  action="addUser.do" id="addUserForm" method="post" class="form-horizontal">
                 <div class="form-group">
                     <label class="col-sm-offset-3 col-sm-2 control-label">房号</label>
                     <div class="col-sm-3">
@@ -75,41 +76,25 @@
                 </div>
                  <div class="form-group">
                      <div class="col-sm-offset-5 col-sm-4">
-                        <button type="submit" class="btn btn-default" value="提交">提交</button>
+                        <button type="button" id="submit" class="btn btn-default" value="提交">提交</button>
                         <button type="reset" class="btn btn-default" value="重置">重置</button>
                      </div>
                  </div>
             </form>
         </div>
     </div>
-
-
-<script type="text/javascript">
-	
-	
-	function check(obj){
-	   var msg = "是否添加该用户";
-        if(confirm(msg) == true){
-            
-           return true;
-        }
-       else {
-         return false;
-       }
-    } 
-	
-		/* $(document).ready(function() {
-			$('#addUserForm').ajaxForm(function(tip) {
-			     alert("tip:" + tip);
-			     if (tip.success) {
-				    alert("success");
-			     } else {
-			         alert("fail");
-			     }
-			});
-		});
-		
+	<script type="text/javascript">
+	$("#submit").click(function(){
+	   $("#addUserForm").ajaxSubmit(function(response){
+	        if (response.tip == "success") {
+                    alert("用户添加成功");
+                    window.location.href = 'listUser.do';
+                } else if (response.tip == "error") {
+                    alert("用户添加失败!");
+                } 
+	   });
+	 
+	});	
 	</script>
-
 </body>
 </html>
