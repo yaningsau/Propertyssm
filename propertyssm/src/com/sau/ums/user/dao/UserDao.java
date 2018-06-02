@@ -2,6 +2,7 @@ package com.sau.ums.user.dao;
 
 import java.util.List;
 
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import com.sau.ums.bean.User;
@@ -26,5 +27,14 @@ public interface UserDao {
 
     //根据id获取用户信息
     User getUserInfoById(Integer id);
+
+    User getUserInfoByUserName(String username);
+
+    void updatePasswd(@Param("newPw") String newPw,
+            @Param("username") String username);
+
+    Integer getUserInfoByIdCard(@Param("idcard") String idcard);
+
+    void updateUserLogin(User user);
 
 }

@@ -11,6 +11,7 @@
 <link href="bootstrap-3.3.5-dist/css/header.css" rel="stylesheet">
 <script src="bootstrap-3.3.5-dist/js/jquery-3.0.0.min.js"></script>
 <script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<script src="bootstrap-3.3.5-dist/js/jquery.form.js"></script>
 </head>
 <body>
 <div id="d" align="right" style="margin-top:0px">
@@ -27,7 +28,7 @@
         <span><font size=+5 color="#fff">注册</font></span></div>
           </div>
         <div class="divide-40"></div>
-        <form action=""  method="post">
+        <form id="registerForm" action="register.do"  method="post">
             <div class="form-group col-lg-offset-1 col-lg-10">
                 <label class="control-label"><font size=+1 color="#fff">用户名</font></label>
                 <input type="text" class="form-control"  name="username"/>
@@ -41,14 +42,14 @@
                     <input type="password" class="form-control" name="password" />
             </div>
             <div class="form-group col-lg-offset-1 col-lg-10">
-                <label class="control-label"><font size=+1 color="#fff">重复密码</font></label>
-                    <input type="password" class="form-control" name="password" />
+                <label class="control-label"><font size=+1 color="#fff">确认密码</font></label>
+                    <input type="password" class="form-control" name="passwd" />
             </div>
             <div class="form-group col-lg-offset-1 col-lg-10">
             
             </div>
             <div class="form-group col-lg-offset-1 col-lg-10">
-                <button type="submit" class="btn btn-default col-lg-6">注册</button>
+                <button type="button" id="submit" class="btn btn-default col-lg-6">注册</button>
                 <button type="reset" class="btn btn-default col-lg-6">重置</button>  
             </div>
             
@@ -57,5 +58,20 @@
             
         
     </div>
+    <script type="text/javascript">
+    
+    
+    $("#submit").click(function(){
+       $("#registerForm").ajaxSubmit(function(response){
+            if (response.success) {
+              alert("用户注册成功");
+              window.location.href = 'login.jsp';
+          } else {
+              alert("用户注册失败!");
+          } 
+       });
+     
+    }); 
+    </script>
 </body>
 </html>

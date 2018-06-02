@@ -74,4 +74,49 @@
        FROM t_user
        WHERE id=#{id}
     </select>
+    
+    <!-- 查询用户列表 -->
+    <select id="getUserInfoByUserName" parameterType="String" resultType="User">
+       SELECT <include refid="usercolumn"></include>
+       FROM t_user
+       WHERE username=#{username}
+    </select>
+    
+    <!-- 修改用户信息 -->
+    <update id="updatePasswd" parameterType="String">
+    UPDATE t_user
+    <set>
+    <if test="newPw != null">
+    password=#{newPw}
+    </if>
+    </set>
+    <where>
+        username=#{username}
+    </where>
+    </update>
+    
+    
+    <!-- 查询用户列表 -->
+    <select id="getUserInfoByIdCard" parameterType="String" resultType="Integer">
+       SELECT id
+       FROM t_user
+       WHERE idcard=#{idcard}
+    </select>
+    
+    <!-- 修改用户信息 -->
+    <update id="updateUserLogin" parameterType="User">
+    UPDATE t_user
+    <set>
+    <if test="username != null and username != ''">
+    username=#{username}
+    </if>
+        <if test="password != null and password != ''">
+    ,password=#{password}
+    </if>
+    </set>
+    <where>
+        idcard=#{idcard}
+    </where>
+    </update>
+    
 </mapper>

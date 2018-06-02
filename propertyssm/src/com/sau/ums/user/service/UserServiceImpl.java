@@ -85,4 +85,29 @@ public class UserServiceImpl implements UserService {
     public User getUserInfoById(Integer id) {
         return udao.getUserInfoById(id);
     }
+
+    @Override
+    public User getUserInfoByUserName(String username) {
+        return udao.getUserInfoByUserName(username);
+    }
+
+    @Override
+    public boolean updatePasswd(String newPw, String username) {
+        boolean isSuccess = false;
+        udao.updatePasswd(newPw, username);
+
+        isSuccess = true;
+
+        return isSuccess;
+    }
+
+    @Override
+    public Integer getUserInfoByIdCard(String idcard) {
+        return udao.getUserInfoByIdCard(idcard);
+    }
+
+    @Override
+    public void updateUserLogin(User user) {
+        udao.updateUserLogin(user);
+    }
 }

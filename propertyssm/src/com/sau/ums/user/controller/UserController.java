@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.github.pagehelper.PageInfo;
@@ -118,5 +119,41 @@ public class UserController {
             e.getMessage();
         }
         return "updateUser";
+    }
+
+    @RequestMapping("updatePasswd.do")
+    @ResponseBody
+    public Map<String, Object> updatePasswd(
+            @RequestParam("originalPw") String originalPw,
+            @RequestParam("newPw") String newPw,
+            @RequestParam("username") String username) {
+        Map<String, Object> resultMap = new HashMap<String, Object>();
+        User user = us.getUserInfoByUserName(username);
+        if (user.getPassword().equals(originalPw)) {
+            us.updatePasswd(newPw, username);
+            resultMap.put("success", true);
+            resultMap.put("message", "");
+        } else {
+            resultMap.put("success", false);
+            resultMap.put("message", "初始密码不正确！");
+        }
+        return resultMap;
+    }
+
+    @RequestMapping("register.do")
+    @ResponseBody
+    public Map<String, Object> registerAccount(User user) {
+        Map<String, Object> resultMap = new HashMap<String, Object>();
+        //根据身份证号验证是否可以注册账号
+        Integer queryInfo = us.getUserInfoByIdCard(user.getIdcard());
+        if (null != queryInfo) {
+            us.updateUserLogin(user);
+            resultMap.put("success", true);
+            resultMap.put("message", "");
+        } else {
+            resultMap.put("success", false);
+            resultMap.put("message", "该用户由于无有效身份信息，无法完成账号注册！");
+        }
+        return resultMap;
     }
 }

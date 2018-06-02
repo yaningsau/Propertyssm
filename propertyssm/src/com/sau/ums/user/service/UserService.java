@@ -26,4 +26,14 @@ public interface UserService {
     //根据id获取用户信息
     User getUserInfoById(Integer id);
 
+    //根据用户名查询用户信息
+    User getUserInfoByUserName(String username);
+
+    //修改密码
+    boolean updatePasswd(String newPw, String username);
+
+    Integer getUserInfoByIdCard(String idcard);
+
+    void updateUserLogin(User user);
+
 }
