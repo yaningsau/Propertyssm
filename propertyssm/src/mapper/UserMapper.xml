@@ -50,19 +50,28 @@
     name=#{name}
     </if>
     <if test="sex != null">
-    sex=#{sex}
+    ,sex=#{sex}
     </if>
     <if test="idcard != null">
-    idcard=#{idcard}
+    ,idcard=#{idcard}
     </if>
     <if test="kind != null">
-    kind=#{kind}
+    ,kind=#{kind}
     </if>
     <if test="num != null">
-    num=#{num}
+    ,num=#{num}
+    </if>
+    <if test="ps != null">
+    ,ps=#{ps}
     </if>
     </set>
     WHERE id=#{id}
     </update>
     
+    <!-- 查询用户列表 -->
+    <select id="getUserInfoById" parameterType="String" resultType="User">
+       SELECT <include refid="usercolumn"></include>
+       FROM t_user
+       WHERE id=#{id}
+    </select>
 </mapper>

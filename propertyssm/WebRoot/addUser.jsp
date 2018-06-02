@@ -10,6 +10,9 @@
 <!-- <script src="bootstrap-3.3.5-dist/js/jquery-1.11.0.min.js"></script> -->
 <script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
 <script src="bootstrap-3.3.5-dist/js/jquery.form.js"></script>
+<!-- 表单验证 -->
+<script src="bootstrap-3.3.5-dist/js/validate/jquery.validate.min.js"></script>
+<script src="bootstrap-3.3.5-dist/js/validate/additional-methods.js"></script>
 </head>
 <body>
     <jsp:include page="header.jsp"></jsp:include>
@@ -65,7 +68,7 @@
                 <div class="form-group">
                     <label class="col-sm-offset-3 col-sm-2 control-label">教师编号</label>
                     <div class="col-sm-3">
-                        <input type="text" class="form-control" name="num"/></textarea>
+                        <input type="text" class="form-control" placeholder="只需业主填写" name="num"/></textarea>
                     </div>
                 </div>
                 <div class="form-group">
@@ -84,6 +87,8 @@
         </div>
     </div>
 	<script type="text/javascript">
+	
+	
 	$("#submit").click(function(){
 	   $("#addUserForm").ajaxSubmit(function(response){
 	        if (response.tip == "success") {

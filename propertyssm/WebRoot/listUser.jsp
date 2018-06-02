@@ -82,7 +82,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                     <td>${user.num}</td>
                                     <td>${user.ps}</td>
                                     <td>
-                                    <a href='updateUser.do?id=${user.id}'>修改</a>
+                                    <a href='getUserInfoById.do?id=${user.id}'>修改</a>
                                     <a onClick='return delUser(this);' href='delUser.do?id=${user.id}'>删除</a>
                                     </td>
                                  </tr>

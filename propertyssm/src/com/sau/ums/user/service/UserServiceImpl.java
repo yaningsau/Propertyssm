@@ -79,4 +79,10 @@ public class UserServiceImpl implements UserService {
 
         return isSuccess;
     }
+
+    //根据id获取用户信息
+    @Override
+    public User getUserInfoById(Integer id) {
+        return udao.getUserInfoById(id);
+    }
 }

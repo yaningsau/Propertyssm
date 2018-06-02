@@ -23,4 +23,7 @@ public interface UserService {
     //修改用户信息
     public boolean updateUser(User user);
 
+    //根据id获取用户信息
+    User getUserInfoById(Integer id);
+
 }

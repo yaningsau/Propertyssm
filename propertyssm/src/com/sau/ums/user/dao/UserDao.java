@@ -24,4 +24,7 @@ public interface UserDao {
     //修改用户信息
     public void updateUser(User user);
 
+    //根据id获取用户信息
+    User getUserInfoById(Integer id);
+
 }

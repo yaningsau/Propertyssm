@@ -76,6 +76,8 @@ public class UserController {
     }
 
     //修改用户信息
+    @RequestMapping("updateUser.do")
+    @ResponseBody
     public Map<String, Object> updateUser(User user, HttpSession session) {
         Map<String, Object> map = new HashMap<String, Object>();
         boolean isSuccess = false;
@@ -87,7 +89,22 @@ public class UserController {
             map.put("tip", "error");
         }
         return map;
-
     }
 
+    /**
+     * 根据id获取用户信息
+     * @param id id
+     * @return
+     */
+    @RequestMapping("getUserInfoById.do")
+    public String getUserInfoById(Integer id, ModelMap model) {
+        User user = new User();
+        try {
+            user = us.getUserInfoById(id);
+            model.addAttribute("user", user);
+        } catch (Exception e) {
+            e.getMessage();
+        }
+        return "updateUser";
+    }
 }
