@@ -17,4 +17,10 @@ public interface RoomService {
     //添加房屋
     public boolean addRoom(Room room);
 
+    //根据房间号查询房屋信息
+    public Room getRoomInfoById(String roomId);
+
+    //根据房间号修改房屋信息
+    public boolean updateRoomInfo(Room room);
+
 }

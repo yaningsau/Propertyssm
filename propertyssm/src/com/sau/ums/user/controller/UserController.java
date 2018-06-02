@@ -3,6 +3,7 @@ package com.sau.ums.user.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +13,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.github.pagehelper.PageInfo;
+import com.sau.ums.bean.Room;
 import com.sau.ums.bean.User;
+import com.sau.ums.room.service.RoomService;
 import com.sau.ums.user.service.UserService;
 
 @Controller
@@ -20,6 +23,9 @@ public class UserController {
 
     @Autowired
     public UserService us;
+
+    @Autowired
+    public RoomService roomService;
 
     //获取用户列表
     @RequestMapping("/listUser.do")
@@ -61,12 +67,18 @@ public class UserController {
     //添加用户
     @RequestMapping("addUser.do")
     @ResponseBody
-    public Map<String, Object> addUser(User user, HttpSession session) {
+    public Map<String, Object> addUser(User user, HttpServletRequest request) {
         Map<String, Object> map = new HashMap<String, Object>();
         boolean isSuccess = false;
-
+        boolean isRoomSuccess = false;
+        String room = request.getParameter("room");
+        //根据房间号获取房屋表对应数据
+        Room roomInfo = roomService.getRoomInfoById(room);
+        roomInfo.setName(user.getName());
+        roomInfo.setNumber(user.getNum());
+        isRoomSuccess = roomService.updateRoomInfo(roomInfo);
         isSuccess = us.addUser(user);
-        if (isSuccess) {
+        if (isSuccess && isRoomSuccess) {
             map.put("tip", "success");
         } else {
             map.put("tip", "error");

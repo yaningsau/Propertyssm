@@ -57,6 +57,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                             <th>户型面积</th>
                             <th>阁楼面积</th>
                             <th>业主</th>
+                            <th>教师编号</th>
                             <th>备注</th>
                             <th colspan="2">操作</th>
                         </tr>
@@ -76,6 +77,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                     <td>${room.roomarea}</td>
                                     <td>${room.area}</td>
                                     <td>${room.loftarea}</td>
+                                    <td>${room.name}</td>
                                     <td>${room.number}</td>
                                     <td>${room.ps}</td>
                                     <td>

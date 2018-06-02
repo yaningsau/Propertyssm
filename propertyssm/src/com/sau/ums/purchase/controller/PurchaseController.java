@@ -66,7 +66,6 @@ public class PurchaseController {
         Map<String, Object> map = new HashMap<String, Object>();
 
         boolean isSuccess = false;
-
         isSuccess = ps.addPurchase(purchase);
 
         if (isSuccess) {

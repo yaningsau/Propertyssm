@@ -50,4 +50,17 @@ public class RoomServiceImpl implements RoomService {
         return isSuccess;
     }
 
+    @Override
+    public Room getRoomInfoById(String room) {
+        return rdao.getRoomInfoById(room);
+    }
+
+    @Override
+    public boolean updateRoomInfo(Room room) {
+        boolean isSuccess = false;
+        rdao.updateRoomInfo(room);
+        isSuccess = true;
+        return isSuccess;
+    }
+
 }

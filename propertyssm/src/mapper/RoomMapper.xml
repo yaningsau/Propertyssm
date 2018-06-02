@@ -5,7 +5,7 @@
 <mapper namespace="com.sau.ums.room.dao.RoomDao">
 
     <sql id="roomcolumn">
-        room,roomtype,publicarea,roomarea,area,loftarea,number,ps
+        room,roomtype,publicarea,roomarea,area,loftarea,number,ps,name
     </sql>
     
     <!-- 查询房屋列表 -->
@@ -34,5 +34,29 @@
     VALUES(#{room},#{roomtype},#{publicarea},#{roomarea},#{area},#{loftarea},#{ps})
     </insert>
 
-
+    <!-- 根据房间号获取房屋信息 -->
+    <select id="getRoomInfoById" parameterType="String" resultType="Room">
+    SELECT <include refid="roomcolumn"></include>
+    FROM t_house
+    <where>
+    <if test="room != null and room != ''">
+    room=#{room,jdbcType=VARCHAR}
+    </if>
+    </where>
+    </select>
+    
+    <update id="updateRoomInfo" parameterType="Room">
+        update t_house
+        <set>
+            <if test="name != null and name !=''">
+                name=#{name}
+            </if>
+            <if test="number != null and number !=''">
+                ,number=#{number}
+            </if>
+        </set>
+        <where>
+            room=#{room}
+        </where>
+    </update>
 </mapper>

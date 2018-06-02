@@ -38,8 +38,8 @@
     
     <!-- 添加用户 -->
     <insert id="addUser" parameterType="User">
-    INSERT INTO t_user(name,sex,idcard,kind,ps)
-    VALUES(#{name},#{sex},#{idcard},#{kind},#{ps})
+    INSERT INTO t_user(name,sex,idcard,kind,ps,num)
+    VALUES(#{name},#{sex},#{idcard},#{kind},#{ps},#{num})
     </insert>
     
     <!-- 修改用户信息 -->

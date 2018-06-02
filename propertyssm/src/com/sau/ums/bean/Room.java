@@ -16,6 +16,8 @@ public class Room {
 
     private String number;
 
+    private String name;
+
     private String ps;
 
     public String getRoom() {
@@ -80,6 +82,14 @@ public class Room {
 
     public void setPs(String ps) {
         this.ps = ps;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
 }
