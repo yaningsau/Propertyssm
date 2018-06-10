@@ -1,9 +1,9 @@
 package com.sau.ums.complain.service;
 
-import javax.transaction.Transactional;
 
 import com.github.pagehelper.PageInfo;
 import com.sau.ums.bean.Complain;
+import org.springframework.transaction.annotation.Transactional;
 
 public interface ComplainService {
 

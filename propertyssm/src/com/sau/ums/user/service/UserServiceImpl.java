@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import com.sau.ums.bean.Propertyfee;
 import com.sau.ums.bean.User;
 import com.sau.ums.user.dao.UserDao;
 import com.sau.ums.util.Constant;
@@ -25,7 +26,7 @@ public class UserServiceImpl implements UserService {
         user = udao.getUserByName(username);
 
         //如果用户存在，判断密码是否正确
-        if (username != null) {
+        if (user != null) {
             if (!password.equals(user.getPassword())) {
                 user = null;
             }
@@ -109,5 +110,13 @@ public class UserServiceImpl implements UserService {
     @Override
     public void updateUserLogin(User user) {
         udao.updateUserLogin(user);
+    }
+
+    @Override
+    public boolean addHouseFee(Propertyfee propertyfee) {
+        boolean isSuccess = false;
+        udao.addHouseFee(propertyfee);
+        isSuccess = true;
+        return isSuccess;
     }
 }

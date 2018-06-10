@@ -1,9 +1,10 @@
 package com.sau.ums.user.service;
 
-import javax.transaction.Transactional;
 
 import com.github.pagehelper.PageInfo;
+import com.sau.ums.bean.Propertyfee;
 import com.sau.ums.bean.User;
+import org.springframework.transaction.annotation.Transactional;
 
 public interface UserService {
 
@@ -35,5 +36,7 @@ public interface UserService {
     Integer getUserInfoByIdCard(String idcard);
 
     void updateUserLogin(User user);
+
+    boolean addHouseFee(Propertyfee propertyfee);
 
 }

@@ -76,8 +76,8 @@ $(function(){
                 </li>       
                 <div>
                     <dl class="sub" id="sub3">
-                        <dd><a href="fee_search.jsp" class="col-sm-offset-3"><span>查询物业费</span></a></dd>
-                        <dd><a href="fee_add.jsp" class="col-sm-offset-3"><span>添加物业费</span></a></dd>
+                        <dd><a href="listPropertyfee.do" class="col-sm-offset-3"><span>查询物业费</span></a></dd>
+                        
                     </dl>
                 <div>
 	            

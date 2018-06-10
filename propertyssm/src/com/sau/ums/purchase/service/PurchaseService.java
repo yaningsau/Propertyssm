@@ -1,9 +1,9 @@
 package com.sau.ums.purchase.service;
 
-import javax.transaction.Transactional;
 
 import com.github.pagehelper.PageInfo;
 import com.sau.ums.bean.Purchase;
+import org.springframework.transaction.annotation.Transactional;
 
 public interface PurchaseService {
 

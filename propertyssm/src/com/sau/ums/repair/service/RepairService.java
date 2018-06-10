@@ -1,9 +1,9 @@
 package com.sau.ums.repair.service;
 
-import javax.transaction.Transactional;
 
 import com.github.pagehelper.PageInfo;
 import com.sau.ums.bean.Repair;
+import org.springframework.transaction.annotation.Transactional;
 
 public interface RepairService {
 

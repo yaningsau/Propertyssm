@@ -118,5 +118,11 @@
         idcard=#{idcard}
     </where>
     </update>
+
+    <!-- 添加用户 -->
+    <insert id="addHouseFee" parameterType="Propertyfee">
+        INSERT INTO t_propertyfee(room,housefee,parkfee,payment,ps,arrearage,time,status)
+        VALUES(#{room},#{housefee},#{parkfee},#{payment},#{ps},#{arrearage},#{time},#{status})
+    </insert>
     
 </mapper>
