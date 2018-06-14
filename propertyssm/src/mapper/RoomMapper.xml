@@ -45,6 +45,7 @@
     </where>
     </select>
     
+    <!-- 添加业主-->
     <update id="updateRoomInfo" parameterType="Room">
         update t_house
         <set>
@@ -53,6 +54,32 @@
             </if>
             <if test="number != null and number !=''">
                 ,number=#{number}
+            </if>
+        </set>
+        <where>
+            room=#{room}
+        </where>
+    </update>
+    
+    <!-- 修改信息 -->
+    <update id="updateRoom" parameterType="Room">
+    update t_house
+        <set>
+            <if test="roomtype != null">
+               roomtype=#{roomtype}
+            </if>
+            
+            <if test="publicarea != null">
+                ,publicarea=#{publicarea}
+            </if>
+            <if test="roomarea != null">
+                ,roomarea=#{roomarea}
+            </if>
+            <if test="roomarea != null">
+                ,area=#{area}
+            </if>
+            <if test="roomarea != null">
+                ,loftarea=#{loftarea}
             </if>
         </set>
         <where>

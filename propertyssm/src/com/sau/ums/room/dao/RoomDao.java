@@ -22,6 +22,10 @@ public interface RoomDao {
     //根据房间号查询房屋信息
     public Room getRoomInfoById(@Param("room") String room);
 
+    //添加房屋的业主信息
     public void updateRoomInfo(Room room);
+
+    //修改房屋信息
+    public void updateRoom(Room room);
 
 }

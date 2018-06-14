@@ -50,7 +50,6 @@ $(function(){
                 </li>       
                 <div>
                     <dl class="sub" id="sub1">
-                        <dd><a href="family_search.jsp" class="col-sm-offset-3"><span>查询家属</span></a></dd>
                         <dd><a href="family_add.jsp" class="col-sm-offset-3"><span>添加家属</span></a></dd>
                     </dl>
                 <div>

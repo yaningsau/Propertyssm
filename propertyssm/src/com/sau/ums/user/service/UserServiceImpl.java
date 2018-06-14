@@ -102,11 +102,13 @@ public class UserServiceImpl implements UserService {
         return isSuccess;
     }
 
+    //
     @Override
     public Integer getUserInfoByIdCard(String idcard) {
         return udao.getUserInfoByIdCard(idcard);
     }
 
+    //用户注册
     @Override
     public void updateUserLogin(User user) {
         udao.updateUserLogin(user);

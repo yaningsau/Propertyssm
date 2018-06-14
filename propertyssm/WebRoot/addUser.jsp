@@ -31,7 +31,7 @@
                 <div class="form-group">
                     <label class="col-sm-offset-3 col-sm-2 control-label">房号</label>
                     <div class="col-sm-3">
-                        <input type="text"class="form-control" name="room"/>
+                        <input type="text"class="form-control" placeholder="只需住户填写" name="room"/>
                     </div>
                 </div>
                 <div class="form-group">

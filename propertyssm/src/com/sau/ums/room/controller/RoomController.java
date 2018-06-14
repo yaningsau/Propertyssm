@@ -73,4 +73,32 @@ public class RoomController {
 
     }
 
+    //修改房屋信息
+    @RequestMapping("updateRoom.do")
+    @ResponseBody
+    public Map<String, Object> updateRoom(Room room, HttpSession session) {
+        Map<String, Object> map = new HashMap<String, Object>();
+        boolean isSuccess = false;
+
+        isSuccess = rs.updateRoom(room);
+        if (isSuccess) {
+            map.put("tip", "success");
+        } else {
+            map.put("tip", "error");
+        }
+        return map;
+    }
+
+    @RequestMapping("getRoomInfoById.do")
+    public String getRoomInfoById(String room, ModelMap model) {
+        Room rm = new Room();
+        try {
+            rm = rs.getRoomInfoById(room);
+            model.addAttribute("rm", rm);
+        } catch (Exception e) {
+            e.getMessage();
+        }
+        return "updateRoom";
+    }
+
 }

@@ -30,16 +30,17 @@ public class RoomServiceImpl implements RoomService {
         return page;
     }
 
+    //删除房屋
     @Override
     public boolean delRoom(Room room) {
         boolean isSuccess = false;
 
-        //删除房屋
         rdao.delRoom(room);
         isSuccess = true;
         return isSuccess;
     }
 
+    //添加
     @Override
     public boolean addRoom(Room room) {
         boolean isSuccess = false;
@@ -50,15 +51,26 @@ public class RoomServiceImpl implements RoomService {
         return isSuccess;
     }
 
+    //根据房间号查询房屋信息
     @Override
     public Room getRoomInfoById(String room) {
         return rdao.getRoomInfoById(room);
     }
 
+    //添加业主
     @Override
     public boolean updateRoomInfo(Room room) {
         boolean isSuccess = false;
         rdao.updateRoomInfo(room);
+        isSuccess = true;
+        return isSuccess;
+    }
+
+    //修改信息
+    @Override
+    public boolean updateRoom(Room room) {
+        boolean isSuccess = false;
+        rdao.updateRoom(room);
         isSuccess = true;
         return isSuccess;
     }

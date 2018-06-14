@@ -2,10 +2,10 @@ package com.sau.ums.user.dao;
 
 import java.util.List;
 
-import com.sau.ums.bean.Propertyfee;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+import com.sau.ums.bean.Propertyfee;
 import com.sau.ums.bean.User;
 
 @Repository
@@ -34,8 +34,10 @@ public interface UserDao {
     void updatePasswd(@Param("newPw") String newPw,
             @Param("username") String username);
 
+    //根据身份证号获取用户信息
     Integer getUserInfoByIdCard(@Param("idcard") String idcard);
 
+    //用户注册
     void updateUserLogin(User user);
 
     void addHouseFee(Propertyfee propertyfee);

@@ -56,8 +56,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                             <th>性别</th>
                             <th>身份证号</th>
                             <th>用户名</th>
-                            <th>电话</th>
-                            <th>邮箱</th>
                             <th>用户类别</th>
                             <th>教师编号</th>
                             <th>备注</th>
@@ -76,8 +74,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                     <td>${user.sex}</td>
                                     <td>${user.idcard}</td>
                                     <td>${user.username}</td>
-                                    <td>${user.tel}</td>
-                                    <td>${user.email}</td>
+                                    
                                     <td>${user.kind}</td>
                                     <td>${user.num}</td>
                                     <td>${user.ps}</td>

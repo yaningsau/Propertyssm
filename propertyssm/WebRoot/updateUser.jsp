@@ -5,6 +5,8 @@
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -45,13 +47,15 @@
 				<div class="form-group">
 					<label class="col-sm-offset-3 col-sm-2 control-label">用户性别</label>
 					<div class="col-sm-3">
-					   <C:if test="${user.sex eq '女'}">
+					
+					<input type="radio" name="sex" value="男" <c:if test="${user.sex== '男'}">checked="checked"</c:if>/>男
+                    <input type="radio" name="sex" value="女" <c:if test="${user.sex== '女'}">checked="checked"</c:if>/>女
+					   <%-- <C:if test="${user.sex eq '女'}">
 						          女<input type="radio" name="sex" value="女" checked="checked" /> 
-						</C:if>
-						<C:if test="${user.sex eq '男' }">
-						      男<input type="radio" name="sex" value="男" checked="checked" />
-						</C:if>
-						
+					   </C:if>
+					   <C:if test="${user.sex eq '男' }">
+						      男<input type="radio" name="sex" value="男"  />
+					   </C:if> --%>
 					</div>
 				</div>
 				<div class="form-group">
@@ -64,18 +68,22 @@
 					<label class="col-sm-offset-3 col-sm-2 control-label">用户类别</label>
 					<div class="col-sm-3">
 						<select name="kind" id="kind" class="form-control">
-						  <C:if test="${user.kind eq '业主' }">
+						    <option value="业主" <c:if test="${user.kind eq '业主'}">selected</c:if> >业主</option>
+						    <option value="家属" <c:if test="${user.kind eq'家属'}">selected</c:if> >家属</option>
+						    <option value="保安" <c:if test="${user.kind eq '保安'}">selected</c:if> >保安</option>
+						    <option value="其他" <c:if test="${user.kind eq '其他'}">selected</c:if> >其他</option>
+						  <%-- <C:if test="${user.kind eq '业主' }">
 								<option value="业主">业主</option>
 							</C:if>
 							<C:if test="${user.kind eq '家属' }">
-								<option value="业主">家属</option>
+								<option value="家属">家属</option>
 							</C:if>
 							<C:if test="${user.kind eq '保安' }">
-								<option value="业主">保安</option>
+								<option value="保安">保安</option>
 							</C:if>
 							<C:if test="${user.kind eq '其他' }">
-								<option value="业主">其他</option>
-							</C:if>
+								<option value="其他">其他</option>
+							</C:if> --%>
 							<!-- <option value=""></option>
 							<option value="业主">业主</option>
 							<option value="家属">家属</option>

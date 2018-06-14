@@ -75,10 +75,15 @@ public class UserController {
     @ResponseBody
     public Map<String, Object> addUser(User user, HttpServletRequest request) {
         Map<String, Object> map = new HashMap<String, Object>();
+
         boolean isSuccess = false;
+
         boolean isRoomSuccess = false;
+
         boolean isHouseFeeSuccess = false;
+
         Propertyfee propertyfee = new Propertyfee();
+
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
         String date = df.format(new Date());// new Date()为获取当前系统时间，也可使用当前时间戳
         String room = request.getParameter("room");

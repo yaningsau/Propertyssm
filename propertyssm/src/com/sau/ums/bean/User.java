@@ -14,10 +14,6 @@ public class User {
 
     private String password;
 
-    private String tel;
-
-    private String email;
-
     private String kind;
 
     private String num;
@@ -70,22 +66,6 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public String getTel() {
-        return tel;
-    }
-
-    public void setTel(String tel) {
-        this.tel = tel;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public String getKind() {

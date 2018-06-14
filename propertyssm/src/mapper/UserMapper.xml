@@ -4,7 +4,7 @@
 
 <mapper namespace="com.sau.ums.user.dao.UserDao">
     <sql id="usercolumn">
-        id,name,sex,idcard,username,password,tel,email,kind,num,ps
+        id,name,sex,idcard,username,password,kind,num,ps
     </sql>
     <!-- 通过用户名查询用户信息 -->
    <select id="getUserByName" parameterType="string" resultType="User">
@@ -82,7 +82,7 @@
        WHERE username=#{username}
     </select>
     
-    <!-- 修改用户信息 -->
+    <!-- 修改密码-->
     <update id="updatePasswd" parameterType="String">
     UPDATE t_user
     <set>
@@ -103,7 +103,7 @@
        WHERE idcard=#{idcard}
     </select>
     
-    <!-- 修改用户信息 -->
+    <!-- 用户注册 -->
     <update id="updateUserLogin" parameterType="User">
     UPDATE t_user
     <set>
