@@ -1,8 +1,5 @@
 package com.sau.ums.user.controller;
 
-import java.sql.Timestamp;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -84,8 +81,8 @@ public class UserController {
 
         Propertyfee propertyfee = new Propertyfee();
 
-        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
-        String date = df.format(new Date());// new Date()为获取当前系统时间，也可使用当前时间戳
+        //SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+        //String date = df.format(new Date());// new Date()为获取当前系统时间，也可使用当前时间戳
         String room = request.getParameter("room");
         if (room != null && room != "") {
             //根据房间号获取房屋表对应数据
@@ -98,7 +95,7 @@ public class UserController {
             propertyfee.setPayment(houseFee);
             propertyfee.setArrearage(houseFee);
             propertyfee.setStatus("未缴费");
-            propertyfee.setTime(Timestamp.valueOf(date));
+            //propertyfee.setTime(Timestamp.valueOf(date));
             roomInfo.setName(user.getName());
             roomInfo.setNumber(user.getNum());
             isRoomSuccess = roomService.updateRoomInfo(roomInfo);

@@ -8,7 +8,9 @@ import org.springframework.stereotype.Service;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.sau.ums.bean.Park;
+import com.sau.ums.bean.Propertyfee;
 import com.sau.ums.park.dao.ParkDao;
+import com.sau.ums.propertyfee.dao.PropertyFeeDao;
 import com.sau.ums.util.Constant;
 
 @Service
@@ -16,6 +18,9 @@ public class ParkServiceImpl implements ParkService {
 
     @Autowired
     private ParkDao pdao;
+
+    @Autowired
+    private PropertyFeeDao propertyFeeDao;
 
     @Override
     public PageInfo<Park> listPark(Park park, Integer pageNum) {
@@ -63,6 +68,28 @@ public class ParkServiceImpl implements ParkService {
         isSuccess = true;
 
         return isSuccess;
+    }
+
+    @Override
+    public List<Park> getParkInfoByRoom(String room) {
+
+        return pdao.getParkInfoByRoom(room);
+    }
+
+    @Override
+    public boolean updateParkFee(Propertyfee propertyfee) {
+        boolean isSuccess = false;
+
+        pdao.updateParkFee(propertyfee);
+        isSuccess = true;
+
+        return isSuccess;
+    }
+
+    @Override
+    public Propertyfee getHousefee(String room) {
+
+        return propertyFeeDao.getHousefee(room);
     }
 
 }

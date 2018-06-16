@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Repository;
 
 import com.sau.ums.bean.Park;
+import com.sau.ums.bean.Propertyfee;
 
 @Repository
 public interface ParkDao {
@@ -24,4 +25,9 @@ public interface ParkDao {
     //修改
     public void updatePark(Park park);
 
+    //根据房号查询停车位数量
+    List<Park> getParkInfoByRoom(String room);
+
+    //添加停车位物业费
+    public void updateParkFee(Propertyfee propertyfee);
 }

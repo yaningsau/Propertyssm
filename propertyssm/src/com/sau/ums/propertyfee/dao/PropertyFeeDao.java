@@ -10,4 +10,7 @@ import com.sau.ums.bean.Propertyfee;
 public interface PropertyFeeDao {
 
     public List<Propertyfee> listPropertyfee(Propertyfee propertyfee);
+
+    //查询housefee
+    public Propertyfee getHousefee(String room);
 }

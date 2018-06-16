@@ -1,8 +1,10 @@
 package com.sau.ums.park.controller;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +15,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.github.pagehelper.PageInfo;
 import com.sau.ums.bean.Park;
+import com.sau.ums.bean.Propertyfee;
 import com.sau.ums.park.service.ParkService;
+import com.sau.ums.util.Constant;
 
 @Controller
 public class ParkController {
@@ -90,11 +94,32 @@ public class ParkController {
     //修改
     @RequestMapping("updatePark.do")
     @ResponseBody
-    public Map<String, Object> updatePark(Park park, HttpSession session) {
+    public Map<String, Object> updatePark(Park park, HttpServletRequest request) {
         Map<String, Object> map = new HashMap<String, Object>();
         boolean isSuccess = false;
 
+        boolean isParkFeeSuccess = false;
+
+        String room = request.getParameter("room");
+
+        List<Park> parkInfo = ps.getParkInfoByRoom(room);
+        int num = parkInfo.size();
+        float parkfee = Constant.PARKFEE_PER_CAR * num;
+        float housefee = ps.getHousefee(room).getHousefee();
+        float payment = parkfee + housefee;
+        Propertyfee propertyfee = new Propertyfee();
+
+        propertyfee.setParkfee(parkfee);
+        propertyfee.setPayment(payment);
+        propertyfee.setRoom(room);
+
         isSuccess = ps.updatePark(park);
+        isParkFeeSuccess = ps.updateParkFee(propertyfee);
+        if (isSuccess && isParkFeeSuccess) {
+            map.put("tip", "success");
+        } else {
+            map.put("tip", "error");
+        }
 
         if (isSuccess) {
             map.put("tip", "success");
@@ -103,5 +128,4 @@ public class ParkController {
         }
         return map;
     }
-
 }

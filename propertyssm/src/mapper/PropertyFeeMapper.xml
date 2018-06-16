@@ -13,4 +13,11 @@
         </if>
     </where>
     </select>
+    
+      <!-- 查询housefee -->
+   <select id="getHousefee" parameterType="String" resultType="Propertyfee" >
+       SELECT housefee
+       FROM t_propertyfee 
+       WHERE room=#{room}
+  </select>
 </mapper>
