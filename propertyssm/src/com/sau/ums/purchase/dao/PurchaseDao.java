@@ -18,4 +18,10 @@ public interface PurchaseDao {
     //添加
     public void addPurchase(Purchase purchase);
 
+    //修改
+    public void updatePurchase(Purchase purchase);
+
+    //根据id获取信息
+    Purchase getPurchaseInfoById(Integer id);
+
 }

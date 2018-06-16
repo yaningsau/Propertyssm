@@ -4,7 +4,7 @@ String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt"%>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
@@ -77,10 +77,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                     <td>${guard.idcard}</td>
                                     <td>${guard.tel}</td>
                                     <td>${guard.lnum}</td>
-                                    <td>${guard.time}</td>
+                                    <td><fmt:formatDate value="${guard.time}" pattern="yyyy-MM-dd" /></td>
                                     <td>${guard.ps}</td>
                                     <td>
-                                    <a href=>修改</a>
                                     <a onClick='return delGuard(this);' href='delGuard.do?id=${guard.id}'>删除</a>
                                     </td>
                                  </tr>

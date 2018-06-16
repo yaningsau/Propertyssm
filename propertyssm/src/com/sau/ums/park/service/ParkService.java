@@ -1,9 +1,9 @@
 package com.sau.ums.park.service;
 
+import org.springframework.transaction.annotation.Transactional;
 
 import com.github.pagehelper.PageInfo;
 import com.sau.ums.bean.Park;
-import org.springframework.transaction.annotation.Transactional;
 
 public interface ParkService {
 
@@ -16,5 +16,11 @@ public interface ParkService {
 
     //添加
     public boolean addPark(Park park);
+
+    //根据车位好查询信息
+    Park getParkInfoById(String carnum);
+
+    //修改
+    public boolean updatePark(Park park);
 
 }

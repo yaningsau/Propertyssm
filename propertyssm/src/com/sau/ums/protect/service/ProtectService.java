@@ -1,9 +1,9 @@
 package com.sau.ums.protect.service;
 
+import org.springframework.transaction.annotation.Transactional;
 
 import com.github.pagehelper.PageInfo;
 import com.sau.ums.bean.Protect;
-import org.springframework.transaction.annotation.Transactional;
 
 public interface ProtectService {
 
@@ -16,5 +16,11 @@ public interface ProtectService {
 
     //添加安防
     public boolean addProtect(Protect protect);
+
+    //修改
+    public boolean updateProtect(Protect protect);
+
+    //根据id查询信息
+    Protect getProtectInfoById(Integer id);
 
 }

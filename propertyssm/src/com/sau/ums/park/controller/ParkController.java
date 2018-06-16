@@ -74,4 +74,34 @@ public class ParkController {
         return map;
     }
 
+    //查询信息
+    @RequestMapping("getParkInfoById.do")
+    public String getParkInfoById(String carnum, ModelMap model) {
+        Park park = new Park();
+        try {
+            park = ps.getParkInfoById(carnum);
+            model.addAttribute("park", park);
+        } catch (Exception e) {
+            e.getMessage();
+        }
+        return "updatePark";
+    }
+
+    //修改
+    @RequestMapping("updatePark.do")
+    @ResponseBody
+    public Map<String, Object> updatePark(Park park, HttpSession session) {
+        Map<String, Object> map = new HashMap<String, Object>();
+        boolean isSuccess = false;
+
+        isSuccess = ps.updatePark(park);
+
+        if (isSuccess) {
+            map.put("tip", "success");
+        } else {
+            map.put("tip", "error");
+        }
+        return map;
+    }
+
 }

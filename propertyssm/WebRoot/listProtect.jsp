@@ -67,7 +67,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                     <td>${protect.facility}</td>
                                     <td>${protect.ps}</td>
                                     <td>
-                                    <a href=>修改</a>
+                                    <a href='getProtectInfoById.do?id=${protect.id}'>修改</a>
                                     <a onClick='return delProtect(this);' href='delProtect.do?position=${protect.position}'>删除</a>
                                     </td>
                                  </tr>

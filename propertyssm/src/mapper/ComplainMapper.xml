@@ -27,5 +27,26 @@
   INSERT INTO t_complain(complain,status,ps)
   VALUES(#{complain},#{status},#{ps})
   </insert>
+  
+  <!-- 根据id查询信息 -->
+  <select id="getComplainInfoById" parameterType="String" resultType="Complain">
+       SELECT <include refid="complaincolumn"></include>
+       FROM t_complain
+       WHERE id=#{id}
+  </select>
+  
+  <!-- 修改 -->
+    <update id="updateComplain" parameterType="Complain">
+    UPDATE t_complain
+    <set>
+    <if test="status != null">
+    status=#{status}
+    </if>
+    <if test="way != null">
+    ,way=#{way}
+    </if>
+    </set>
+    WHERE id=#{id}
+    </update>
 
 </mapper>

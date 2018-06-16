@@ -9,9 +9,6 @@ import com.github.pagehelper.PageInfo;
 import com.sau.ums.bean.Propertyfee;
 import com.sau.ums.propertyfee.service.PropertyFeeService;
 
-/**
- * Created by luchang on 2018/6/6.
- */
 @Controller
 public class PropertyFeeController {
 

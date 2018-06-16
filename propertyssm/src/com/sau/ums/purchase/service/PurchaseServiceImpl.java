@@ -52,4 +52,20 @@ public class PurchaseServiceImpl implements PurchaseService {
 
         return isSuccess;
     }
+
+    @Override
+    public boolean updatePurchase(Purchase purchase) {
+        boolean isSuccess = false;
+
+        pdao.updatePurchase(purchase);
+        isSuccess = true;
+
+        return isSuccess;
+    }
+
+    @Override
+    public Purchase getPurchaseInfoById(Integer id) {
+
+        return pdao.getPurchaseInfoById(id);
+    }
 }

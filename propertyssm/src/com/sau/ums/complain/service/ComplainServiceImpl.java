@@ -54,4 +54,21 @@ public class ComplainServiceImpl implements ComplainService {
         return isSuccess;
 
     }
+
+    @Override
+    public Complain getComplainInfoById(Integer id) {
+
+        return cdao.getComplainInfoById(id);
+    }
+
+    @Override
+    public boolean updateComplain(Complain complain) {
+        boolean isSuccess = false;
+
+        cdao.updateComplain(complain);
+
+        isSuccess = true;
+
+        return isSuccess;
+    }
 }

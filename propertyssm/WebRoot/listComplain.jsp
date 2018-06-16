@@ -88,7 +88,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                     <td>${complain.ps}</td>
                                     <c:if test="${ loguser.kind == '管理员' }">
                                     <td>
-                                    <a href=>处理</a>
+                                    <a href='getComplainInfoById.do?id=${complain.id}'>处理</a>
                                     <a onClick='return delComplain(this);' href='delComplain.do?id=${complain.id}'>删除</a>
                                     </td>
                                     </c:if>

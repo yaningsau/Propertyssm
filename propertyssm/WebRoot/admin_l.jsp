@@ -108,7 +108,6 @@ $(function(){
                     <dl class="sub" id="sub6">
                         <dd><a href="listPark.do" class="col-sm-offset-3"><span>查询停车位</span></a></dd>
                         <dd><a href="addPark.jsp" class="col-sm-offset-3"><span>添加停车位</span></a></dd>
-                        <dd><a href="usepark.jsp" class="col-sm-offset-3"><span>车位使用登记</span></a></dd>
                     </dl>
                 <div>
                 

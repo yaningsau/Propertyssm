@@ -1,9 +1,9 @@
 package com.sau.ums.complain.service;
 
+import org.springframework.transaction.annotation.Transactional;
 
 import com.github.pagehelper.PageInfo;
 import com.sau.ums.bean.Complain;
-import org.springframework.transaction.annotation.Transactional;
 
 public interface ComplainService {
 
@@ -16,5 +16,11 @@ public interface ComplainService {
 
     //添加
     public boolean addComplain(Complain complain);
+
+    //根据id查询信息
+    Complain getComplainInfoById(Integer id);
+
+    //修改
+    public boolean updateComplain(Complain complain);
 
 }

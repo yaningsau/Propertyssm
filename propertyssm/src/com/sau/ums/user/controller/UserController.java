@@ -138,11 +138,8 @@ public class UserController {
         return map;
     }
 
-    /**
-     * 根据id获取用户信息
-     * @param id id
-     * @return
-     */
+    // 根据id获取用户信息
+
     @RequestMapping("getUserInfoById.do")
     public String getUserInfoById(Integer id, ModelMap model) {
         User user = new User();

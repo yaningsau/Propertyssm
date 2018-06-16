@@ -33,7 +33,7 @@
                 </div>
                 <div class="form-group">
                     <label class="col-sm-offset-3 col-sm-2 control-label">设备</label>
-                    <div class="col-sm-3">
+                    <div class="col-sm-3"  style="margin-top: 5px;">
                     <input type="checkbox" name="facility" value="灭火器"/>灭火器
                     <input type="checkbox" name="facility" value="烟雾报警器"/>烟雾报警器
                     <input type="checkbox" name="facility" value="防盗窗"/>防盗窗

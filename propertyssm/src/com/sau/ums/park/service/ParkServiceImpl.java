@@ -50,4 +50,19 @@ public class ParkServiceImpl implements ParkService {
         return isSuccess;
     }
 
+    @Override
+    public Park getParkInfoById(String carnum) {
+        return pdao.getParkInfoById(carnum);
+    }
+
+    @Override
+    public boolean updatePark(Park park) {
+        boolean isSuccess = false;
+
+        pdao.updatePark(park);
+        isSuccess = true;
+
+        return isSuccess;
+    }
+
 }

@@ -69,4 +69,34 @@ public class ProtectController {
         return map;
     }
 
+    //修改
+    @RequestMapping("updateProtect.do")
+    @ResponseBody
+    public Map<String, Object> updateProtect(Protect protect,
+            HttpSession session) {
+        Map<String, Object> map = new HashMap<String, Object>();
+        boolean isSuccess = false;
+
+        isSuccess = ps.updateProtect(protect);
+        if (isSuccess) {
+            map.put("tip", "success");
+        } else {
+            map.put("tip", "error");
+        }
+        return map;
+    }
+
+    //查询信息
+    @RequestMapping("getProtectInfoById.do")
+    public String getProtectInfoById(Integer id, ModelMap model) {
+        Protect protect = new Protect();
+        try {
+            protect = ps.getProtectInfoById(id);
+            model.addAttribute("protect", protect);
+        } catch (Exception e) {
+            e.getMessage();
+        }
+        return "updateProtect";
+    }
+
 }

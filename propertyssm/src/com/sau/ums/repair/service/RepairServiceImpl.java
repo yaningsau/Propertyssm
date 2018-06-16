@@ -50,4 +50,20 @@ public class RepairServiceImpl implements RepairService {
         return isSuccess;
     }
 
+    @Override
+    public boolean updateRepair(Repair repair) {
+        boolean isSuccess = false;
+
+        rdao.updateRepair(repair);
+        isSuccess = true;
+
+        return isSuccess;
+    }
+
+    @Override
+    public Repair getRepairInfoById(Integer id) {
+
+        return rdao.getRepairInfoById(id);
+    }
+
 }

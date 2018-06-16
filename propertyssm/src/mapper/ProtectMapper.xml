@@ -27,4 +27,25 @@
     INSERT INTO t_protect(position,facility,ps)
     VALUES(#{position},#{facility},#{ps})
     </insert>
+    
+    <!-- 根据id查询信息 -->
+    <select id="getProtectInfoById" parameterType="String" resultType="Protect">
+       SELECT <include refid="protectcolumn"></include>
+       FROM t_protect
+       WHERE id=#{id}
+  </select>
+  
+  <!-- 修改 -->
+    <update id="updateProtect" parameterType="Protect">
+    UPDATE t_protect
+    <set>
+    <if test="position != null">
+    position=#{position}
+    </if>
+    <if test="facility != null">
+    ,facility=#{facility}
+    </if>
+    </set>
+    WHERE id=#{id}
+    </update>
 </mapper>

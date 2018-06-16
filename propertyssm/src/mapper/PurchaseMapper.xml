@@ -29,5 +29,38 @@
   INSERT INTO t_purchase(sname,price,number,total,uses,time,ps)
   VALUES(#{sname},#{price},#{number},#{total},#{uses},#{time},#{ps})
   </insert>
+  
+  <!-- 根据id查询信息 -->
+    <select id="getPurchaseInfoById" parameterType="String" resultType="Purchase">
+       SELECT <include refid="purchasecolumn"></include>
+       FROM t_purchase
+       WHERE id=#{id}
+    </select>
+    
+    <!-- 修改信息 -->
+    <update id="updatePurchase" parameterType="Purchase">
+    UPDATE t_purchase
+    <set>
+    <if test="sname != null">
+    sname=#{sname}
+    </if>
+    <if test="price != null">
+    ,price=#{price}
+    </if>
+    <if test="number != null">
+    ,number=#{number}
+    </if>
+    <if test="total != null">
+    ,total=#{total}
+    </if>
+    <if test="uses != null">
+    ,uses=#{uses}
+    </if>
+    <if test="time != null">
+    ,time=#{time}
+    </if>
+    </set>
+    WHERE id=#{id}
+    </update>
 
 </mapper>

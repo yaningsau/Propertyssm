@@ -25,7 +25,7 @@
 
   <div class="nav_l col-sm-8">
     <font size=+5 color="#fff">蒲新教师公寓物业管理系统</font>
-    <a data-toggle="modal" data-target="#myModal" style="color: white; margin-left: 190px;">修改密码</a>&nbsp;
+    <a data-toggle="modal" data-target="#myModal" style="color: white; margin-left: 180px;">修改密码</a>&nbsp;
     <a href="login.jsp" style="color: white" onclick="return confirm('确定注销登录吗?');">注销</a>
   </div>
     </div>

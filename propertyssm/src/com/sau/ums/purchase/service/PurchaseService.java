@@ -1,9 +1,9 @@
 package com.sau.ums.purchase.service;
 
+import org.springframework.transaction.annotation.Transactional;
 
 import com.github.pagehelper.PageInfo;
 import com.sau.ums.bean.Purchase;
-import org.springframework.transaction.annotation.Transactional;
 
 public interface PurchaseService {
 
@@ -17,4 +17,9 @@ public interface PurchaseService {
     //添加
     public boolean addPurchase(Purchase purchase);
 
+    //修改
+    public boolean updatePurchase(Purchase purchase);
+
+    //根据id获取信息
+    Purchase getPurchaseInfoById(Integer id);
 }

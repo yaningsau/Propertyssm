@@ -18,4 +18,10 @@ public interface RepairDao {
     //添加
     public void addRepair(Repair repair);
 
+    //修改
+    public void updateRepair(Repair repair);
+
+    //根据id查询信息
+    Repair getRepairInfoById(Integer id);
+
 }

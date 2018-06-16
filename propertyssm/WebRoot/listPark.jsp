@@ -86,12 +86,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                     <td>${park.carnum}</td>
                                     <td><fmt:formatDate value="${park.begintime}" pattern="yyyy-MM-dd" /></td>
                                     <td><fmt:formatDate value="${park.endtime}" pattern="yyyy-MM-dd" /></td>
-                                    <td>${park.status}</td>
                                     <td>${park.room}</td>
+                                    <td>${park.status}</td>
                                     <td>${park.ps}</td>
                                     <c:if test="${ loguser.kind == '管理员' }">
                                     <td>
-                                    <a href=>修改</a>
+                                    <a href='getParkInfoById.do?carnum=${park.carnum}'>使用登记</a>
                                     <a onClick='return delPark(this);' href='delPark.do?carnum=${park.carnum}'>删除</a>
                                     </td>
                                     </c:if>

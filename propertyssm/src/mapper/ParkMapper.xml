@@ -34,5 +34,30 @@
   INSERT INTO t_park(carnum,status,ps)
   VALUES(#{carnum},#{status},#{ps})
   </insert>
+  
+  <!-- 查询信息 -->
+    <select id="getParkInfoById" parameterType="String" resultType="Park">
+       SELECT <include refid="parkcolumn"></include>
+       FROM t_Park
+       WHERE carnum=#{carnum}
+  </select>
+  
+  <!-- 修改 -->
+    <update id="updatePark" parameterType="Park">
+    UPDATE t_park
+    <set>
+    <if test="begintime != null">
+    begintime=#{begintime}
+    </if>
+    <if test="endtime != null">
+    ,endtime=#{endtime}
+    </if>
+    <if test="room != null">
+    ,room=#{room}
+    </if>
+    ,status=#{status}
+    </set>
+    WHERE carnum=#{carnum}
+    </update>
 
 </mapper>

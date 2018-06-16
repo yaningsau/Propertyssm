@@ -18,4 +18,10 @@ public interface ProtectDao {
     //添加安防
     public void addProtect(Protect protect);
 
+    //修改
+    public void updateProtect(Protect protect);
+
+    //根据id查询信息
+    Protect getProtectInfoById(Integer id);
+
 }

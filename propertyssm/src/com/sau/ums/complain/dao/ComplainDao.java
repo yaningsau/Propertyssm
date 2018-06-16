@@ -18,4 +18,10 @@ public interface ComplainDao {
     //添加
     public void addComplain(Complain complain);
 
+    //根据id查询信息
+    Complain getComplainInfoById(Integer id);
+
+    //修改
+    public void updateComplain(Complain complain);
+
 }

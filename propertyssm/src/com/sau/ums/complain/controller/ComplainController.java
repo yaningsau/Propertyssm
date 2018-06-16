@@ -74,4 +74,35 @@ public class ComplainController {
         return map;
     }
 
+    //根据id获取信息
+    @RequestMapping("getComplainInfoById.do")
+    public String getComplainInfoById(Integer id, ModelMap model) {
+        Complain complain = new Complain();
+        try {
+            complain = cs.getComplainInfoById(id);
+            model.addAttribute("complain", complain);
+        } catch (Exception e) {
+            e.getMessage();
+        }
+        return "updateComplain";
+    }
+
+    //修改
+    @RequestMapping("updateComplain.do")
+    @ResponseBody
+    public Map<String, Object> updateComplain(Complain complain,
+            HttpSession session) {
+        Map<String, Object> map = new HashMap<String, Object>();
+        boolean isSuccess = false;
+
+        isSuccess = cs.updateComplain(complain);
+
+        if (isSuccess) {
+            map.put("tip", "success");
+        } else {
+            map.put("tip", "error");
+        }
+        return map;
+    }
+
 }

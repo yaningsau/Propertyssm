@@ -53,4 +53,20 @@ public class ProtectServiceImpl implements ProtectService {
         return isSuccess;
     }
 
+    @Override
+    public boolean updateProtect(Protect protect) {
+        boolean isSuccess = false;
+
+        pdao.updateProtect(protect);
+        isSuccess = true;
+
+        return isSuccess;
+    }
+
+    @Override
+    public Protect getProtectInfoById(Integer id) {
+
+        return pdao.getProtectInfoById(id);
+    }
+
 }

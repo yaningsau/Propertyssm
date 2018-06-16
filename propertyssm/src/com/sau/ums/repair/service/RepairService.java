@@ -1,9 +1,9 @@
 package com.sau.ums.repair.service;
 
+import org.springframework.transaction.annotation.Transactional;
 
 import com.github.pagehelper.PageInfo;
 import com.sau.ums.bean.Repair;
-import org.springframework.transaction.annotation.Transactional;
 
 public interface RepairService {
 
@@ -16,5 +16,11 @@ public interface RepairService {
 
     //添加
     public boolean addRepair(Repair repair);
+
+    //修改
+    public boolean updateRepair(Repair repair);
+
+    //根据id获取信息
+    Repair getRepairInfoById(Integer id);
 
 }

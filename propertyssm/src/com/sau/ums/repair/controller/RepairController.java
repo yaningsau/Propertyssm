@@ -41,7 +41,7 @@ public class RepairController {
     //删除
     @RequestMapping("delRepair.do")
     @ResponseBody
-    public Map<String, Object> delProtect(Repair repair, HttpSession session) {
+    public Map<String, Object> delRepair(Repair repair, HttpSession session) {
         Map<String, Object> map = new HashMap<String, Object>();
         boolean isSuccess = false;
 
@@ -57,7 +57,7 @@ public class RepairController {
     //添加
     @RequestMapping("addRepair.do")
     @ResponseBody
-    public Map<String, Object> addProtect(Repair repair, HttpSession session) {
+    public Map<String, Object> addRepair(Repair repair, HttpSession session) {
         Map<String, Object> map = new HashMap<String, Object>();
         boolean isSuccess = false;
 
@@ -68,6 +68,35 @@ public class RepairController {
             map.put("tip", "error");
         }
         return map;
+    }
+
+    //修改
+    @RequestMapping("updateRepair.do")
+    @ResponseBody
+    public Map<String, Object> updateRepair(Repair repair, HttpSession session) {
+        Map<String, Object> map = new HashMap<String, Object>();
+        boolean isSuccess = false;
+
+        isSuccess = rs.updateRepair(repair);
+        if (isSuccess) {
+            map.put("tip", "success");
+        } else {
+            map.put("tip", "error");
+        }
+        return map;
+    }
+
+    //根据id获取信息
+    @RequestMapping("getRepairInfoById.do")
+    public String getRepairInfoById(Integer id, ModelMap model) {
+        Repair repair = new Repair();
+        try {
+            repair = rs.getRepairInfoById(id);
+            model.addAttribute("repair", repair);
+        } catch (Exception e) {
+            e.getMessage();
+        }
+        return "updateRepair";
     }
 
 }

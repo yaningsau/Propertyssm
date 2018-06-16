@@ -11,9 +11,6 @@ import com.sau.ums.bean.Propertyfee;
 import com.sau.ums.propertyfee.dao.PropertyFeeDao;
 import com.sau.ums.util.Constant;
 
-/**
- * Created by luchang on 2018/6/6.
- */
 @Service
 public class PropertyFeeServiceImpl implements PropertyFeeService {
 

@@ -96,7 +96,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                     <td>${repair.ps}</td>
                                    <c:if test="${ loguser.kind == '管理员' }">
                                     <td>
-                                    <a href=>处理</a>
+                                    <a href='getRepairInfoById.do?id=${repair.id}' >处理</a>
                                     <a onClick='return delRepair(this);' href='delRepair.do?id=${repair.id}'>删除</a>
                                     </td>
                                     </c:if>

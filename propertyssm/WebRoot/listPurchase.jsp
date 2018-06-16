@@ -75,7 +75,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                     <td><fmt:formatDate value="${purchase.time}" pattern="yyyy-MM-dd" /></td>
                                     <td>${purchase.ps}</td>
                                     <td>
-                                    <a href=>修改</a>
+                                    <a href='getPurchaseInfoById.do?id=${purchase.id}'>修改</a>
                                     <a onClick='return delPurchase(this);' href='delPurchase.do?id=${purchase.id}'>删除</a>
                                     </td>
                                  </tr>

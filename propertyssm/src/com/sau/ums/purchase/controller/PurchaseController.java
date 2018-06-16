@@ -74,6 +74,38 @@ public class PurchaseController {
             map.put("tip", "error");
         }
         return map;
+
+    }
+
+    //修改
+    @RequestMapping("updatePurchase.do")
+    @ResponseBody
+    public Map<String, Object> updatePurchase(Purchase purchase,
+            HttpSession session) {
+        Map<String, Object> map = new HashMap<String, Object>();
+
+        boolean isSuccess = false;
+        isSuccess = ps.updatePurchase(purchase);
+
+        if (isSuccess) {
+            map.put("tip", "success");
+        } else {
+            map.put("tip", "error");
+        }
+        return map;
+    }
+
+    //根据id获取信息
+    @RequestMapping("getPurchaseInfoById.do")
+    public String getPurchaseInfoById(Integer id, ModelMap model) {
+        Purchase purchase = new Purchase();
+        try {
+            purchase = ps.getPurchaseInfoById(id);
+            model.addAttribute("purchase", purchase);
+        } catch (Exception e) {
+            e.getMessage();
+        }
+        return "updatePurchase";
     }
 
 }

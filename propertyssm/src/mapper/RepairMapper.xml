@@ -34,5 +34,23 @@
   INSERT INTO t_repair(room,position,name,tel,facility,status,ps)
   VALUES(#{room},#{position},#{name},#{tel},#{facility},#{status},#{ps})
   </insert>
+  
+  <!-- 根据id查询信息 -->
+  <select id="getRepairInfoById" parameterType="String" resultType="Repair">
+       SELECT <include refid="repaircolumn"></include>
+       FROM t_repair
+       WHERE id=#{id}
+  </select>
+  
+  <!-- 修改 -->
+    <update id="updateRepair" parameterType="Repair">
+    UPDATE t_repair
+    <set>
+    <if test="status != null">
+    status=#{status}
+    </if>
+    </set>
+    WHERE id=#{id}
+    </update>
 
 </mapper>
