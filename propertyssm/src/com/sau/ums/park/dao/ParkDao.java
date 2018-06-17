@@ -19,7 +19,7 @@ public interface ParkDao {
     //添加
     public void addPark(Park park);
 
-    //根据车位好查询信息
+    //根据车位号查询信息
     Park getParkInfoById(String carnum);
 
     //修改

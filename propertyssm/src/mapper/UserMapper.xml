@@ -4,7 +4,7 @@
 
 <mapper namespace="com.sau.ums.user.dao.UserDao">
     <sql id="usercolumn">
-        id,name,sex,idcard,username,password,kind,num,ps
+        id,name,sex,idcard,username,password,kind,num,status,room,ps
     </sql>
     <!-- 通过用户名查询用户信息 -->
    <select id="getUserByName" parameterType="string" resultType="User">
@@ -38,8 +38,8 @@
     
     <!-- 添加用户 -->
     <insert id="addUser" parameterType="User">
-    INSERT INTO t_user(name,sex,idcard,kind,ps,num)
-    VALUES(#{name},#{sex},#{idcard},#{kind},#{ps},#{num})
+    INSERT INTO t_user(name,sex,idcard,kind,ps,num,status,room)
+    VALUES(#{name},#{sex},#{idcard},#{kind},#{ps},#{num},#{status},#{room})
     </insert>
     
     <!-- 修改用户信息 -->
@@ -119,10 +119,15 @@
     </where>
     </update>
 
-    <!-- 添加用户 -->
+    
     <insert id="addHouseFee" parameterType="Propertyfee">
         INSERT INTO t_propertyfee(room,housefee,parkfee,payment,ps,arrearage,time,status)
         VALUES(#{room},#{housefee},#{parkfee},#{payment},#{ps},#{arrearage},#{time},#{status})
     </insert>
     
+    <!-- 添加家属 -->
+    <insert id="addFamily" parameterType="User">
+    INSERT INTO t_user(name,sex,idcard,kind,ps,status,room)
+    VALUES(#{name},#{sex},#{idcard},#{kind},#{ps},#{status},#{room})
+    </insert>
 </mapper>

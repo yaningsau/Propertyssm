@@ -18,6 +18,10 @@ public class User {
 
     private String num;
 
+    private String status;
+
+    private String room;
+
     private String ps;
 
     public Integer getId() {
@@ -82,6 +86,22 @@ public class User {
 
     public void setNum(String num) {
         this.num = num;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public String getRoom() {
+        return room;
+    }
+
+    public void setRoom(String room) {
+        this.room = room;
     }
 
     public String getPs() {

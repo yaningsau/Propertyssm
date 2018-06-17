@@ -50,7 +50,7 @@ $(function(){
                 </li>       
                 <div>
                     <dl class="sub" id="sub1">
-                        <dd><a href="family_add.jsp" class="col-sm-offset-3"><span>添加家属</span></a></dd>
+                        <dd><a href="addFamily.jsp" class="col-sm-offset-3"><span>添加家属</span></a></dd>
                     </dl>
                 <div>
                 <li class="dropdown_menu" id="dropdown_menu2">
@@ -58,8 +58,7 @@ $(function(){
                 </li>       
                 <div>
                     <dl class="sub" id="sub2">
-                        <dd><a href="fee_search.jsp" class="col-sm-offset-3"><span>查询物业费</span></a></dd>
-                        <dd><a href="pay.jsp" class="col-sm-offset-3"><span>缴纳物业费</span></a></dd>
+                        <dd><a href="getHousefee.do?room=${loguser.room}" class="col-sm-offset-3"><span>查询物业费</span></a></dd>
                     </dl>
                 <div>
                 

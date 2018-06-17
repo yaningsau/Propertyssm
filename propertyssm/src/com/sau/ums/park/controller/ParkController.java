@@ -107,10 +107,12 @@ public class ParkController {
         float parkfee = Constant.PARKFEE_PER_CAR * num;
         float housefee = ps.getHousefee(room).getHousefee();
         float payment = parkfee + housefee;
+        float arrearage = payment;
         Propertyfee propertyfee = new Propertyfee();
 
         propertyfee.setParkfee(parkfee);
         propertyfee.setPayment(payment);
+        propertyfee.setArrearage(arrearage);
         propertyfee.setRoom(room);
 
         isSuccess = ps.updatePark(park);

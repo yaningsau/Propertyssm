@@ -15,7 +15,7 @@ import com.sau.ums.util.Constant;
 public class PropertyFeeServiceImpl implements PropertyFeeService {
 
     @Autowired
-    PropertyFeeDao propertyFeeDao;
+    PropertyFeeDao pdao;
 
     @Override
     public PageInfo<Propertyfee> listPropertyfee(Propertyfee propertyfee,
@@ -23,9 +23,25 @@ public class PropertyFeeServiceImpl implements PropertyFeeService {
         PageInfo<Propertyfee> page = null;
         //查询用户列表
         PageHelper.startPage(pageNum, Constant.PAGE_SIZE);
-        List<Propertyfee> propertyfeelist = propertyFeeDao
-                .listPropertyfee(propertyfee);
+        List<Propertyfee> propertyfeelist = pdao.listPropertyfee(propertyfee);
         page = new PageInfo<Propertyfee>(propertyfeelist);
         return page;
+    }
+
+    @Override
+    public Propertyfee getHousefee(String room) {
+
+        return pdao.getHousefee(room);
+    }
+
+    @Override
+    public boolean Propertyfee(Propertyfee propertyfee) {
+
+        boolean isSuccess = false;
+
+        pdao.Propertyfee(propertyfee);
+        isSuccess = true;
+
+        return isSuccess;
     }
 }

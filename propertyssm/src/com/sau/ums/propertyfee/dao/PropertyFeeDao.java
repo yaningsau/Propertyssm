@@ -13,4 +13,8 @@ public interface PropertyFeeDao {
 
     //查询housefee
     public Propertyfee getHousefee(String room);
+
+    //修改物业费
+    public void Propertyfee(Propertyfee propertyfee);
+
 }

@@ -31,7 +31,7 @@
                 <li><a>外来人员记录</a></li>
             </ul>
         </div>
-        <div class="r_content">
+        <div class="r_content" style="color:#545454">
             <form action="addGuard.do" id="addGuardForm" method="post" class="form-horizontal" role="from">
                 <div class="form-group">
                     <label class="col-sm-offset-3 col-sm-2 control-label">姓名</label>
@@ -42,7 +42,7 @@
                 <div class="form-group">
                     <label class="col-sm-offset-3 col-sm-2 control-label">身份证号</label>
                     <div class="col-sm-3">
-                        <input type="text"class="form-control" name="idcard"/>
+                        <input type="text"class="form-control" name="idcard" id="idcard" onBlur="chkIdCard()"/><span id="tipCard"></span>
                     </div>
                 </div>
                 <div class="form-group">
@@ -55,7 +55,7 @@
                 <div class="form-group">
                     <label class="col-sm-offset-3 col-sm-2 control-label">电话</label>
                     <div class="col-sm-3">
-                        <input type="text"class="form-control" name="tel"/>
+                        <input type="text"class="form-control" name="tel" id="tel" onBlur="chkTel()"/><span id="tiptel"></span>
                     </div>
                 </div>
                 <div class="form-group">
@@ -87,6 +87,27 @@
     </div>
     
     <script type="text/javascript">
+    
+    //验证手机号
+    function chkTel(){
+    document.getElementById("tiptel").innerHTML = "&nbsp;";
+    var idcard = document.getElementById("tel").value;
+    var reg = /^0?1[3|4|5|8][0-9]\d{8}$/;
+    
+    if(idcard.match(reg)!=idcard){
+       document.getElementById("tiptel").innerHTML = "<font color='red' size='-1'>输入的电话号码格式不正确</font>";
+    }   
+   }
+    //验证身份证号码
+    function chkIdCard(){
+    document.getElementById("tipCard").innerHTML = "&nbsp;";
+    var idcard = document.getElementById("idcard").value;
+    var reg = /^\d{18}|\d{17}[xX]$/;
+    
+    if(idcard.match(reg)!=idcard){
+       document.getElementById("tipCard").innerHTML = "<font color='red' size='-1'>输入的身份证号码格式不正确</font>";
+    }   
+   }
     $("#submit").click(function(){
        $("#addGuardForm").ajaxSubmit(function(response){
             if (response.tip == "success") {

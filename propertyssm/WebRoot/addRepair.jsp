@@ -38,7 +38,7 @@
                 <li><a>报修</a></li>
             </ul>
         </div>
-        <div class="r_content">
+        <div class="r_content" style="color:#545454">
             <form action="addRepair.do" id="addRepairForm" method="post" class="form-horizontal" role="from">
                 <div class="form-group">
                     <label class="col-sm-offset-3 col-sm-2 control-label">房号</label>

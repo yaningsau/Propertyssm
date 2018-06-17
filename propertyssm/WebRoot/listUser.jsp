@@ -13,11 +13,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <title>物业管理系统</title>
     
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
 <link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
 <link href="bootstrap-3.3.5-dist/css/font-awesome.min.css" rel="stylesheet">
 <link href="bootstrap-3.3.5-dist/css/content_r.css" rel="stylesheet">
 <script src="bootstrap-3.3.5-dist/js/jquery-3.0.0min.js"></script>
 <script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<!-- 分页 -->
+<link href="CSS/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 <style>
     .divide-60{ 
         height:60px;
@@ -38,6 +41,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
         </div>
         <div class="r_content">
             <form action="listUser.do" method="post" role="form" class="form-inline pull-right">
+               <input type="hidden" name="pageNum" id="pageNum" value="1"/>
                 <font color="#545454">用户名：</font>
                 <input type="text" style="color:#545454" class="form-control" placeholder="username" name="username" value="${condition.username}"/>
                 <font color="#545454">姓名：</font>
@@ -99,14 +103,14 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 </p>
 
 <!-- 分页 -->
-<script type="text/javascript" src="js/jquery-1.8.3.min.js"></script>
-<script type="text/javascript" src="js/jqPaginator.min.js"></script>
+<script type="text/javascript" src="CSS/js/jquery-1.8.3.min.js"></script>
+<script type="text/javascript" src="CSS/js/jqPaginator.min.js"></script>
  
  <script>
 
 $(function(){
-    /* <!--设置权限查询条件-->
-    $("#userform #kind").val($("#condition #kind").val()); */
+    <!--设置权限查询条件-->
+    $("#userform #kind").val($("#condition #kind").val());
     
     <!--初始化分页插件-->
     $("#page").jqPaginator({

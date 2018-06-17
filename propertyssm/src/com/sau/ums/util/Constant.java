@@ -2,11 +2,11 @@ package com.sau.ums.util;
 
 public interface Constant {
 
-	int PAGE_SIZE = 5;
+    int PAGE_SIZE = 5;
 
-	float HOUSEFEE_PER_SQUARE_METER = 10;
+    float HOUSEFEE_PER_SQUARE_METER = 2;
 
-    float PARKFEE_PER_CAR = 15;
+    float PARKFEE_PER_CAR = 40;
 
     float NUM_0 = 0;
 }

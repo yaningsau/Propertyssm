@@ -30,7 +30,7 @@
                 <li><a>停车位使用登记</a></li>
             </ul>
         </div>
-        <div class="r_content">
+        <div class="r_content" style="color:#545454">
             <form id="updateForm" action="updatePark.do" method="post" class="form-horizontal"
                 role="form">
                 <div class="form-group">

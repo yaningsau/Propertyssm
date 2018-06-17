@@ -52,14 +52,16 @@
 				<div style="padding-top: 50px;">
 					<label class="col-sm-offset-3 col-sm-2 control-label">新密码</label>
 					<div class="col-sm-4">
-						<input type="password" class="form-control" id="newPw" name="newPw" />
+						<input type="password" class="form-control" id="newPw" name="newPw" onblur="checkPwd()" />
+						<div id="tippwd"></div>
 					</div>
 				</div>
 				<div style="padding-top: 50px;">
 					<label class="col-sm-offset-3 col-sm-2 control-label">确认密码</label>
 					<div class="col-sm-4">
 						<input type="password" class="form-control" id="confirmPw"
-							name="confirmPw" />
+							name="confirmPw" onBlur="checkPwd2()" />
+							<div id="tippwd2"></div>
 					</div>
 				</div>
 			</div>
@@ -73,6 +75,33 @@
   </div>
 </div>
 <script type="text/javascript">
+
+   function tipPwd(){
+     document.getElementById("tippwd").innerHTML = "<font color='red' size='-1'>请输入6位以上的密码</font>";
+   }
+
+   //验证密码长度
+   function checkPwd(){
+      document.getElementById("tippwd").innerHTML = "&nbsp;";
+      var password = document.getElementById("newPw").value;
+      if(password.length<6||password.length>10){
+          document.getElementById("tippwd").innerHTML = "<font color='red' size='-1'>请输入6~10位的密码</font>";
+          document.getElementById("newPw").value="";
+          document.getElementById("newPw").focus();
+      }
+    }
+
+   function checkPwd2(){
+      document.getElementById("tippwd2").innerHTML = "&nbsp;"
+      var password1 = document.getElementById("newPw");
+      var password2 = document.getElementById("confirmPw");
+      if(password1.value!=password2.value){
+         document.getElementById("tippwd2").innerHTML = "<font color='red' size='-1'>两次密码输入不一致</font>";
+          password2.value="";
+      }
+    }
+
+
     $("#saveBtn").click(function() {
     var username = $("#username").val();
     var originalPw = $("#originalPw").val();
@@ -84,7 +113,8 @@
               data: {"originalPw":originalPw, "newPw":newPw, "username":username},
               success:function(result) {
                    if (result.success) {
-                        alert("修改密码成功！");
+                        alert("修改密码成功，请重新登录！");
+                        window.location.href = 'login.jsp';
                    } else {
                         alert("修改密码失败！");
                    }

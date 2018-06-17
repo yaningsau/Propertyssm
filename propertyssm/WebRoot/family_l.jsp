@@ -50,8 +50,7 @@ $(function(){
                 </li>       
                 <div>
                     <dl class="sub" id="sub1">
-                        <dd><a href="" class="col-sm-offset-3"><span>查询物业费</span></a></dd>
-                        <dd><a href="" class="col-sm-offset-3"><span>缴纳物业费</span></a></dd>
+                        <dd><a href="getHousefee.do?room=${loguser.room}" class="col-sm-offset-3"><span>查询物业费</span></a></dd>
                     </dl>
                
                 

@@ -184,4 +184,21 @@ public class UserController {
         }
         return resultMap;
     }
+
+    //删除用户
+    @RequestMapping("addFamily.do")
+    @ResponseBody
+    public Map<String, Object> addFamily(User user, HttpSession session) {
+        Map<String, Object> map = new HashMap<String, Object>();
+        boolean isSuccess = false;
+
+        isSuccess = us.addFamily(user);
+        if (isSuccess) {
+            map.put("tip", "success");
+        } else {
+            map.put("tip", "error");
+        }
+        return map;
+
+    }
 }

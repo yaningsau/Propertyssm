@@ -23,7 +23,7 @@
                 <li><a>添加采购</a></li>
             </ul>
         </div>
-        <div class="r_content">
+        <div class="r_content" style="color:#545454">
             <form action="addPurchase.do" id="addPurchaseForm" method="post" class="form-horizontal" role="from">
                 <div class="form-group">
                     <label class="col-sm-offset-3 col-sm-2 control-label">商品名称</label>

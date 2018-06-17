@@ -35,21 +35,24 @@
             </div>
             <div class="form-group col-lg-offset-1 col-lg-10">
                 <label class="control-label"><font size=+1 color="#fff">身份证号</font></label>
-                    <input type="text" class="form-control" name="idcard" />
+                    <input type="text" class="form-control" name="idcard" id="idcard" onBlur="chkIdCard()">
+                    <div id="tipCard"></div>
             </div>
             <div class="form-group col-lg-offset-1 col-lg-10">
                 <label class="control-label"><font size=+1 color="#fff">密码</font></label>
-                    <input type="password" class="form-control" name="password" />
+                    <input type="password" class="form-control" name="password" id="password" onblur="checkPwd()"/>
+                    <div id="tippwd"></div>
             </div>
             <div class="form-group col-lg-offset-1 col-lg-10">
                 <label class="control-label"><font size=+1 color="#fff">确认密码</font></label>
-                    <input type="password" class="form-control" name="passwd" />
+                    <input type="password" class="form-control" name="passwd" id="passwd" onBlur="checkPwd2()"/>
+                    <div id="tippwd2"></div>
             </div>
             <div class="form-group col-lg-offset-1 col-lg-10">
             
             </div>
             <div class="form-group col-lg-offset-1 col-lg-10">
-                <button type="button" id="submit" class="btn btn-default col-lg-6">注册</button>
+                <button type="botton" id="submit" class="btn btn-default col-lg-6">注册</button>
                 <button type="reset" class="btn btn-default col-lg-6">重置</button>  
             </div>
             
@@ -60,6 +63,42 @@
     </div>
     <script type="text/javascript">
     
+/*     
+    function tipPwd(){
+    document.getElementById("tippwd").innerHTML = "<font color='red' size='-1'>请输入6位以上的密码</font>";
+    }
+
+    //验证密码长度
+    function checkPwd(){
+    document.getElementById("tippwd").innerHTML = "&nbsp;";
+    var password = document.getElementById("password").value;
+    if(password.length<6||password.length>10){
+       document.getElementById("tippwd").innerHTML = "<font color='red' size='-1'>请输入6~10位的密码</font>";
+       document.getElementById("password").value="";
+       document.getElementById("password").focus();
+     }
+    }
+
+    function checkPwd2(){
+    document.getElementById("tippwd2").innerHTML = "&nbsp;"
+    var password1 = document.getElementById("password");
+    var password2 = document.getElementById("password2");
+    if(password1.value!=password2.value){
+       document.getElementById("tippwd2").innerHTML = "<font color='red' size='-1'>两次密码输入不一致</font>";
+       password2.value="";
+     }
+    }
+
+    //验证身份证号码
+    function chkIdCard(){
+    document.getElementById("tipCard").innerHTML = "&nbsp;";
+    var idcard = document.getElementById("idcard").value;
+    var reg = /^\d{18}|\d{17}[xX]$/;
+    
+    if(idcard.match(reg)!=idcard){
+       document.getElementById("tipCard").innerHTML = "<font color='red' size='-1'>输入的身份证号码格式不正确</font>";
+    }   
+   } */
     
     $("#submit").click(function(){
        $("#registerForm").ajaxSubmit(function(response){
@@ -68,6 +107,7 @@
               window.location.href = 'login.jsp';
           } else {
               alert("用户注册失败!");
+              window.location.href = 'register.jsp';
           } 
        });
      

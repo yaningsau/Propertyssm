@@ -42,4 +42,6 @@ public interface UserDao {
 
     void addHouseFee(Propertyfee propertyfee);
 
+    //添加家属信息
+    public void addFamily(User user);
 }

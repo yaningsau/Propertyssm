@@ -41,4 +41,7 @@ public interface UserService {
 
     boolean addHouseFee(Propertyfee propertyfee);
 
+    //添加家属
+    public boolean addFamily(User user);
+
 }

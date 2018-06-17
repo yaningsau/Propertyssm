@@ -121,4 +121,14 @@ public class UserServiceImpl implements UserService {
         isSuccess = true;
         return isSuccess;
     }
+
+    @Override
+    public boolean addFamily(User user) {
+        boolean isSuccess = false;
+
+        udao.addFamily(user);
+        isSuccess = true;
+
+        return isSuccess;
+    }
 }

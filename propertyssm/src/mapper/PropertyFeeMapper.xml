@@ -16,8 +16,28 @@
     
       <!-- 查询housefee -->
    <select id="getHousefee" parameterType="String" resultType="Propertyfee" >
-       SELECT housefee
+       SELECT *
        FROM t_propertyfee 
        WHERE room=#{room}
   </select>
+  
+  <!-- 缴费 -->
+  <update id="Propertyfee" parameterType="Propertyfee" >
+    UPDATE t_housefee
+    <set>
+    <if test="payment != null">
+    payment=#{payment}
+    </if>
+    <if test="status != null">
+    ,status=#{status}
+    </if>
+    <if test="arrearage != null">
+    arrearage=#{payment}
+    </if>
+    <if test="time != null">
+    ,time=#{time}
+    </if>
+    </set>
+     WHERE room=#{room}
+  </update>
 </mapper>
