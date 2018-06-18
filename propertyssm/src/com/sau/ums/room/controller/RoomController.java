@@ -79,11 +79,16 @@ public class RoomController {
     @ResponseBody
     public Map<String, Object> addRoom(Room room, HttpSession session) {
         Map<String, Object> map = new HashMap<String, Object>();
-        boolean isSuccess = false;
 
-        isSuccess = rs.addRoom(room);
-        if (isSuccess) {
-            map.put("tip", "success");
+        String roomInfo = rs.getRoom(room.getRoom());
+        if (roomInfo == null) {
+            boolean isSuccess = false;
+            isSuccess = rs.addRoom(room);
+            if (isSuccess) {
+                map.put("tip", "success");
+            } else {
+                map.put("tip", "error");
+            }
         } else {
             map.put("tip", "error");
         }

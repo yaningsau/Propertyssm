@@ -90,48 +90,55 @@ public class UserController {
     public Map<String, Object> addUser(User user, HttpServletRequest request) {
         Map<String, Object> map = new HashMap<String, Object>();
 
-        boolean isSuccess = false;
+        Integer queryInfo = us.getUserInfoByIdCard(user.getIdcard());
 
-        boolean isRoomSuccess = false;
+        if (null == queryInfo) {
 
-        boolean isHouseFeeSuccess = false;
+            boolean isSuccess = false;
 
-        Propertyfee propertyfee = new Propertyfee();
+            boolean isRoomSuccess = false;
 
-        //SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
-        //String date = df.format(new Date());// new Date()为获取当前系统时间，也可使用当前时间戳
-        String room = request.getParameter("room");
-        if (room != null && room != "") {
-            //根据房间号获取房屋表对应数据
-            Room roomInfo = roomService.getRoomInfoById(room);
-            //计算房屋的物业费
-            float houseFee = Constant.HOUSEFEE_PER_SQUARE_METER
-                    * roomInfo.getArea();
-            propertyfee.setHousefee(houseFee);
-            propertyfee.setRoom(room);
-            propertyfee.setPayment(houseFee);
-            propertyfee.setArrearage(houseFee);
-            propertyfee.setStatus("未缴费");
-            //propertyfee.setTime(Timestamp.valueOf(date));
-            roomInfo.setName(user.getName());
-            roomInfo.setNumber(user.getNum());
-            isRoomSuccess = roomService.updateRoomInfo(roomInfo);
-            isSuccess = us.addUser(user);
-            isHouseFeeSuccess = us.addHouseFee(propertyfee);
-            if (isSuccess && isRoomSuccess && isHouseFeeSuccess) {
-                map.put("tip", "success");
+            boolean isHouseFeeSuccess = false;
+
+            Propertyfee propertyfee = new Propertyfee();
+            //SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+            //String date = df.format(new Date());// new Date()为获取当前系统时间，也可使用当前时间戳
+            String room = request.getParameter("room");
+            if (room != null && room != "") {
+                //根据房间号获取房屋表对应数据
+                Room roomInfo = roomService.getRoomInfoById(room);
+                //计算房屋的物业费
+                float houseFee = Constant.HOUSEFEE_PER_SQUARE_METER
+                        * roomInfo.getArea();
+                propertyfee.setHousefee(houseFee);
+                propertyfee.setRoom(room);
+                propertyfee.setPayment(houseFee);
+                propertyfee.setArrearage(houseFee);
+                propertyfee.setStatus("未缴费");
+                //propertyfee.setTime(Timestamp.valueOf(date));
+                roomInfo.setName(user.getName());
+                roomInfo.setNumber(user.getNum());
+                isRoomSuccess = roomService.updateRoomInfo(roomInfo);
+                isSuccess = us.addUser(user);
+                isHouseFeeSuccess = us.addHouseFee(propertyfee);
+                if (isSuccess && isRoomSuccess && isHouseFeeSuccess) {
+                    map.put("tip", "success");
+                } else {
+                    map.put("tip", "error");
+                }
             } else {
-                map.put("tip", "error");
+                //根据房间号获取房屋表对应数据
+                isSuccess = us.addUser(user);
+                if (isSuccess) {
+                    map.put("tip", "success");
+                } else {
+                    map.put("tip", "error");
+                }
             }
         } else {
-            //根据房间号获取房屋表对应数据
-            isSuccess = us.addUser(user);
-            if (isSuccess) {
-                map.put("tip", "success");
-            } else {
-                map.put("tip", "error");
-            }
+            map.put("tip", "error");
         }
+
         return map;
 
     }
@@ -191,7 +198,8 @@ public class UserController {
         Map<String, Object> resultMap = new HashMap<String, Object>();
         //根据身份证号验证是否可以注册账号
         Integer queryInfo = us.getUserInfoByIdCard(user.getIdcard());
-        if (null != queryInfo) {
+        String un = us.getUserName(user.getUsername());
+        if (null != queryInfo && un == null) {
             us.updateUserLogin(user);
             resultMap.put("success", true);
             resultMap.put("message", "");
@@ -209,13 +217,19 @@ public class UserController {
         Map<String, Object> map = new HashMap<String, Object>();
         boolean isSuccess = false;
 
-        isSuccess = us.addFamily(user);
-        if (isSuccess) {
-            map.put("tip", "success");
+        Integer queryInfo = us.getUserInfoByIdCard(user.getIdcard());
+        if (null == queryInfo) {
+            isSuccess = us.addFamily(user);
+            if (isSuccess) {
+                map.put("tip", "success");
+            } else {
+                map.put("tip", "error");
+            }
         } else {
             map.put("tip", "error");
         }
         return map;
 
     }
+
 }

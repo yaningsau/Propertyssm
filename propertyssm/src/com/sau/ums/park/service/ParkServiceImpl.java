@@ -108,4 +108,10 @@ public class ParkServiceImpl implements ParkService {
         return isSuccess;
     }
 
+    @Override
+    public String getPark(String carnum) {
+
+        return pdao.getPark(carnum);
+    }
+
 }

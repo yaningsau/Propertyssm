@@ -60,7 +60,8 @@
                     alert("添加成功");
                     window.location.href = 'listPark.do';
                 } else if (response.tip == "error") {
-                    alert("添加失败!");
+                    alert("停车位已存在，添加失败!");
+                    window.location.href = 'addPark.jsp';
                 } 
        });
      

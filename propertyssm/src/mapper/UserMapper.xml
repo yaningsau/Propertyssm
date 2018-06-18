@@ -139,4 +139,12 @@
         room=#{room}
     </where>
     </select>
+    <!-- 查询 -->
+    <select id="getUserName" parameterType="String" resultType="String">
+       SELECT *
+       FROM t_user
+        <where>
+        username=#{username}
+    </where>
+    </select>
 </mapper>

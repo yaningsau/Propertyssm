@@ -41,4 +41,6 @@ public interface ParkService {
     //修改
     public boolean TupdatePark(Park park);
 
+    String getPark(String carnum);
+
 }

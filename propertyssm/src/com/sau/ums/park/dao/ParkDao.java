@@ -37,4 +37,6 @@ public interface ParkDao {
     //刷新
     public void TupdatePark(Park park);
 
+    String getPark(String carnum);
+
 }

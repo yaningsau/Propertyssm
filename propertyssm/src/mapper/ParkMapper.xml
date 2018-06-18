@@ -98,5 +98,12 @@
     </set>
     WHERE carnum=#{carnum}
     </update>
+    
+    <!-- 查询 -->
+    <select id="getPark" parameterType="String" resultType="String">
+       SELECT carnum
+       FROM t_park
+       WHERE carnum=#{carnum}
+  </select>
 
 </mapper>

@@ -28,4 +28,7 @@ public interface RoomDao {
     //修改房屋信息
     public void updateRoom(Room room);
 
+    //房间号存在与否
+    String getRoom(String room);
+
 }

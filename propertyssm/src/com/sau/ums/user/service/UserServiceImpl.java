@@ -137,4 +137,10 @@ public class UserServiceImpl implements UserService {
 
         return udao.getUserInfo(room);
     }
+
+    @Override
+    public String getUserName(String username) {
+
+        return udao.getUserName(username);
+    }
 }

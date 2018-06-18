@@ -90,7 +90,7 @@
     
     //验证手机号
     function chkTel(){
-    document.getElementById("tiptel").innerHTML = "&nbsp;";
+    document.getElementById("tiptel").innerHTML = "";
     var idcard = document.getElementById("tel").value;
     var reg = /^0?1[3|4|5|8][0-9]\d{8}$/;
     
@@ -100,7 +100,7 @@
    }
     //验证身份证号码
     function chkIdCard(){
-    document.getElementById("tipCard").innerHTML = "&nbsp;";
+    document.getElementById("tipCard").innerHTML = "";
     var idcard = document.getElementById("idcard").value;
     var reg = /^\d{18}|\d{17}[xX]$/;
     

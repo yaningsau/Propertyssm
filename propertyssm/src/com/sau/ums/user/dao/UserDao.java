@@ -47,4 +47,7 @@ public interface UserDao {
 
     //查询
     List<User> getUserInfo(String room);
+
+    String getUserName(String username);
+
 }

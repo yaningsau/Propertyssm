@@ -75,4 +75,9 @@ public class RoomServiceImpl implements RoomService {
         return isSuccess;
     }
 
+    @Override
+    public String getRoom(String room) {
+        return rdao.getRoom(room);
+    }
+
 }

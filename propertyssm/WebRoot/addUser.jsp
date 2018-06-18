@@ -99,7 +99,7 @@
 	
 	//验证身份证号码
     function chkIdCard(){
-    document.getElementById("tipCard").innerHTML = "&nbsp;";
+    document.getElementById("tipCard").innerHTML = "";
     var idcard = document.getElementById("idcard").value;
     var reg = /^\d{18}|\d{17}[xX]$/;
     
@@ -114,7 +114,8 @@
                       alert("用户添加成功");
                       window.location.href = 'listUser.do';
                    } else if (response.tip == "error") {
-                      alert("用户添加失败!");
+                      alert("身份证号已存在,用户添加失败!");
+                      window.location.href = 'addUser.jsp';
                   } 
 	     });
 	 

@@ -85,12 +85,17 @@ public class ParkController {
     @ResponseBody
     public Map<String, Object> addPark(Park park, HttpSession session) {
         Map<String, Object> map = new HashMap<String, Object>();
-        boolean isSuccess = false;
+        String parkInfo = ps.getPark(park.getCarnum());
+        if (parkInfo == null) {
+            boolean isSuccess = false;
 
-        isSuccess = ps.addPark(park);
+            isSuccess = ps.addPark(park);
 
-        if (isSuccess) {
-            map.put("tip", "success");
+            if (isSuccess) {
+                map.put("tip", "success");
+            } else {
+                map.put("tip", "error");
+            }
         } else {
             map.put("tip", "error");
         }

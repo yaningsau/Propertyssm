@@ -105,7 +105,8 @@
                     alert("添加成功");
                     window.location.href = 'listRoom.do';
                 } else if (response.tip == "error") {
-                    alert("添加失败!");
+                    alert("房间已存在，添加失败!");
+                    window.location.href = 'addRoom.jsp';
                 } 
        });
      

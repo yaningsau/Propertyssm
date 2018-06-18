@@ -86,4 +86,13 @@
             room=#{room}
         </where>
     </update>
+    
+    <!-- 查询 -->
+    <select id="getRoom" parameterType="String" resultType="String">
+    SELECT room
+    FROM t_house
+    <where>
+    room=#{room}
+    </where>
+    </select>
 </mapper>

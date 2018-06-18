@@ -26,4 +26,7 @@ public interface RoomService {
     //修改房屋信息
     public boolean updateRoom(Room room);
 
+    //房间号存在与否
+    String getRoom(String room);
+
 }

@@ -9,6 +9,7 @@
 <link href="bootstrap-3.3.5-dist/css/content_r.css" rel="stylesheet">
 <script src="bootstrap-3.3.5-dist/js/jquery-3.0.0.min.js"></script>
 <script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<script src="bootstrap-3.3.5-dist/js/jquery.form.js"></script>
 </head>
 <body>
     <jsp:include page="header.jsp"></jsp:include>
@@ -85,10 +86,11 @@
     $("#submit").click(function(){
        $("#addForm").ajaxSubmit(function(response){
             if (response.tip == "success") {
-                    alert("用户添加成功");
-                    window.location.href = 'Prpertyfee.do';
+                    alert("添加成功");
+                    window.location.href = 'owner.jsp';
                 } else if (response.tip == "error") {
-                    alert("用户添加失败!");
+                    alert("身份证号已存在,添加失败!");
+                    window.location.href = 'addFamily.jsp';
                 } 
        });
      

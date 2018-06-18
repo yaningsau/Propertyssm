@@ -49,4 +49,7 @@ public interface UserService {
     //查询
     List<User> getUserInfo(String room);
 
+    //根据用户名获取用户信息
+    String getUserName(String username);
+
 }
