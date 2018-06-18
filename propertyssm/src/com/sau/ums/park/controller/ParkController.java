@@ -44,6 +44,25 @@ public class ParkController {
 
     }
 
+    @RequestMapping("listPa.do")
+    public String listPa(Park park, Integer pageNum, ModelMap model) {
+
+        pageNum = 1;
+
+        Park p = new Park();
+        p.setCarnum(park.getCarnum());
+        p.setRoom(park.getRoom());
+        p.setStatus(park.getStatus());
+
+        PageInfo<Park> page = ps.listPark(park, pageNum);
+
+        model.addAttribute("page", page);
+        model.addAttribute("condition", p);
+
+        return "listPark";
+
+    }
+
     //删除
     @RequestMapping("delPark.do")
     @ResponseBody

@@ -39,6 +39,23 @@ public class PurchaseController {
 
     }
 
+    @RequestMapping("listP.do")
+    public String listP(Purchase purchase, Integer pageNum, ModelMap model) {
+
+        pageNum = 1;
+
+        Purchase p = new Purchase();
+        p.setSname(purchase.getSname());
+
+        PageInfo<Purchase> page = ps.listPurchase(purchase, pageNum);
+
+        model.addAttribute("page", page);
+        model.addAttribute("condition", p);
+
+        return "listPurchase";
+
+    }
+
     //删除
     @RequestMapping("delPurchase.do")
     @ResponseBody

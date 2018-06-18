@@ -38,6 +38,23 @@ public class RepairController {
         return "listRepair";
     }
 
+    @RequestMapping("listRe.do")
+    public String listRe(Repair repair, Integer pageNum, ModelMap model) {
+
+        pageNum = 1;
+
+        Repair r = new Repair();
+        r.setName(repair.getName());
+        r.setRoom(repair.getRoom());
+        r.setStatus(repair.getStatus());
+
+        PageInfo<Repair> page = rs.listRepair(repair, pageNum);
+
+        model.addAttribute("page", page);
+        model.addAttribute("condition", r);
+        return "listRepair";
+    }
+
     //删除
     @RequestMapping("delRepair.do")
     @ResponseBody

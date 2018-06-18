@@ -10,10 +10,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>物业管理系统</title>
-<link href="bootstrap-3.3.5-dist/css/header.css" rel="stylesheet">
-<script src="bootstrap-3.3.5-dist/js/jquery-3.0.0.min.js"></script>
-<script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
-<link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="<%=basePath%>bootstrap-3.3.5-dist/css/header.css" rel="stylesheet">
+<!-- <script src="<%=basePath%>bootstrap-3.3.5-dist/js/jquery-3.0.0.min.js"></script> -->
+<!-- <script src="<%=basePath%>bootstrap-3.3.5-dist/js/bootstrap.min.js"></script> -->
+<link href="<%=basePath%>bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 	<div class="header">

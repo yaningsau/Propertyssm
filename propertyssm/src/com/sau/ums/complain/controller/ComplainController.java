@@ -39,6 +39,22 @@ public class ComplainController {
         return "listComplain";
     }
 
+    @RequestMapping("listC.do")
+    public String listC(Complain complain, Integer pageNum, ModelMap model) {
+
+        pageNum = 1;
+
+        Complain c = new Complain();
+        c.setStatus(complain.getStatus());
+
+        PageInfo<Complain> page = cs.listComplain(complain, pageNum);
+
+        model.addAttribute("page", page);
+        model.addAttribute("condition", c);
+
+        return "listComplain";
+    }
+
     //删除
     @RequestMapping("delComplain.do")
     @ResponseBody

@@ -13,11 +13,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <title>物业管理系统</title>
     
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="bootstrap-3.3.5-dist/css/font-awesome.min.css" rel="stylesheet">
-<link href="bootstrap-3.3.5-dist/css/content_r.css" rel="stylesheet">
-<script src="bootstrap-3.3.5-dist/js/jquery-3.0.0.min.js"></script>
-<script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<link href="<%=basePath%>bootstrap-3.3.5-dist/css/bootstrap.min.css"
+    rel="stylesheet">
+<link href="<%=basePath%>font-awesome-4.5.0/css/font-awesome.min.css"
+    rel="stylesheet">
+<link href="<%=basePath%>bootstrap-3.3.5-dist/css/content_r.css"
+    rel="stylesheet">
+<script src="<%=basePath%>bootstrap-3.3.5-dist/js/jquery-3.0.0.min.js"></script>
+<script src="<%=basePath%>bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<script src="<%=basePath%>CSS/js/jqPaginator.min.js"></script>
+<script src="<%=basePath%>bootstrap-3.3.5-dist/js/jquery.form.js"></script>
 <style>
     .divide-60{ 
         height:60px;
@@ -37,10 +42,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             </ul>
         </div>
         <div class="r_content">
-            <form action="listProtect.do" method="post" role="form" class="form-inline pull-right">
+            <form action="listProtect.do" method="post" role="form" class="form-inline pull-right" id="userform">
+            <input type="hidden" name="pageNum" id="pageNum_1" value="" />
               <font color="#545454">设备名称：</font>
                 <input type="text" class="form-control" placeholder="facility" name="facility"/>
-                <input type="button" class="form-control" id="target" value="搜索" onClick="document.forms[0].submit()">
+                <input type="submit" class="form-control" id="target" value="搜索" onClick="fnSearch()">
             </form>
             <div class="divide-60"></div>
             <div class="table-responsive">
@@ -73,12 +79,55 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                  </tr>
                             </c:forEach>
                         </c:if>
+                        <p>
+                            <!-- 保存分页信息 -->
+                        <form id="condition">
+                            <!-- 分页查询条件 -->
+                            <input type="hidden" name="facility" id="facility"
+                                value="${condition.facility}" /> 
+                            <!-- 分页信息 -->
+                            <input type="hidden" name="pageNum" id="pageNum"
+                                value="${page.pageNum}" /> <input type="hidden" name="totalPages"
+                                id="totalPages" value="${page.pages}" />
+                        </form>
+                        </p>
                     </tbody>
                 </table>
+                <div class="pull-right">
+                    <ul id="page" class="pagination"></ul>
+                    </div>
             </div>
         </div>
     </div>
     <script type='text/javascript' language='javascript'>
+    $(function(){
+    <!--设置权限查询条件-->
+            $("#userform #kind").val($("#condition #kind").val());
+            <!--初始化分页插件-->
+            $("#page")
+                    .jqPaginator(
+                            {
+                                totalPages : Number($("#totalPages").val()),
+                                visiblePages : 4,
+                                currentPage : Number($("#pageNum").val()),
+                                prev : '<li class="prev"><a href="javascript:;">上一页</a></li>',
+                                next : '<li class="next"><a href="javascript:;">下一页</a></li>',
+                                page : '<li class="page"><a href="javascript:;">{{page}}</a></li>',
+                                first : '<li class="first"><a href="javascript:;">首页</a></li>',
+                                last : '<li class="last"><a href="javascript:;">尾页</a></li>',
+                                onPageChange : function(num, type) {
+                                    if (type == "change") {
+                                        $("#userform #pageNum_1").val(num);
+                                        $("#userform").submit();
+                                    }
+                                }
+                            });
+    });
+    function fnSearch(){
+        $("#userform").attr("action","listPr.do");
+        $("#pageNum_1").val($("#pageNum").val());
+        $("#userform").submit();
+        }
         function delProtect(obj){
         var msg = "是否删除该安防";
         if(confirm(msg) == true){

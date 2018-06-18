@@ -39,6 +39,22 @@ public class GuardController {
         return "listGuard";
     }
 
+    @RequestMapping("listG.do")
+    public String listG(Guard guard, Integer pageNum, ModelMap model) {
+
+        pageNum = 1;
+
+        Guard g = new Guard();
+        g.setName(guard.getName());
+
+        PageInfo<Guard> page = gs.listGuard(guard, pageNum);
+
+        model.addAttribute("page", page);
+        model.addAttribute("condition", g);
+
+        return "listGuard";
+    }
+
     //删除
     @RequestMapping("delGuard.do")
     @ResponseBody

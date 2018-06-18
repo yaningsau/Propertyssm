@@ -50,6 +50,23 @@ public class UserController {
         return "listUser";
     }
 
+    @RequestMapping("/list.do")
+    public String list(User user, Integer pageNum, ModelMap model) {
+        pageNum = 1;
+        User u = new User();
+        u.setUsername(user.getUsername());
+        u.setKind(user.getKind());
+
+        //调用service方法处理请求
+        PageInfo<User> page = us.listUser(user, pageNum);
+
+        //生成响应信息
+        model.addAttribute("page", page);
+        model.addAttribute("condition", u);
+
+        return "listUser";
+    }
+
     //删除用户
     @RequestMapping("delUser.do")
     @ResponseBody

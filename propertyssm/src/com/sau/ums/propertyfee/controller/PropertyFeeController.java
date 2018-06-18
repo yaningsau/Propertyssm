@@ -21,13 +21,27 @@ public class PropertyFeeController {
     @Autowired
     PropertyFeeService ps;
 
-    //获取用户列表
+    //获取列表
     @RequestMapping("/listPropertyfee.do")
     public String listPropertyfee(Propertyfee propertyfee, Integer pageNum,
             ModelMap model) {
         if (pageNum == null) {
             pageNum = 1;
         }
+
+        //调用service方法处理请求
+        PageInfo<Propertyfee> page = ps.listPropertyfee(propertyfee, pageNum);
+
+        //生成响应信息
+        model.addAttribute("page", page);
+        return "listPropertyfee";
+    }
+
+    @RequestMapping("/listPf.do")
+    public String listPf(Propertyfee propertyfee, Integer pageNum,
+            ModelMap model) {
+
+        pageNum = 1;
 
         //调用service方法处理请求
         PageInfo<Propertyfee> page = ps.listPropertyfee(propertyfee, pageNum);

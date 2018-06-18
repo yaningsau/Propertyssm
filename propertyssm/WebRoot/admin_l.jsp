@@ -1,18 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"
+%>
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>人事管理系统</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="bootstrap-3.3.5-dist/css/font-awesome.min.css" rel="stylesheet">
-<link href="bootstrap-3.3.5-dist/css/content_l.css" rel="stylesheet">
-<link href="font-awesome-4.5.0/css/font-awesome.min.css">
-<script src="bootstrap-3.3.5-dist/js/jquery-3.0.0.min.js"></script>
-<script src="bootstrap-3.3.5-dist/js/jquery.form.js"></script>
-<script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<link href="<%=basePath%>bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="<%=basePath%>font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="<%=basePath%>bootstrap-3.3.5-dist/css/content_l.css" rel="stylesheet">
+<link href="<%=basePath%>font-awesome-4.5.0/css/font-awesome.min.css">
+<!-- <script src="<%=basePath%>bootstrap-3.3.5-dist/js/jquery-3.0.0.min.js"></script> -->
+<!-- <script src="<%=basePath%>bootstrap-3.3.5-dist/js/jquery.form.js"></script> -->
+<!-- <script src="<%=basePath%>bootstrap-3.3.5-dist/js/bootstrap.min.js"></script> -->
 
 <script type="text/javascript">
 $(function(){
@@ -43,6 +48,7 @@ $(function(){
     $( 'li#dropdown_menu9' ).click( function(){
         $("#sub9").slideToggle("slow");
     });
+    
 });
 </script>
 </head>

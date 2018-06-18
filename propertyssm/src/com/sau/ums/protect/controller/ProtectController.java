@@ -37,6 +37,22 @@ public class ProtectController {
         return "listProtect";
     }
 
+    @RequestMapping("listPr.do")
+    public String listPr(Protect protect, Integer pageNum, ModelMap model) {
+
+        pageNum = 1;
+
+        Protect p = new Protect();
+        p.setFacility(protect.getFacility());
+
+        PageInfo<Protect> page = ps.listProtect(protect, pageNum);
+
+        model.addAttribute("page", page);
+        model.addAttribute("condition", p);
+
+        return "listProtect";
+    }
+
     //删除
     @RequestMapping("delProtect.do")
     @ResponseBody

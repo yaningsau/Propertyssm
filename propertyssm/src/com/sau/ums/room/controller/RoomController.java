@@ -39,6 +39,24 @@ public class RoomController {
         return "listRoom";
     }
 
+    //获取房屋列表
+    @RequestMapping("listR.do")
+    public String listR(Room room, Integer pageNum, ModelMap model) {
+
+        pageNum = 1;
+
+        Room r = new Room();
+        r.setRoomtype(room.getRoomtype());
+        r.setRoom(room.getRoom());
+
+        PageInfo<Room> page = rs.listRoom(room, pageNum);
+
+        model.addAttribute("page", page);
+        model.addAttribute("condition", r);
+
+        return "listRoom";
+    }
+
     //删除房屋
     @RequestMapping("delRoom.do")
     @ResponseBody
