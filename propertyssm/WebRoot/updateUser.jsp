@@ -107,7 +107,7 @@
 				<div class="form-group">
 					<div class="col-sm-offset-5 col-sm-4">
 						<button type="button" id="submit" class="btn btn-default" value="提交">提交</button>
-						<button type="reset" class="btn btn-default" value="重置">重置</button>
+						
 					</div>
 				</div>
 			</form>

@@ -23,20 +23,44 @@
   
   <!-- 缴费 -->
   <update id="Propertyfee" parameterType="Propertyfee" >
-    UPDATE t_housefee
+    UPDATE t_propertyfee
     <set>
-    <if test="payment != null">
-    payment=#{payment}
-    </if>
     <if test="status != null">
-    ,status=#{status}
+    status=#{status}
     </if>
     <if test="arrearage != null">
-    arrearage=#{payment}
+    ,arrearage=#{arrearage}
     </if>
     <if test="time != null">
     ,time=#{time}
     </if>
+    </set>
+     WHERE room=#{room}
+  </update>
+  
+  <!-- 查询 -->
+  <select id="getPropertyInfo"  resultType="Propertyfee">
+    SELECT *
+    FROM t_propertyfee
+    </select>
+    
+    <!-- 刷新 -->
+    <update id="TPropertyfee" parameterType="Propertyfee" >
+    UPDATE t_propertyfee
+    <set>
+    <if test="status != null">
+    status=#{status}
+    </if>
+    <if test="arrearage != null">
+    ,arrearage=#{arrearage}
+    </if>
+    <if test="payment != null">
+    ,payment=#{payment}
+    </if>
+    <if test="parkfee != null">
+    ,parkfee=#{parkfee}
+    </if>
+    ,time=#{time}
     </set>
      WHERE room=#{room}
   </update>

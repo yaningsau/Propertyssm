@@ -38,7 +38,7 @@
             </ul>
         </div>
         <div class="r_content" style="color:#545454">
-            <form  action="Propertyfee.do" id="addUserForm" method="post" class="form-horizontal">
+            <form  action="Propertyfee.do" id="updateForm" method="post" class="form-horizontal">
                 
                 <div class="form-group">
                     <label class="col-sm-offset-3 col-sm-2 control-label">房号:</label>
@@ -69,7 +69,8 @@
                 </div>
                 <div class="form-group">
                     <label class="col-sm-offset-3 col-sm-2 control-label">缴费状态:</label>
-                    <div class="col-sm-3" style="margin-top: 5px;">            
+                    <div class="col-sm-3" style="margin-top: 5px;">  
+                              
                            ${propertyfee.status }                                                      
                     </div>
                 </div>
@@ -77,6 +78,7 @@
                 <div class="form-group">
                     <label class="col-sm-offset-3 col-sm-2 control-label">欠费金额:</label>
                     <div class="col-sm-3" style="margin-top: 5px;">
+                    
                         ${propertyfee.arrearage }
                     </div>
                 </div>
@@ -88,15 +90,16 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label class="col-sm-offset-3 col-sm-2 control-label">请输入缴费金额:</label>
+                    <label class="col-sm-offset-3 col-sm-2 control-label">需缴费金额:</label>
                     <div class="col-sm-3" style="margin-top: 5px;">
-                       <input type="text" class="form-control" name="fee" id="fee" > 
+                       <input type="text" class="form-control" name="fee" id="fee" readonly="readonly" value="${propertyfee.arrearage }" > 
                     </div>
                 </div>
                  <div class="form-group">
                      <div class="col-sm-offset-5 col-sm-4">
+                        <c:if test="${ loguser.status == '退休' }">
                         <button type="button" id="submit" class="btn btn-default" value="缴费">缴费</button>
-                       
+                       </c:if>
                      </div>
                  </div>
             </form>
@@ -119,5 +122,18 @@
               }
            });
        }
+       
+       $("#submit").click(function(){
+       $("#updateForm").ajaxSubmit(function(response){
+            if (response.tip == "success") {
+                    alert("缴费成功");
+                    window.location.href = 'owner.jsp';
+                } else if (response.tip == "error") {
+                    alert("缴费失败!");
+                } 
+       });
+     
+    }); 
+       
       </script>
 </html>

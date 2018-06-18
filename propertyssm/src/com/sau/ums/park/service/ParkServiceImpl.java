@@ -92,4 +92,20 @@ public class ParkServiceImpl implements ParkService {
         return propertyFeeDao.getHousefee(room);
     }
 
+    @Override
+    public List<Park> getParkInfo() {
+
+        return pdao.getParkInfo();
+    }
+
+    @Override
+    public boolean TupdatePark(Park park) {
+        boolean isSuccess = false;
+
+        pdao.TupdatePark(park);
+        isSuccess = true;
+
+        return isSuccess;
+    }
+
 }

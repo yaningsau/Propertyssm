@@ -130,4 +130,13 @@
     INSERT INTO t_user(name,sex,idcard,kind,ps,status,room)
     VALUES(#{name},#{sex},#{idcard},#{kind},#{ps},#{status},#{room})
     </insert>
+    
+    <!-- 查询 -->
+    <select id="getUserInfo" parameterType="String" resultType="User">
+       SELECT status
+       FROM t_user
+        <where>
+        room=#{room}
+    </where>
+    </select>
 </mapper>

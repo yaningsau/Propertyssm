@@ -30,4 +30,11 @@ public interface ParkDao {
 
     //添加停车位物业费
     public void updateParkFee(Propertyfee propertyfee);
+
+    //查询
+    List<Park> getParkInfo();
+
+    //刷新
+    public void TupdatePark(Park park);
+
 }

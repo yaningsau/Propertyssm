@@ -42,7 +42,7 @@
        WHERE carnum=#{carnum}
   </select>
   
-  <!-- 修改 -->
+  <!-- 修改   -->
     <update id="updatePark" parameterType="Park">
     UPDATE t_park
     <set>
@@ -77,8 +77,26 @@
   <if test="payment != null">
   ,payment=#{payment}
   </if>
-  
   </set>
   WHERE room=#{room}
   </update>
+  
+  <!-- 查询 -->
+  <select id="getParkInfo" resultType="Park">
+       SELECT <include refid="parkcolumn"></include>
+       FROM t_park
+  </select>
+
+    <!-- 定时刷新   -->
+    <update id="TupdatePark" parameterType="Park">
+    UPDATE t_park
+    <set>
+    begintime=#{begintime}
+    ,endtime=#{endtime}
+    ,room=#{room}
+    ,status=#{status}
+    </set>
+    WHERE carnum=#{carnum}
+    </update>
+
 </mapper>

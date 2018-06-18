@@ -17,4 +17,10 @@ public interface PropertyFeeDao {
     //修改物业费
     public void Propertyfee(Propertyfee propertyfee);
 
+    //查询
+    List<Propertyfee> getPropertyInfo();
+
+    //刷新
+    public void TPropertyfee(Propertyfee propertyfee);
+
 }

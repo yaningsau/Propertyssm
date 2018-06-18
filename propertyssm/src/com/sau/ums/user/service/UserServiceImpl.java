@@ -131,4 +131,10 @@ public class UserServiceImpl implements UserService {
 
         return isSuccess;
     }
+
+    @Override
+    public List<User> getUserInfo(String room) {
+
+        return udao.getUserInfo(room);
+    }
 }

@@ -44,4 +44,7 @@ public interface UserDao {
 
     //添加家属信息
     public void addFamily(User user);
+
+    //查询
+    List<User> getUserInfo(String room);
 }

@@ -1,5 +1,8 @@
 package com.sau.ums.propertyfee.controller;
 
+import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -73,6 +76,15 @@ public class PropertyFeeController {
             HttpSession session) {
         Map<String, Object> map = new HashMap<String, Object>();
         boolean isSuccess = false;
+
+        String status = "已缴费";
+        float arrearage = 0;
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式
+        String date = df.format(new Date());// new Date()为获取当前系统时间，也可使用当前时间戳
+
+        propertyfee.setArrearage(arrearage);
+        propertyfee.setStatus(status);
+        propertyfee.setTime(Timestamp.valueOf(date));
 
         isSuccess = ps.Propertyfee(propertyfee);
 

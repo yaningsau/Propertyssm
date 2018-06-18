@@ -6,7 +6,7 @@ public interface Constant {
 
     float HOUSEFEE_PER_SQUARE_METER = 2;
 
-    float PARKFEE_PER_CAR = 40;
+    float PARKFEE_PER_CAR = 20;
 
     float NUM_0 = 0;
 }

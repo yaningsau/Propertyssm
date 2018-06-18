@@ -1,5 +1,7 @@
 package com.sau.ums.propertyfee.service;
 
+import java.util.List;
+
 import com.github.pagehelper.PageInfo;
 import com.sau.ums.bean.Propertyfee;
 
@@ -14,4 +16,10 @@ public interface PropertyFeeService {
 
     //修改
     public boolean Propertyfee(Propertyfee propertyfee);
+
+    //查询
+    List<Propertyfee> getPropertyInfo();
+
+    //刷新
+    public boolean TPropertyfee(Propertyfee propertyfee);
 }

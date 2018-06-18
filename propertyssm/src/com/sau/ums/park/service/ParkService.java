@@ -35,4 +35,10 @@ public interface ParkService {
     //查询housefee
     public Propertyfee getHousefee(String room);
 
+    //查询
+    List<Park> getParkInfo();
+
+    //修改
+    public boolean TupdatePark(Park park);
+
 }

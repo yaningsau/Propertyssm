@@ -44,4 +44,20 @@ public class PropertyFeeServiceImpl implements PropertyFeeService {
 
         return isSuccess;
     }
+
+    @Override
+    public List<Propertyfee> getPropertyInfo() {
+
+        return pdao.getPropertyInfo();
+    }
+
+    @Override
+    public boolean TPropertyfee(Propertyfee propertyfee) {
+        boolean isSuccess = false;
+
+        pdao.TPropertyfee(propertyfee);
+        isSuccess = true;
+
+        return isSuccess;
+    }
 }

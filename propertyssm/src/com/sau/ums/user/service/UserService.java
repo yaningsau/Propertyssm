@@ -1,5 +1,7 @@
 package com.sau.ums.user.service;
 
+import java.util.List;
+
 import org.springframework.transaction.annotation.Transactional;
 
 import com.github.pagehelper.PageInfo;
@@ -43,5 +45,8 @@ public interface UserService {
 
     //添加家属
     public boolean addFamily(User user);
+
+    //查询
+    List<User> getUserInfo(String room);
 
 }
