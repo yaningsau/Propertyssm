@@ -16,8 +16,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <link href="bootstrap-3.3.5-dist/css/font-awesome.min.css" rel="stylesheet">
 <link href="bootstrap-3.3.5-dist/css/content_l.css" rel="stylesheet">
 <link href="font-awesome-4.5.0/css/font-awesome.min.css">
-<script src="bootstrap-3.3.5-dist/js/jquery-3.0.0.min.js"></script>
-<script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<!-- <script src="bootstrap-3.3.5-dist/js/jquery-3.0.0.min.js"></script>
+<script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script> -->
 
 <script type="text/javascript">
 $(function(){

@@ -12,12 +12,12 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <title>物业管理系统</title>
     
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
-<link href="bootstrap-3.3.5-dist/css/font-awesome.min.css" rel="stylesheet">
-<link href="bootstrap-3.3.5-dist/css/content_l.css" rel="stylesheet">
-<link href="font-awesome-4.5.0/css/font-awesome.min.css">
-<script src="bootstrap-3.3.5-dist/js/jquery-3.0.0.min.js"></script>
-<script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+<link href="<%=basePath%>bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="<%=basePath%>font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet">
+<link href="<%=basePath%>bootstrap-3.3.5-dist/css/content_l.css" rel="stylesheet">
+<link href="<%=basePath%>font-awesome-4.5.0/css/font-awesome.min.css">
+<!-- <script src="bootstrap-3.3.5-dist/js/jquery-3.0.0.min.js"></script>
+<script src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script> -->
 
 <script type="text/javascript">
 $(function(){
