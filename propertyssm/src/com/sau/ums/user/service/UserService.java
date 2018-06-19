@@ -52,4 +52,6 @@ public interface UserService {
     //根据用户名获取用户信息
     String getUserName(String username);
 
+    String getUserIDcard(String idcard);
+
 }

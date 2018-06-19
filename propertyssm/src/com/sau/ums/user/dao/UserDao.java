@@ -50,4 +50,6 @@ public interface UserDao {
 
     String getUserName(String username);
 
+    String getUserIDcard(String idcard);
+
 }

@@ -147,4 +147,13 @@
         username=#{username}
     </where>
     </select>
+    
+    <!-- 查询 -->
+    <select id="getUserIDcard" parameterType="String" resultType="String">
+       SELECT *
+       FROM t_user
+        <where>
+        idcard=#{idcard}
+    </where>
+    </select>
 </mapper>

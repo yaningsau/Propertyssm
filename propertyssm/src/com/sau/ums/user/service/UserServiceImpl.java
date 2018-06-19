@@ -143,4 +143,10 @@ public class UserServiceImpl implements UserService {
 
         return udao.getUserName(username);
     }
+
+    @Override
+    public String getUserIDcard(String idcard) {
+
+        return udao.getUserIDcard(idcard);
+    }
 }
