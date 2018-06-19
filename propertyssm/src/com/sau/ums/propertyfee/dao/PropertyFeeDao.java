@@ -23,4 +23,7 @@ public interface PropertyFeeDao {
     //刷新
     public void TPropertyfee(Propertyfee propertyfee);
 
+    //删除用户
+    public void delPropertyfee(Integer id);
+
 }

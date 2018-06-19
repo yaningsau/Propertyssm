@@ -149,7 +149,7 @@
                 <li><a>添加用户</a></li>
             </ul>
         </div>
-        <div class="r_content">
+        <div class="r_content" style="color:#545454">
             <form  action="addUser.do" id="addUserForm" method="post" class="form-horizontal">
                 <div class="form-group">
                     <label class="col-sm-offset-3 col-sm-2 control-label">房号</label>
@@ -183,7 +183,6 @@
                     <select name="kind" id="kind" class="form-control">
                     <option value=""></option>
                     <option value="业主">业主</option>
-                    <option value="家属">家属</option>
                     <option value="保安">保安</option>
                     <option value="其他">其他</option>                               
                     </select>                                                         
@@ -193,6 +192,16 @@
                     <label class="col-sm-offset-3 col-sm-2 control-label">教师编号</label>
                     <div class="col-sm-3">
                         <input type="text" class="form-control" placeholder="只需业主填写" name="num"/></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-offset-3 col-sm-2 control-label">在职状态</label>
+                    <div class="col-sm-3">
+                    <select name="status" id="status" class="form-control">
+                    <option value="" selected = "selected">只需业主填写</option>
+                    <option value="退休">退休</option>
+                    <option value="在职">在职</option>                              
+                    </select>                                                         
                     </div>
                 </div>
                 <div class="form-group">

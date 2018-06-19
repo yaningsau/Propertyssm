@@ -83,7 +83,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                     <td><fmt:formatDate value="${ propertyfee.time}" pattern="yyyy-MM-dd" /></td>
                                     <td>${propertyfee.ps}</td>
                                     <td>
-                                    <a onClick='return delPurchase(this);' href='delPurchase.do?id=${propertyfee.id}'>删除</a>
+                                    <a onClick='return delPropertyfee(this);' href='delPropertyfee.do?id=${propertyfee.id}'>删除</a>
                                     </td>
                                  </tr>
                             </c:forEach>
@@ -138,18 +138,18 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 }
                             });
     });
-        function delPurchase(obj){
-        var msg = "是否删除该采购";
+        function delPropertyfee(obj){
+        var msg = "是否删除";
         if(confirm(msg) == true){
-            var purchase =  $(obj).parent("td").attr("purchase");
-            $.post("delPurchase.do",{"purchase":purchase},function(response){
+            var id =  $(obj).parent("td").attr("id");
+            $.post("delPropertyfee.do",{"id":id},function(response){
                 if(response.tip=="success"){
-                    alert("采购删除成功");
-                    window.location.href='listPurchase.do';
+                    alert("删除成功");
+                    window.location.href='listPropertyfee.do';
                 }
                 else if(response.tip=="error"){
-                    alert("采购删除失败!"+response.msg);
-                    }
+                    alert("删除失败!"+response.msg);
+                }
             });
             return true;
         }

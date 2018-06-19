@@ -60,4 +60,14 @@ public class PropertyFeeServiceImpl implements PropertyFeeService {
 
         return isSuccess;
     }
+
+    @Override
+    public boolean delPropertyfee(Integer id) {
+        boolean isSuccess = false;
+
+        pdao.delPropertyfee(id);
+        isSuccess = true;
+
+        return isSuccess;
+    }
 }

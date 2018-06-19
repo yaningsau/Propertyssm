@@ -96,4 +96,21 @@ public class PropertyFeeController {
         return map;
     }
 
+    //删除用户
+    @RequestMapping("delPropertyfee.do")
+    @ResponseBody
+    public Map<String, Object> delPropertyfee(Integer id, HttpSession session) {
+        Map<String, Object> map = new HashMap<String, Object>();
+        boolean isSuccess = false;
+
+        isSuccess = ps.delPropertyfee(id);
+        if (isSuccess) {
+            map.put("tip", "success");
+        } else {
+            map.put("tip", "error");
+        }
+        return map;
+
+    }
+
 }

@@ -147,11 +147,10 @@ public class ParkController {
             map.put("tip", "error");
         }
 
-        if (isSuccess) {
-            map.put("tip", "success");
-        } else {
-            map.put("tip", "error");
-        }
+        /*
+         * if (isSuccess) { map.put("tip", "success"); } else { map.put("tip",
+         * "error"); }
+         */
         return map;
     }
 

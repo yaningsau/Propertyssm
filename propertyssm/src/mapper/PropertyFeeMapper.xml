@@ -64,4 +64,10 @@
     </set>
      WHERE room=#{room}
   </update>
+  
+  <!-- 删除用户 -->
+    <delete id="delPropertyfee" parameterType="Propertyfee">
+     DELETE FROM t_propertyfee
+     WHERE id=#{id}
+    </delete>
 </mapper>

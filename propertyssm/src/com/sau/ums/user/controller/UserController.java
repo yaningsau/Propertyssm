@@ -126,12 +126,13 @@ public class UserController {
                 map.put("tip", "error");
             }
         } else {
-            //根据房间号获取房屋表对应数据
-            /*
-             * isSuccess = us.addUser(user); if (isSuccess) { map.put("tip",
-             * "success"); } else { map.put("tip", "error"); }
-             */
-            map.put("tip", "error");
+            isSuccess = us.addUser(user);
+            if (isSuccess) {
+                map.put("tip", "success");
+            } else {
+                map.put("tip", "error");
+            }
+
         }
 
         return map;

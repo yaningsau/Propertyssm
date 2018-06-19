@@ -74,8 +74,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
                                 <tr>
                                     <td>${st.index+1}</td>
                                     <td>${purchase.sname}</td>
-                                    <td>${purchase.price}</td>
                                     <td>${purchase.number}</td>
+                                    <td>${purchase.price}</td>
+                                    
                                     <td>${purchase.total}</td>
                                     <td>${purchase.uses}</td>
                                     <td><fmt:formatDate value="${purchase.time}" pattern="yyyy-MM-dd" /></td>

@@ -2,6 +2,8 @@ package com.sau.ums.propertyfee.service;
 
 import java.util.List;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import com.github.pagehelper.PageInfo;
 import com.sau.ums.bean.Propertyfee;
 
@@ -22,4 +24,8 @@ public interface PropertyFeeService {
 
     //刷新
     public boolean TPropertyfee(Propertyfee propertyfee);
+
+    @Transactional
+    public boolean delPropertyfee(Integer id);
+
 }
